@@ -1,7 +1,31 @@
 .navbar {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
 }
 
 .nav-link {
   color: #023047 !important;
+}
+
+.fil1 {
+  fill: #023047;
+}
+.fil0 {
+  fill: #f88500;
+}
+.fil2 {
+  fill: #023047;
+  fill-rule: nonzero;
+}
+
+#dropdownMenuButton1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  color: white;
+  width: 193px;
+  height: 43px;
+  background-color: #f88500;
+  margin-left: 120px;
 }
