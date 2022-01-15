@@ -9,23 +9,22 @@
   color: #023047 !important;
 }
 
-.fil1 {
-  fill: #023047;
-}
-.fil0 {
-  fill: #f88500;
-}
-.fil2 {
-  fill: #023047;
-  fill-rule: nonzero;
-}
-
-#dropdownMenuButton1 {
+#dropdownMenuLink {
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
   color: white;
   width: 193px;
   height: 43px;
   background-color: #f88500;
-  margin-left: 120px;
+}
+
+.dropdown-menu {
+  background-color: #e5e5e5;
+}
+
+.dropdown-menu > li > a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #023047;
 }
