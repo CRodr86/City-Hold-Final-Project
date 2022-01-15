@@ -16,7 +16,7 @@ export const Cards = () => {
       <div className="container">
         <div className="row mt-2">
           <div className="col-sm-4">
-            <div class="card p-4">
+            <div class="card p-4 h-100">
               <div className="card-body">
                 
                 <h5 className="card-title"><GiTeamIdea style={iconStyles}/> Proposals</h5>
@@ -27,7 +27,7 @@ export const Cards = () => {
             </div>
           </div>
           <div className="col-sm-4">
-            <div class="card p-4">
+            <div class="card p-4 h-100">
               <div className="card-body">
                 <h5 className="card-title"> <FaCity style={iconStyles}/> Projects</h5>
                 <p className="card-text">
@@ -37,7 +37,7 @@ export const Cards = () => {
             </div>
           </div>
           <div className="col-sm-4">
-            <div class="card p-4">
+            <div class="card p-4 h-100">
               <div className="card-body">
                 <h5 className="card-title"> <FaPersonBooth style={iconStyles}/> Public Voting</h5>
                 <p className="card-text">
@@ -49,7 +49,7 @@ export const Cards = () => {
         </div>
         <div className="row mt-4">
           <div className="col-sm-4">
-            <div class="card p-4">
+            <div class="card p-4 h-100">
               <div className="card-body">
                 <h5 className="card-title"> <FaBusAlt style={iconStyles}/> Services</h5>
                 <p className="card-text">
@@ -58,8 +58,8 @@ export const Cards = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-4">
-            <div class="card p-4">
+          <div className="col-sm-4 ">
+            <div class="card p-4 h-100">
               <div className="card-body">
                 <h5 className="card-title"> <FaIdBadge style={iconStyles}/> Citizen File</h5>
                 <p className="card-text">
@@ -68,8 +68,8 @@ export const Cards = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-4">
-            <div class="card p-4">
+          <div className="col-sm-4 ">
+            <div class="card p-4 h-100">
               <div className="card-body">
                 <h5 className="card-title"><FaStore style={iconStyles}/> City News</h5>
                 <p className="card-text">
