@@ -5,7 +5,7 @@ import "./aboutButton.css"
 export const AboutButton = () => {
 	return (
     <>
-      <button type="button" className="btn btn-warning px-4">About Us</button>
+      <button type="button" className="btn btn-warning px-5">About Us</button>
     </>
   );
 };

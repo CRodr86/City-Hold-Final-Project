@@ -3,21 +3,26 @@ import { Link } from "react-router-dom";
 import UpperBannerImg from "../../../img/UpperBannerImg.png"
 import { AboutButton } from "../AboutButton/AboutButton.jsx";
 import "./upperBanner.css"
+let bgImg = {background: `linear-gradient(0deg, rgba(2, 48, 71, 0.5), rgba(2, 48, 71, 0.5)), url(${UpperBannerImg})`,
+backgroundSize: `cover`,
+backgroundPosition: `bottom`,
+backgroundRepeat: `no-repeat`}
 
 
 export const UpperBanner = () => {
 	return (
     <>
-      <div className="container-fluid " id="banner_wrapper">
-        <div className="row my-2 align-items-center">
+      <div className="container-fluid w-100" id="banner_wrapper">
+        <div className="row my-1 py-5 ">
           <div className="col-12 ">
-            <h1 class="text-start  mt-5 ">Participating has never been so easy.</h1>
-            <h5 class="text-start mt-3 mb-4 ">
-              Get involved and keep informed of everything that is happening in
-              our city.
-            </h5>
-
-            <AboutButton />
+            <div className="bg-image px-5" style={bgImg}>
+              <h1 className="pb-2 ">Participating has never been so easy.</h1>
+              <p className=" pb-3 w-75 ">
+                Get involved and keep informed of everything that is happening
+                in our city.
+              </p>
+              <AboutButton />
+            </div>
           </div>
         </div>
       </div>

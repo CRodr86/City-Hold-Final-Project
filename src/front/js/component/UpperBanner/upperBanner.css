@@ -1,17 +1,21 @@
-#banner_wrapper{
-    background: #023047;
-    height: 50vh;
-    /* background-image: url("../../../img/UpperBannerImg.png");
-*/
+.bg-image{
+    height: 500px;
+    padding-top:15%;
+   
+
 }
 
-h1, h5{
+h1, p{
     color: #E5e5e5;
+    
 }
 h1{
-    font-family: Ubuntu;
+font-family: Ubuntu;   
+font-weight: bold;
+
 }
 
-h5{
+p{
     font-family: Open Sans;
+    font-size:x-large
 }
