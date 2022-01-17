@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo.jsx";
+import NavbarItem from "../NavbarItem/NavbarItem.jsx";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -23,41 +24,49 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item mx-2">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Proposals
-              </a>
-            </li>
-            <li className="nav-item mx-2">
-              <a className="nav-link" href="#">
-                Projects
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Public Voting
-              </a>
-            </li>
-            <li className="nav-item mx-2">
-              <a className="nav-link" href="#">
-                Services
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                My File
-              </a>
-            </li>
-            <li className="nav-item ms-2 me-5">
-              <a className="nav-link" href="#">
-                News
-              </a>
-            </li>
+            <NavbarItem
+              liClassName="nav-item mx-2"
+              aClassName="nav-link active"
+              ariaCurrent="page"
+              href="#"
+              pageName="Home"
+            />
+            <NavbarItem
+              liClassName="nav-item"
+              aClassName="nav-link"
+              href="#"
+              pageName="Proposals"
+            />
+            <NavbarItem
+              liClassName="nav-item mx-2"
+              aClassName="nav-link"
+              href="#"
+              pageName="Projects"
+            />
+            <NavbarItem
+              liClassName="nav-item"
+              aClassName="nav-link"
+              href="#"
+              pageName="Public Voting"
+            />
+            <NavbarItem
+              liClassName="nav-item mx-2"
+              aClassName="nav-link"
+              href="#"
+              pageName="Services"
+            />
+            <NavbarItem
+              liClassName="nav-item"
+              aClassName="nav-link"
+              href="#"
+              pageName="My File"
+            />
+            <NavbarItem
+              liClassName="nav-item mx-2 me-5"
+              aClassName="nav-link"
+              href="#"
+              pageName="News"
+            />
             <div className="dropdown ms-5">
               <a
                 className="btn btn-secondary dropdown-toggle border-0"
