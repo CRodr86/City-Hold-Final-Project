@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
+import UpperBanner from "../component/UpperBanner/UpperBanner.jsx";
+
+
 
 const Home = () => {
-  const { store, actions } = useContext(Context);
 
-  return <div></div>;
+	return (
+		<>
+			<UpperBanner/>
+		</>
+	);
 };
-export default Home;
+
+export default Home
