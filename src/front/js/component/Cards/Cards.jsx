@@ -18,8 +18,7 @@ export const Cards = () => {
           <div className="col-sm-4">
             <div class="card p-4 h-100">
               <div className="card-body">
-                
-                <h5 className="card-title"><GiTeamIdea style={iconStyles}/> Proposals</h5>
+                <h5 className="card-title"><FaEnvelopeOpenText style={iconStyles}/> Proposals</h5>
                 <p className="card-text">
                 We are glad to hear and resolve any proposal or claim that you may have. 
                 </p>
