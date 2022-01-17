@@ -1,0 +1,10 @@
+.fil1 {
+  fill: #023047;
+}
+.fil0 {
+  fill: #f88500;
+}
+.fil2 {
+  fill: #023047;
+  fill-rule: nonzero;
+}

@@ -10,7 +10,7 @@ const iconStyles = {
     fontSize: "35px"
 };
 
-export const Cards = () => {
+const Cards = () => {
 	return (
     <>
       <div className="container">
@@ -82,3 +82,5 @@ export const Cards = () => {
     </>
   );
 };
+
+export default Cards
