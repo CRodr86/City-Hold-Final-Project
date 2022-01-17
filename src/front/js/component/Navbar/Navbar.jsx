@@ -85,7 +85,11 @@ const Navbar = () => {
                   aria-labelledby="dropdownMenuLink"
                 >
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a
+                      className="dropdown-item"
+                      data-bs-toggle="modal"
+                      data-bs-target="#signInModal"
+                    >
                       Sign in
                     </a>
                   </li>
