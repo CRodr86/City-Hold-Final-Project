@@ -1,0 +1,33 @@
+#counter_banner_wrapper{
+    background: #F88500;
+}
+
+#counter_banner_title{
+    font-family: Ubuntu;
+    color: #e5e5e5;
+}
+
+#counter_banner_text{
+    font-family: Open Sans;
+    color: #e5e5e5;
+}
+
+.count, .text{
+    color: #e5e5e5;
+    
+}
+
+.count{
+    font-family: Ubuntu;
+    font-size: 40px;
+}
+
+.text{
+    font-family: Open Sans;
+  
+}
+
+#counter_elem{
+    border-right: #e5e5e5 solid 1px;
+    border-left: #e5e5e5 solid 1px;
+}
