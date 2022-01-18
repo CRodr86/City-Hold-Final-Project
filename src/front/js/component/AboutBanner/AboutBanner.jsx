@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./aboutBanner.css"
-import{FaDesktop, FaPeopleArrows, FaBullseye} from "react-icons/fa"
+import "./aboutBanner.css";
+import{FaDesktop, FaPeopleArrows, FaBullseye} from "react-icons/fa";
+import AboutBannerImg1 from "../../../img/AboutBannerImg1.png";
+import AboutBannerImg2 from "../../../img/AboutBannerImg2.png"
 
 const iconStyles = {
     color: "#F88500",
@@ -13,8 +15,8 @@ const iconStyles = {
 const AboutBanner = () => {
 	return (
     <>
-      <div className="container" >
-        <div className="row my-3" id="about_banner_wrapper" > 
+      <div className="container my-5" id="about_banner_wrapper" >
+        <div className="row my-3"  > 
           <div className="col-8 p-2">
             <h5 id="section_title">About us</h5>
             <h2 id="section_subtitle">Keeping the city connected</h2>
@@ -24,8 +26,12 @@ const AboutBanner = () => {
               <li> <FaBullseye className="fa-li" style={iconStyles}/>By allowing authorities to manage information more efficiently we aim to speed up the resolution of public problems</li>
             </ul>
           </div>
-          <div className="col-4 justify-content-center">
-              <div className="square"></div>
+          <div className="col-4 d-none d-md-block ps-5 ">
+              <div className="square ">
+              <img src={AboutBannerImg1} alt="Street corssing people" id="about_img_1" />
+              <img src={AboutBannerImg2} alt="Connected hands picture" id="about_img_2" />
+              </div>
+              
           </div>
         </div>
       </div>
