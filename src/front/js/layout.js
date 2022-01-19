@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import  Home from "./pages/Home.jsx";
+import Home from "./pages/Home.jsx";
 import injectContext from "./store/appContext";
 import Navbar from "./component/Navbar/Navbar.jsx";
-
+import Footer from "./component/Footer/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import injectContext from "./store/appContext";
 
 //create your first component
 const Layout = () => {
@@ -20,6 +22,7 @@ const Layout = () => {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );

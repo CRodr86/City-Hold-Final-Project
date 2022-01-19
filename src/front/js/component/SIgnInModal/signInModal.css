@@ -1,0 +1,50 @@
+.modal-content {
+  background-color: #e5e5e5 !important;
+}
+
+.nav-item button {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+  background-color: #e5e5e5 !important;
+}
+
+#forgot {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #023047;
+}
+
+#logInButton {
+  font-family: "Ubuntu", sans-serif;
+  color: #ffffff;
+  background-color: #f88400;
+}
+
+#logInButton:hover {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+  background-color: #da7400;
+}
+
+#signUpButton {
+  font-family: "Ubuntu", sans-serif;
+  color: #ffffff;
+  background-color: #f88500;
+}
+
+#signUpButton:hover {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+  background-color: #da7400;
+}
+
+.form-label {
+  font-family: "Ubuntu", sans-serif;
+  font-size: small;
+  color: #023047;
+}
+
+.form-control {
+  background-color: #f8fafc;
+  border: 0;
+}
