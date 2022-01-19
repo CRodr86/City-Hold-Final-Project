@@ -6,9 +6,9 @@ import CounterElement from "./CounterElement.jsx";
 const CounterBanner = () => {
   return (
     <>
-      <div className="container mt-5 py-2" id="counter_banner_wrapper">
-        <div className="row my-3">
-          <div className="col-12 text-center pt-4">
+      <div className="container-fluid mt-5 py-5" id="counter_banner_wrapper">
+        <div className="row">
+          <div className="col-12 text-center">
             <h2 id="counter_banner_title">
               Let’s keep improving your quality of life
             </h2>

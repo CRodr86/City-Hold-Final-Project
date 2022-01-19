@@ -13,9 +13,10 @@ backgroundPosition: `bottom`,
 const UpperBanner = (props) => {
 	return (
     <>
-      <div className="container w-100" id="banner_wrapper">
+      <div className="container-fluid w-100" id="banner_wrapper">
         <div className="row ">
           <div className="col-12 ">
+            
             <div className="bg-image px-5" style={bgImg}>
               <h1 className="pb-2 ">{props.primaryText}</h1>
               <p className=" pb-3 w-75">
