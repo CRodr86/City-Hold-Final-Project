@@ -18,7 +18,7 @@ const UpperBanner = (props) => {
           <div className="col-12 ">
             <div className="bg-image px-5" style={bgImg}>
               <h1 className="pb-2 ">{props.primaryText}</h1>
-              <p className=" pb-3 w-75 ">
+              <p className=" pb-3 w-75">
                 {props.secondaryText}
               </p>
               <MainButton buttonText="About us" />
