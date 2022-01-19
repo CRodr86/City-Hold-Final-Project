@@ -17,8 +17,8 @@ const Home = () => {
       />
       <Cards />
       <AboutBanner />
-      <CounterBanner />
       <TrendingNews />
+      <CounterBanner />
     </>
   );
 };

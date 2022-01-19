@@ -5,7 +5,7 @@ import Logo from "../Logo/Logo.jsx";
 const Footer = () => {
   return (
     <div className="container-fluid ">
-      <footer className="row row-cols-7 py-5 my-5 border-top footer d-flex justify-content-around">
+      <footer className="row row-cols-7 py-5 mb-5 border-top footer d-flex justify-content-around">
         <div className="col"></div>
         <div className="col">
           <a href="/" className="mb-3 link-dark text-decoration-none">

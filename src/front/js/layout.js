@@ -4,8 +4,6 @@ import Home from "./pages/Home.jsx";
 import injectContext from "./store/appContext";
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Footer from "./component/Footer/Footer.jsx";
-import Home from "./pages/Home.jsx";
-import injectContext from "./store/appContext";
 
 //create your first component
 const Layout = () => {
