@@ -1,0 +1,17 @@
+h3 {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+}
+
+.card-title {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+}
+
+.smallCard {
+  height: 400px;
+}
+
+.bigCard {
+  height: 800px;
+}
