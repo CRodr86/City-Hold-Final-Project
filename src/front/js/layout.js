@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Footer from "./component/Footer/Footer.jsx";
 import Navbar from "./component/Navbar/Navbar.jsx";
-
 import Home from "./pages/Home.jsx";
 import injectContext from "./store/appContext";
 
@@ -20,6 +20,7 @@ const Layout = () => {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );
