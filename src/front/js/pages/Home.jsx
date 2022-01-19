@@ -8,7 +8,8 @@ const Home = () => {
 
 	return (
 		<>
-			<UpperBanner/>
+			<UpperBanner primaryText="Participating has never been so easy." secondaryText="Get involved and keep informed of everything that is happening
+                in our city."/>
 		</>
 	);
 };
