@@ -5,9 +5,10 @@ import CounterElement from "./CounterElement.jsx";
 
 
 
-
 const CounterBanner = () => {
+
 	return (
+    
     <>
       <div className="container my-5 py-2" id="counter_banner_wrapper" >
         <div className="row my-3"  > 
@@ -17,9 +18,10 @@ const CounterBanner = () => {
           </div>
         </div>
         <div className="row text-center d-flex justify-content-center" id="numbers_row">
-            <CounterElement  count={9000} text="Registered Citizens" style={{"border": "#e5e5e5 solid 1px"}}/>
-            <CounterElement  count={300} text="Solved proposals and claims"/>
-            <CounterElement  count={12} text="Held Public Votes "/>
+            <CounterElement  count={1000} text="Registered Citizens" prefix="+"/>
+            <CounterElement  count={300} text="Solved proposals and claims" prefix="+"/>
+            <CounterElement  count={12} text="Held Public Votes " prefix=""/>
+         
         </div>
       </div>
     </>
