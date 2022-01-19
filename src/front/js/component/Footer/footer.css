@@ -6,3 +6,8 @@ h5 {
   font-family: "Ubuntu", sans-serif;
   color: #023047;
 }
+
+a {
+  font-family: "Open Sans", sans-serif;
+  color: #010b13 !important;
+}
