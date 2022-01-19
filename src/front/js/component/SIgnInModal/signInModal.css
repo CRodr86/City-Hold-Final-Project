@@ -17,13 +17,25 @@
 #logInButton {
   font-family: "Ubuntu", sans-serif;
   color: #ffffff;
-  background-color: #f88500;
+  background-color: #f88400;
+}
+
+#logInButton:hover {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+  background-color: #da7400;
 }
 
 #signUpButton {
   font-family: "Ubuntu", sans-serif;
   color: #ffffff;
   background-color: #f88500;
+}
+
+#signUpButton:hover {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+  background-color: #da7400;
 }
 
 .form-label {
