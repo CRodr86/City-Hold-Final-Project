@@ -1,18 +1,19 @@
 import React from "react";
 import "./navbarItem.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const NavbarItem = (props) => {
   return (
     <>
-      <li className={props.liClassName}>
-        <a
+      <li className={props.liClassName} id="navitem">
+        <Link
           className={props.aClassName}
           aria-current={props.ariaCurrent}
-          href={props.href}
+          to={props.to}
         >
           {props.pageName}
-        </a>
+        </Link>
       </li>
     </>
   );
@@ -22,7 +23,7 @@ NavbarItem.propTypes = {
   liClassName: PropTypes.string,
   aClassName: PropTypes.string,
   ariaCurrent: PropTypes.string,
-  href: PropTypes.string,
+  to: PropTypes.string,
   pageName: PropTypes.string,
 };
 
