@@ -1,0 +1,31 @@
+#carousel_item_wrapper{
+    border: solid #023047 3px ;
+    color: #023047;
+    font-family: Open Sans;
+}
+
+#details_button{
+    color: #023047;
+    border: #F88500 solid 1px;
+    font-family: Ubuntu;
+    
+}
+
+#details_button:hover{
+    background: rgb(2, 48, 71);
+    color: #e5e5e5;
+    border: #023047;
+}
+
+#vote_button{
+    background: rgb(248, 133, 0) ;
+    color: #023047;
+    border: #F88500;
+    font-family: Ubuntu;
+    
+}
+
+#vote_button:hover{
+    color: #e5e5e5;
+    background: #023047;
+}

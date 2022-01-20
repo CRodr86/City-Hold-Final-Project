@@ -5,14 +5,16 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 
 
 
-const PublicVotingHome = () => {
+const PublicVotingHome = (props) => {
   return (
     <>
       <UpperBanner
+        bgClassName="bg-image text-center"
         primaryText="Your opinion matters"
         secondaryText="Please sign up or log in to participate in the public voting"
-        button={<MainButton buttonText="Sign In"/>}
+        button={<MainButton to="/publicvotingselect" buttonText="Sign In"/>}
       />
+    
     </>
   );
 };
