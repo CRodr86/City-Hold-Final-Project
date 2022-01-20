@@ -4,8 +4,17 @@
 
 .nav-item button {
   font-family: "Ubuntu", sans-serif;
-  color: #023047;
   background-color: #e5e5e5 !important;
+}
+
+.nav-pills .nav-link.active,
+.show > .nav-pills .nav-link {
+  color: #023047 !important;
+  text-decoration: underline;
+}
+.nav-pills .nav-link,
+.show > .nav-pills .nav-link {
+  color: #02304798 !important;
 }
 
 #forgot {
