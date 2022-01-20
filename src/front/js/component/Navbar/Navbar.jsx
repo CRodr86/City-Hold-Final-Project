@@ -11,7 +11,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <Logo width="68px" height="80px" viewBox="0 0 2.2 2.58" />
+            <Logo width="45.33px" height="53.33px" viewBox="0 0 2.2 2.58" />
           </a>
           <button
             className="navbar-toggler"
@@ -69,6 +69,8 @@ const Navbar = () => {
                 href="#"
                 pageName="News"
               />
+            </ul>
+            <div className="d-flex">
               <div className="dropdown ms-5">
                 <a
                   className="btn btn-secondary dropdown-toggle border-0"
@@ -100,7 +102,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               </div>
-            </ul>
+            </div>
           </div>
         </div>
       </nav>
