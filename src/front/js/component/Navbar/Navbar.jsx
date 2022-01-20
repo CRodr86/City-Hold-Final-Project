@@ -34,7 +34,7 @@ const Navbar = () => {
                 pageName="Home"
               />
               <NavbarItem
-                liClassName="nav-item"
+                liClassName="nav-item mx-2"
                 aClassName="nav-link"
                 href="#"
                 pageName="Proposals"
@@ -46,7 +46,7 @@ const Navbar = () => {
                 pageName="Projects"
               />
               <NavbarItem
-                liClassName="nav-item"
+                liClassName="nav-item mx-2"
                 aClassName="nav-link"
                 href="#"
                 pageName="Public Voting"
@@ -58,7 +58,7 @@ const Navbar = () => {
                 pageName="Services"
               />
               <NavbarItem
-                liClassName="nav-item"
+                liClassName="nav-item mx-2"
                 aClassName="nav-link"
                 href="#"
                 pageName="My File"
