@@ -10,24 +10,6 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container">
-<<<<<<< HEAD
-          <div>
-            <a className="navbar-brand" href="#">
-              <Logo width="44.88px" height="52.8px" viewBox="0 0 2.2 2.58" />
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-          </div>
-=======
           <a className="navbar-brand" href="#">
             <Logo width="45.33px" height="53.33px" viewBox="0 0 2.2 2.58" />
           </a>
@@ -42,7 +24,6 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
->>>>>>> 55e21666efa5ff69628140ebf414919e4433511b
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <NavbarItem
