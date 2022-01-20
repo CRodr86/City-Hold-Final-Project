@@ -1,3 +1,7 @@
 .nav-link {
   color: #023047 !important;
 }
+
+#navitem:hover{
+  border-bottom: 1px solid #023047;
+}

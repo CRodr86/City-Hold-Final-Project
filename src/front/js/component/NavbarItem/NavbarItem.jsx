@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const NavbarItem = (props) => {
   return (
     <>
-      <li className={props.liClassName}>
+      <li className={props.liClassName} id="navitem">
         <Link
           className={props.aClassName}
           aria-current={props.ariaCurrent}
