@@ -1,4 +1,4 @@
-h5{
+.card-title-upper{
     font-family: Ubuntu;
     color: #010B13;
 }
@@ -6,7 +6,7 @@ h5{
 .card-text{
     font-family: Open Sans;
     color: #010B13;
-    font-size: large;
+    font-size: medium;
     
 }
 
@@ -15,7 +15,7 @@ h5{
     
 }
 
-.col-sm-4 :hover{
+.col-md-4 :hover{
     background: #e5e5e5;
     cursor: pointer;
 }
