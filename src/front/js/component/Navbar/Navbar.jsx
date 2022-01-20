@@ -30,43 +30,43 @@ const Navbar = () => {
                 liClassName="nav-item mx-2"
                 aClassName="nav-link active"
                 ariaCurrent="page"
-                href="#"
+                to="/"
                 pageName="Home"
               />
               <NavbarItem
                 liClassName="nav-item"
                 aClassName="nav-link"
-                href="#"
-                pageName="Proposals"
-              />
+                to="/proposals"
+                pageName="Proposals"></NavbarItem>
+           
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"
-                href="#"
+                to="#"
                 pageName="Projects"
               />
               <NavbarItem
                 liClassName="nav-item"
                 aClassName="nav-link"
-                href="#"
+                to="/publicvoting"
                 pageName="Public Voting"
               />
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"
-                href="#"
+                to="#"
                 pageName="Services"
               />
               <NavbarItem
                 liClassName="nav-item"
                 aClassName="nav-link"
-                href="#"
+                to="#"
                 pageName="My File"
               />
               <NavbarItem
                 liClassName="nav-item mx-2 me-5"
                 aClassName="nav-link"
-                href="#"
+                to="#"
                 pageName="News"
               />
               <div className="dropdown ms-5">

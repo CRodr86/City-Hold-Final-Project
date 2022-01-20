@@ -9,7 +9,7 @@ const NavbarItem = (props) => {
         <a
           className={props.aClassName}
           aria-current={props.ariaCurrent}
-          href={props.href}
+          to={props.to}
         >
           {props.pageName}
         </a>
@@ -22,7 +22,7 @@ NavbarItem.propTypes = {
   liClassName: PropTypes.string,
   aClassName: PropTypes.string,
   ariaCurrent: PropTypes.string,
-  href: PropTypes.string,
+  to: PropTypes.string,
   pageName: PropTypes.string,
 };
 
