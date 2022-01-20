@@ -22,7 +22,7 @@ const UpperBanner = (props) => {
               <p className=" pb-3 w-75">
                 {props.secondaryText}
               </p>
-              <MainButton buttonText="About us" />
+              <span>{props.button}</span>
             </div>
           </div>
         </div>
@@ -33,7 +33,8 @@ const UpperBanner = (props) => {
 
 MainButton.propTypes = {
   primaryText: PropTypes.string,
-  secondaryText: PropTypes.string
+  secondaryText: PropTypes.string,
+  button: PropTypes.element,
 };
 
 
