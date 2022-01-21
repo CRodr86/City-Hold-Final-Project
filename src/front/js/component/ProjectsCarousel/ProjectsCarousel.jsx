@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "./projectsCarousel.css";
 import CarouselSlide1 from "./CarouselSlide1.jsx";
-import PropTypes from "prop-types";
+
 
 
 
 const ProjectsCarousel = (props) => {
 	return (
     <>
-      <div className="container h-100 p-0" id="carousel_wrapper">
+      <div className="container h-100 p-0 rounded" id="carousel_wrapper">
         <div className="row ">
           <div className="col-12">
             <div
@@ -60,13 +59,5 @@ const ProjectsCarousel = (props) => {
     </>
   );
 };
-
-ProjectsCarousel.propTypes = {
-slide1: PropTypes.string,
-slide2: PropTypes.string,
-slide3: PropTypes.string,
-
-};
-
 
 export default ProjectsCarousel

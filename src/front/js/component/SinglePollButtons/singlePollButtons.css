@@ -1,0 +1,12 @@
+#buttons_wrapper{
+    background: #e5e5e5;
+
+}
+
+#yes_icon:hover{
+    background: #1cc007a8;
+ }
+
+ #no_icon:hover{
+    background: #dd0808a8;
+ }

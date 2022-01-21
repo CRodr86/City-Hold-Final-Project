@@ -1,0 +1,14 @@
+#single_poll_item{
+    border: solid #F88500 3px;
+    border-radius: 25px;
+    color: #023047;
+    height: 200px;
+    width: 200px;
+    font-family: Ubuntu;
+    font-size: xx-large;
+}
+
+#single_poll_item:hover{
+   background: #f8840081
+    
+}

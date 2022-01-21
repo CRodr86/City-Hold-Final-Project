@@ -7,6 +7,7 @@ import Navbar from "./component/Navbar/Navbar.jsx";
 import Footer from "./component/Footer/Footer.jsx";
 import PublicVotingHome from "./pages/PublicVotingHome.jsx";
 import PublicVotingAllVotes from "./pages/PublicVotingAllVotes.jsx"
+import PublicVotingSinglePoll from "./pages/PublicVotingSinglePoll.jsx"
 
 //create your first component
 const Layout = () => {
@@ -23,6 +24,7 @@ const Layout = () => {
           <Route exact path="/proposals" component={ProposalsHome}/>
           <Route exact path="/publicvoting" component={PublicVotingHome}/>
           <Route exact path="/publicvotingselect" component={PublicVotingAllVotes}/>
+          <Route exact path="/publicvotingsinglepoll" component={PublicVotingSinglePoll}/>
         </Switch>
         <Footer />
       </BrowserRouter>

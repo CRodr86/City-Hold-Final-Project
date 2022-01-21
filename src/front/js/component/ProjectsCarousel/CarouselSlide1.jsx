@@ -24,6 +24,7 @@ const CarouselSlide1 = (props) => {
           bottomButtonText="Vote"
           image={PedestrianStreet}
           imageAlt="Pedestrian Street"
+          toVote="/publicvotingsinglepoll"
         />
         <CarouselItem
           topText={
@@ -37,6 +38,7 @@ const CarouselSlide1 = (props) => {
           bottomButtonText="Vote"
           image={NewMall}
           imageAlt="New Mall Construction"
+          toVote="/publicvotingsinglepoll"
         />
       </div>
     </>
