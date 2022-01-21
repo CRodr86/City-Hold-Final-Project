@@ -9,17 +9,17 @@ import PropTypes from "prop-types";
 const CarouselItem = (props) => {
 	return (
     <>
-      <div className="col-md-4 my-4 py-4 h-100 " id="carousel_item_wrapper">
-        <p className="card-text text-start">{props.topText}</p>
-        <div className="card h-100 bg-transparent">
+  
+        <div className="card bg-transparent col-lg-4 m-3 p-2" id="carousel_item_wrapper">
+        <p className="card-text text-start mb-0 mt-1 ms-2" id="carousel_card_toptxt">{props.topText}</p>
           <img
             src={props.image}
-            className="card-img-top"
+            className="card-img-top h-75 w-75 mx-auto"
             alt={props.imageAlt}
           />
-          <div className="card-body ">
-            <h5 className="card-title">{props.title}</h5>
-            <p className="card-text">{props.description}</p>
+          <div className="card-body p-1">
+            <h5 className="card-title" id="carousel_card_title">{props.title}</h5>
+            <p className="card-text" id="carousel_card_description">{props.description}</p>
             <div class="d-grid gap-2 col-6 mx-auto">
               <button className="btn btn-outline-warning" id="details_button">
               {props.topButtonText}
@@ -30,7 +30,7 @@ const CarouselItem = (props) => {
             </div>
           </div>
         </div>
-      </div>
+     
 
       {/* <div className="col-4 my-4 py-4 h-100" id="carousel_item_wrapper">
             <p className="text-start">{props.topText}</p>

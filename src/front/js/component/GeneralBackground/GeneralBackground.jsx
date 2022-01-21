@@ -14,10 +14,10 @@ height: 'max-content'
 const GeneralBackground = (props) => {
 	return (
     <>
-      <div className="container-fluid w-100" id="banner_wrapper">
+      <div className="container w-100" id="banner_wrapper">
         <div className="row ">
           <div className="col-12 ">
-            <div className={props.bgClassName}  style={bgImg}>
+            <div className={props.gralBgClassName}  style={bgImg}>
               <h1 className={props.h1ClassName} id="general_bg_h1">{props.primaryText}</h1>
               <p className={props.pClassName} id="general_bg_p">
                 {props.secondaryText}
@@ -38,7 +38,7 @@ MainButton.propTypes = {
   button: PropTypes.element,
   h1ClassName: PropTypes.string,
   pClassName: PropTypes.string,
-  bgClassName: PropTypes.string,
+  gralBgClassName: PropTypes.string,
   btnPosition: PropTypes.string,
   mainContent:PropTypes.element,
 };

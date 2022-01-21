@@ -10,9 +10,9 @@ import PropTypes from "prop-types";
 const ProjectsCarousel = (props) => {
 	return (
     <>
-      <div className="container h-100" id="carousel_wrapper">
-        <div className="row">
-          <div className="col-12 ">
+      <div className="container h-100 p-0" id="carousel_wrapper">
+        <div className="row ">
+          <div className="col-12">
             <div
               id="carouselExampleControls"
               className="carousel slide"

@@ -1,5 +1,5 @@
 #carousel_item_wrapper{
-    border: solid #023047 3px ;
+    border: solid #023047 2px ;
     color: #023047;
     font-family: Open Sans;
 }
@@ -8,6 +8,7 @@
     color: #023047;
     border: #F88500 solid 1px;
     font-family: Ubuntu;
+    font-size: small;
     
 }
 
@@ -22,10 +23,23 @@
     color: #023047;
     border: #F88500;
     font-family: Ubuntu;
+    font-size: medium;
     
 }
 
 #vote_button:hover{
     color: #e5e5e5;
     background: #023047;
+}
+
+#carousel_card_title{
+    font-size: large;
+}
+
+#carousel_card_description{
+    font-size: small;
+}
+
+#carousel_card_toptxt{
+    font-size: medium;
 }

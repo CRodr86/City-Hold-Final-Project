@@ -18,7 +18,7 @@ const CarouselSlide1 = (props) => {
               <strong>17</strong> <em>days left to vote</em>
             </p>
           }
-          title="Construction of pedestrian plaza and streets"
+          title="Construction of pedestrian streets"
           description="This project was developed by the City Hall in order to give priority to pedestrians in downtown area."
           topButtonText="Project Details"
           bottomButtonText="Vote"
