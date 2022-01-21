@@ -3,17 +3,21 @@ import { Link } from "react-router-dom";
 import "./mainButton.css";
 import PropTypes from "prop-types";
 
-
 const MainButton = (props) => {
-	return (
+  return (
     <>
-      <button type="button" className="btn btn-warning px-5">{props.buttonText}</button>
+      <Link to={props.to}>
+        <button type="button" className="btn px-5">
+          {props.buttonText}
+        </button>
+      </Link>
     </>
   );
 };
 
 MainButton.propTypes = {
   buttonText: PropTypes.string,
+  to: PropTypes.string,
 };
 
 export default MainButton;

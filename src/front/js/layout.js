@@ -5,6 +5,7 @@ import injectContext from "./store/appContext";
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Footer from "./component/Footer/Footer.jsx";
 import Proposals1 from "./pages/Proposals1.jsx";
+import Proposals2 from "./pages/Proposals2.jsx";
 
 //create your first component
 const Layout = () => {
@@ -22,6 +23,9 @@ const Layout = () => {
           </Route>
           <Route exact path="/proposals">
             <Proposals1 />
+          </Route>
+          <Route exact path="/proposals-2">
+            <Proposals2 />
           </Route>
         </Switch>
         <Footer />
