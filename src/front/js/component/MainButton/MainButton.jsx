@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const MainButton = (props) => {
   return (
     <>
-      <Link to={props.to}>
+      <Link to={props.toLink}>
         <button type="button" className="btn px-5">
           {props.buttonText}
         </button>
@@ -17,7 +17,7 @@ const MainButton = (props) => {
 
 MainButton.propTypes = {
   buttonText: PropTypes.string,
-  to: PropTypes.string,
+  toLink: PropTypes.string,
 };
 
 export default MainButton;

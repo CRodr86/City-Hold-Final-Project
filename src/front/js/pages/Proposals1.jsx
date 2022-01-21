@@ -7,7 +7,7 @@ const Proposals1 = () => {
   return (
     <div className="container-fluid proposals1-body">
       <div className="row d-flex justify-content-center pt-5">
-        <div className="col-8">
+        <div className="col-7">
           <Stepper
             steps={[
               { title: "Step One" },
@@ -20,14 +20,14 @@ const Proposals1 = () => {
         </div>
       </div>
       <div className="row d-flex justify-content-center mt-5">
-        <div className="col-9 text-center">
+        <div className="col-8 text-center">
           <h3 id="proposals1Header">
             Tell us your idea to make the city better
           </h3>
         </div>
       </div>
       <div className="row d-flex justify-content-center mt-3">
-        <div className="col-9 text-center">
+        <div className="col-8 text-center">
           <p>
             Please fill all the following proposal form so we can give you the
             best answer to your problem or suggestion. Once you finish we will
@@ -38,7 +38,7 @@ const Proposals1 = () => {
       </div>
       <div className="row mt-2 pb-5">
         <div className="col d-flex justify-content-center">
-          <MainButton buttonText="Start" to="/proposals-2" />
+          <MainButton buttonText="Start" toLink="/proposals-2" />
         </div>
       </div>
     </div>
