@@ -13,45 +13,56 @@ const MultiPollSelector = (props) => {
         id="selector_wrapper"
       >
         <div className="row">
-          <div className="col-12 p-3 text-start">
-            <ul className="list-group">
-              <li className="list-group-item">
-                <input
-                  className="form-check-input me-1"
-                  type="checkbox"
-                  value=""
-                  aria-label="..."
-                />
-                Tucson St.
-              </li>
-              <li className="list-group-item">
-                <input
-                  className="form-check-input me-1"
-                  type="checkbox"
-                  value=""
-                  aria-label="..."
-                />
-                Main St. 
-              </li>
-              <li className="list-group-item">
-                <input
-                  className="form-check-input me-1"
-                  type="checkbox"
-                  value=""
-                  aria-label="..."
-                />
-                Grant St. 
-              </li>
-              <li className="list-group-item">
-                <input
-                  className="form-check-input me-1"
-                  type="checkbox"
-                  value=""
-                  aria-label="..."
-                />
-                All of the above
-              </li>
-            </ul>
+          <div className="col-12 p-3 text-center">
+            <div
+              className="btn-group-vertical gap-2 w-50"
+              role="group"
+              aria-label="Basic radio toggle button group"
+              id="button_group"
+            >
+              <input
+                type="radio"
+                className="btn-check"
+                name="btnradio"
+                id="btnradio1"
+                autocomplete="off"
+              />
+              <label className="each_button btn btn-outline-primary rounded" for="btnradio1">
+              Tucson St.
+              </label>
+
+              <input
+                type="radio"
+                className="btn-check"
+                name="btnradio"
+                id="btnradio2"
+                autocomplete="off"
+              />
+              <label className=" each_button btn btn-outline-primary rounded" for="btnradio2">
+              Main St. 
+              </label>
+
+              <input
+                type="radio"
+                className="btn-check"
+                name="btnradio"
+                id="btnradio3"
+                autocomplete="off"
+              />
+              <label className=" each_button btn btn-outline-primary rounded" for="btnradio3">
+              Grant St. 
+              </label>
+              <input
+                type="radio"
+                className="btn-check"
+                name="btnradio"
+                id="btnradio4"
+                autocomplete="off"
+              />
+              <label className=" each_button btn btn-outline-primary rounded" for="btnradio4">
+              All of the above
+              </label>
+            </div>
           </div>
         </div>
       </div>
