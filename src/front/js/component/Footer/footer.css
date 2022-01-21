@@ -2,12 +2,13 @@
   background-color: #e5e5e5;
 }
 
-h5 {
-  font-family: "Ubuntu", sans-serif;
-  color: #023047;
+.footer p {
+  font-family: "Open Sans", sans-serif;
+  color: #010b13;
+  font-size: medium;
 }
 
-a {
-  font-family: "Open Sans", sans-serif;
+.nav-link {
+  font-family: "Open Sans", sans-serif !important;
   color: #010b13 !important;
 }

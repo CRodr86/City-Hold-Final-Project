@@ -3,15 +3,44 @@ h3 {
   color: #023047;
 }
 
+.trending-news p {
+  font-family: "Open Sans", sans-serif;
+}
+
 .card-title {
   font-family: "Ubuntu", sans-serif;
   color: #023047;
 }
 
 .smallCard {
-  height: 400px;
+  height: 50%;
 }
 
 .bigCard {
-  height: 800px;
+  height: fit-content;
+}
+
+.progress {
+  height: 35px;
+  background-color: #ffb703;
+  border-color: #f88500 !important;
+}
+
+.progress-label {
+  font-family: "Ubuntu", sans-serif;
+  color: #023047;
+}
+
+.progress-bar {
+  font-family: "Ubuntu", sans-serif;
+  font-size: medium;
+  background-color: #f88500;
+}
+
+#progress1 {
+  width: 63%;
+}
+
+#progress2 {
+  width: 37%;
 }
