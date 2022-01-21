@@ -104,15 +104,6 @@ const SignUpForm = () => {
         inputPlaceholder="Years of residence"
         inputAriaLabel="yearsOfResidence"
       />
-      <div class="col-12 d-flex justify-content-end">
-        <button
-          type="submit"
-          class="btn btn-primary border-0 px-5 mb-3"
-          id="signUpButton"
-        >
-          Sign up
-        </button>
-      </div>
     </form>
   );
 };

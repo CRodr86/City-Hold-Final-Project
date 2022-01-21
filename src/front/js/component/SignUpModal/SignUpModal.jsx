@@ -10,6 +10,15 @@ const SignUpModal = () => {
       aria-labelledby="pills-signUp-tab"
     >
       <SignUpForm />
+      <div class="col-12 d-flex justify-content-end">
+        <button
+          type="submit"
+          class="btn btn-primary border-0 px-5 mb-3"
+          id="signUpButton"
+        >
+          Sign up
+        </button>
+      </div>
     </div>
   );
 };
