@@ -1,8 +1,7 @@
 import React from "react";
 import Stepper from "react-stepper-enhanced";
 import "../../styles/proposals2.css";
-import MainButton from "../component/MainButton/MainButton.jsx";
-import SignUpModal from "../component/SignUpModal/SignUpModal.jsx";
+import SignUpForm from "../component/SignUpForm/SignUpForm.jsx";
 
 const Proposals1 = () => {
   return (
@@ -29,13 +28,11 @@ const Proposals1 = () => {
       </div>
       <div className="row d-flex justify-content-center mt-3">
         <div className="col-9 form-bg">
-          <SignUpModal />
+          <SignUpForm />
         </div>
       </div>
       <div className="row mt-2 pb-5">
-        <div className="col d-flex justify-content-center">
-          <MainButton buttonText="Start" to="/proposals-2" />
-        </div>
+        <div className="col d-flex justify-content-center"></div>
       </div>
     </div>
   );
