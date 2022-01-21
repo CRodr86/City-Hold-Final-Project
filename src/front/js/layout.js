@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx";
 import injectContext from "./store/appContext";
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Footer from "./component/Footer/Footer.jsx";
+import Proposals1 from "./pages/Proposals1.jsx";
 
 //create your first component
 const Layout = () => {
@@ -18,6 +19,9 @@ const Layout = () => {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/proposals">
+            <Proposals1 />
           </Route>
         </Switch>
         <Footer />
