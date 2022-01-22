@@ -23,7 +23,8 @@ const GeneralBackground = (props) => {
                 {props.secondaryText}
               </p>
               <div className="container" id="main_div">{props.mainContent}</div>
-              <span className={props.btnPosition}>{props.button}</span>
+              <span className={props.btnPosition1}>{props.button1}</span>
+              <span className={props.btnPosition2}>{props.button2}</span>
             </div>
           </div>
         </div>

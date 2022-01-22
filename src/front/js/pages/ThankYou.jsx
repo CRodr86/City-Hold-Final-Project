@@ -8,15 +8,17 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 
 
 
-const PublicVotingMultiPoll = () => {
+const ThankYou = () => {
   return (
     <>
-        <GeneralBackground gralBgClassName="bg-image px-2 py-5 text-center"
-        primaryText="Select which of the following streets would you choose to be pedestrian only:"
-        h1ClassName="pb-4 px-3" 
-        mainContent={<MultiPollSelector />}
-        btnPosition="btn col-4 "
-        button= {<MainButton to="/thankyou" buttonText="Submit"/>}
+        <GeneralBackground gralBgClassName="bg-image px-2 py-5 mb-3 text-center"
+        primaryText="Thank you for participating"
+        h1ClassName="px-3 mt-3" 
+        btnPosition1="btn col-4 pt-5 mt-4 "
+        button1= {<MainButton to="/publicvotingselect" buttonText="More projects"/>}
+        btnPosition2="btn col-4 pt-5 mt-4"
+        button2= {<MainButton to="/" buttonText="Return to Home"/>}
+        
         />
 
         
@@ -27,4 +29,4 @@ const PublicVotingMultiPoll = () => {
   );
 };
 
-export default PublicVotingMultiPoll;
+export default ThankYou;

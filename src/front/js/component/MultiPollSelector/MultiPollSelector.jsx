@@ -22,7 +22,7 @@ const MultiPollSelector = (props) => {
             >
               <input
                 type="radio"
-                className="btn-check"
+                className="btn-check "
                 name="btnradio"
                 id="btnradio1"
                 autocomplete="off"

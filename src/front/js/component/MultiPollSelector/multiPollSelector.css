@@ -17,4 +17,9 @@
     font-weight: bolder;
 }
 
-
+.btn-check:checked+ .each_button{
+    background: #F88500;
+    border-color: #F88500;
+    color: #023047;
+    font-weight: bolder;
+}
