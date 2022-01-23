@@ -4,7 +4,7 @@ import "../../styles/proposals2.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import SignUpForm from "../component/SignUpForm/SignUpForm.jsx";
 
-const Proposals1 = () => {
+const Proposals2 = () => {
   return (
     <div className="container-fluid proposals1-body">
       <div className="row d-flex justify-content-center pt-5">
@@ -16,7 +16,7 @@ const Proposals1 = () => {
               { title: "Step Three" },
               { title: "Step Four" },
             ]}
-            activeStep={1}
+            activeStep={0}
           />
         </div>
       </div>
@@ -35,7 +35,7 @@ const Proposals1 = () => {
       <div className="row d-flex justify-content-center mt-4 pb-5">
         <div className="col-4">
           <div className="d-flex justify-content-start">
-            <MainButton buttonText="Back" toLink="/proposals-2" />
+            <MainButton buttonText="Back" toLink="/proposals" />
           </div>
         </div>
         <div className="col-4">
@@ -48,4 +48,4 @@ const Proposals1 = () => {
   );
 };
 
-export default Proposals1;
+export default Proposals2;
