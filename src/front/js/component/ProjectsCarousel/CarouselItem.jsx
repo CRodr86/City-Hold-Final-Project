@@ -1,6 +1,5 @@
 import React from "react";
 import { HashLink } from 'react-router-hash-link'
-// import UpperBannerImg from "../../../img/UpperBannerImg.png"
 import "./carouselItem.css";
 import PropTypes from "prop-types";
 
@@ -10,7 +9,7 @@ const CarouselItem = (props) => {
 	return (
     <>
   
-        <div className="card bg-transparent col-lg-4 m-3 p-2" id="carousel_item_wrapper">
+        <div className="card bg-transparent col-lg-4 m-3 p-2" id={props.id}>
         <p className="card-text text-start mb-0 mt-1 ms-2" id="carousel_card_toptxt">{props.topText}</p>
           <img
             src={props.image}
@@ -45,6 +44,7 @@ CarouselItem.propTypes = {
     bottomButtonText: PropTypes.string,
     toVote: PropTypes.string,
     toDetails: PropTypes.string,
+    id: PropTypes.string,
 };
 
 

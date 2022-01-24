@@ -3,13 +3,13 @@ import { HashLink } from 'react-router-hash-link'
 import CarouselItem from "./CarouselItem.jsx";
 import "./projectsCarousel.css";
 import PedestrianStreet from "../../../img/PedestrianStreet.png";
-import NewMall from "../../../img/NewMall.png"
+import NewMall from "../../../img/NewMall.png";
 import PropTypes from "prop-types";
-import "./carouselSlide1.css";
 
 
 
-const CarouselSlide1 = (props) => {
+
+const CarouselSlideProjectsPage1 = (props) => {
 	return (
     <>
       <div className="row d-flex justify-content-evenly">
@@ -50,13 +50,5 @@ const CarouselSlide1 = (props) => {
   );
 };
 
-// topText: PropTypes.string,
-//     image: PropTypes.string,
-//     imageAlt: PropTypes.string,
-//     title: PropTypes.string,
-//     description: PropTypes.string,
-//     topButtonText: PropTypes.string,
-//     bottomButtonText: PropTypes.string,
 
-
-export default CarouselSlide1
+export default CarouselSlideProjectsPage1

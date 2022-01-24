@@ -36,13 +36,13 @@ const Navbar = () => {
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"
-                to="/proposals"
+                to="#"
                 pageName="Proposals"></NavbarItem>
            
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"
-                to="#"
+                to="/projects"
                 pageName="Projects"
               />
               <NavbarItem

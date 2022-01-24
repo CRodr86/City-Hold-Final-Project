@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import ProposalsHome from "./pages/ProposalsHome.jsx";
+import PojectsHome from "./pages/ProjectsHome.jsx";
 import injectContext from "./store/appContext";
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Footer from "./component/Footer/Footer.jsx";
@@ -11,6 +11,7 @@ import PublicVotingSinglePoll from "./pages/PublicVotingSinglePoll.jsx";
 import PublicVotingMultiPoll from  "./pages/PublicVotingMultiPoll.jsx";
 import ThankYou from "./pages/ThankYou.jsx";
 import ProjectDetails from "./pages/ProjectDetails.jsx";
+import ProjectsHome from "./pages/ProjectsHome.jsx";
 
 
 const Layout = () => {
@@ -24,7 +25,7 @@ const Layout = () => {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/proposals" component={ProposalsHome}/>
+          <Route exact path="/projects" component={ProjectsHome}/>
           <Route exact path="/publicvoting" component={PublicVotingHome}/>
           <Route exact path="/publicvotingselect" component={PublicVotingAllVotes}/>
           <Route exact path="/publicvotingsinglepoll" component={PublicVotingSinglePoll}/>
