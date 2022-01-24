@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link'
 import CarouselItem from "./CarouselItem.jsx";
 import "./projectsCarousel.css";
 import PedestrianStreet from "../../../img/PedestrianStreet.png";
@@ -25,6 +25,7 @@ const CarouselSlide1 = (props) => {
           image={PedestrianStreet}
           imageAlt="Pedestrian Street"
           toVote="/publicvotingsinglepoll"
+          toDetails="/projectdetails"
         />
         <CarouselItem
           topText={
@@ -39,6 +40,7 @@ const CarouselSlide1 = (props) => {
           image={NewMall}
           imageAlt="New Mall Construction"
           toVote="/publicvotingsinglepoll"
+          toDetails="/projectdetails"
         />
       </div>
     </>

@@ -10,6 +10,7 @@ import PublicVotingAllVotes from "./pages/PublicVotingAllVotes.jsx";
 import PublicVotingSinglePoll from "./pages/PublicVotingSinglePoll.jsx";
 import PublicVotingMultiPoll from  "./pages/PublicVotingMultiPoll.jsx";
 import ThankYou from "./pages/ThankYou.jsx";
+import ProjectDetails from "./pages/ProjectDetails.jsx";
 
 
 const Layout = () => {
@@ -28,6 +29,7 @@ const Layout = () => {
           <Route exact path="/publicvotingselect" component={PublicVotingAllVotes}/>
           <Route exact path="/publicvotingsinglepoll" component={PublicVotingSinglePoll}/>
           <Route exact path="/publicvotingmultipoll" component={PublicVotingMultiPoll}/>
+          <Route exact path="/projectdetails" component={ProjectDetails}/>
           <Route exact path="/thankyou" component={ThankYou}/>
         </Switch>
         <Footer />

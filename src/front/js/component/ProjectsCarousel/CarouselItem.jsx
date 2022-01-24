@@ -22,10 +22,10 @@ const CarouselItem = (props) => {
             <p className="card-text" id="carousel_card_description">{props.description}</p>
             <div class="d-grid gap-2 col-6 mx-auto">
             <HashLink to={props.toDetails}>
-              <button className="btn btn-outline-warning" id="details_button">
+              <button className="btn btn-outline-warning px-2" id="details_button">
               {props.topButtonText}
               </button></HashLink>
-              <HashLink to={props.toVote}><button className="btn btn-warning" id="vote_button">
+              <HashLink to={props.toVote}><button className="btn btn-warning px-5" id="vote_button">
               {props.bottomButtonText}
               </button></HashLink>
             </div>

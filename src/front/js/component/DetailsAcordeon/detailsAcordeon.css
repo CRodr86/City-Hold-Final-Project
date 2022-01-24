@@ -1,0 +1,26 @@
+#acordeon_wrapper{
+    background: #e5e5e5;
+    color: #023047;
+    font-family: Open Sans;
+}
+
+.accordion-button{
+    border:solid 2px #F88500;
+    font-weight: bold;  
+    background: #e5e5e5;  
+    
+    /* box-shadow: none !important; */
+}
+
+.accordion-button:not(.collapsed){
+    background:#023047;
+    color:#e5e5e5 ;
+    border: #e5e5e5;
+
+    
+}
+
+.accordion-button:focus{
+    border-color: #023047;
+    box-shadow: 0 0 0 0.25rem rgba(2, 48, 71, 0.541);
+}

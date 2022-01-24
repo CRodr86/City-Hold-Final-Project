@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const SinglePollItem = (props) => {
 	return (
     <>
-    <HashLink to={props.to}><button type="button" className="btn btn-outline-warning" id="single_poll_item">{props.btnText}{props.btnIcon}</button></HashLink>
+    <HashLink to={props.to}><button type="button" className="btn btn-outline-warning p-5" id="single_poll_item">{props.btnText}{props.btnIcon}</button></HashLink>
               
     </>
   );

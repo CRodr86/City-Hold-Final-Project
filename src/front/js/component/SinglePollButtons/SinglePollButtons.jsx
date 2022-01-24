@@ -17,17 +17,16 @@ const iconStyles = {
 
 
 
-
 const SinglePollButtons = (props) => {
 	return (
     <>
       <div className="container h-100 w-75 p-0 py-3 rounded" id="buttons_wrapper">
         <div className="row d-flex justify-content-evenly">
-          <div className="col-md-4 p-3">
-            <SinglePollItem  to={"/publicvotingmultipoll"} btnText="Yes" btnIcon={<BsCheckLg  style={iconStyles} />}  />
+          <div className="col-md-4 p-3" id="btn_yes">
+            <SinglePollItem  to={"/publicvotingmultipoll"} btnText="Yes" btnIcon={<BsCheckLg  style={iconStyles} />}   />
           </div>
-          <div className="col-md-4 p-3">
-            <SinglePollItem  to={"#"} btnText="No"  btnIcon={<BsXLg  style={iconStyles} />}/>
+          <div className="col-md-4 p-3" id="btn_no">
+            <SinglePollItem  to={"/thankyou"} btnText="No"  btnIcon={<BsXLg  style={iconStyles} />}/>
           </div>
         </div>
       </div>
