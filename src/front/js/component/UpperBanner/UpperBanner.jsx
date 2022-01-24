@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import UpperBannerImg from "../../../img/UpperBannerImg.png"
 import MainButton  from "../MainButton/MainButton.jsx";
 import "./upperBanner.css";
 import PropTypes from "prop-types";
-import propTypes from "prop-types";
 let bgImg = {background: `linear-gradient(0deg, rgba(2, 48, 71, 0.75), rgba(2, 48, 71, 0.6)), url(${UpperBannerImg})`,
 backgroundPosition: `bottom`,
-//  backgroundRepeat: 'repeat',
+backgroundSize: 'cover',
+backgroundRepeat: 'no-repeat'
 }
 
 

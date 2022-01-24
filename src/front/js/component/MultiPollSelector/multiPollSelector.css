@@ -23,3 +23,7 @@
     color: #023047;
     font-weight: bolder;
 }
+
+.btn-check:focus+ .each_button{
+    box-shadow: 0 0 0 0.25rem rgba(2, 48, 71, 0.541);
+}

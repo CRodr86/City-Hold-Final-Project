@@ -1,7 +1,7 @@
 .navbar {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: medium;
 }
 
 #dropdownMenuLink {
@@ -13,6 +13,9 @@
   background-color: #f88500;
   letter-spacing: 1px;
   
+}
+#dropdownMenuLink:hover{
+  background: #FFB703;
 }
 
 .dropdown-menu {
