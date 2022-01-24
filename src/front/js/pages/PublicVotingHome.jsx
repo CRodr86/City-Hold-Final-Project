@@ -12,12 +12,14 @@ const PublicVotingHome = (props) => {
         bgClassName="bg-image text-center"
         primaryText="Your opinion matters"
         secondaryText="Please sign up or log in to participate in the public voting"
-        button={<MainButton to="/publicvotingselect" buttonText="Sign In"/>}
+        button={<MainButton to="/publicvotingselect" buttonText="Start"  />}
         
       />
     </>
   );
 };
+
+// dataToggle="modal" dataTarget="#signInModal"
 
 
 
