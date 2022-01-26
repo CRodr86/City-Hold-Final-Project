@@ -54,7 +54,7 @@ const Proposals3 = () => {
       </div>
       <div className="row d-flex justify-content-center mt-5">
         <div className="col-6 form-bg py-5 px-4 rounded-3">
-          <div className="row justify-content-center mt-3">
+          <div className="row justify-content-center mt-1">
             <div className="col">
               <div className="row">
                 <div className="col">
