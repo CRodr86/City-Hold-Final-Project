@@ -1,3 +1,12 @@
 .form-bg {
   background-color: #e5e5e5;
 }
+
+.stepLabelActive {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #e5e5e5;
+  background-color: #f88500;
+  font-family: Ubuntu;
+  font-size: larger;
+}

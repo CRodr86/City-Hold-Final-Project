@@ -7,7 +7,7 @@ const MainButton = (props) => {
   return (
     <>
       <Link to={props.toLink}>
-        <button type="button" className="btn px-5">
+        <button type="button" className="btn mainBtn px-5">
           {props.buttonText}
         </button>
       </Link>

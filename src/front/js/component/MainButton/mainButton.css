@@ -1,7 +1,7 @@
-.btn{
-    background: #F88500 ;
-    color: #e5e5e5;
-    border: #F88500;
-    font-family: Ubuntu;
-    letter-spacing: 1px;
+.mainBtn {
+  background: #f88500;
+  color: #e5e5e5;
+  border: #f88500;
+  font-family: Ubuntu;
+  letter-spacing: 1px;
 }
