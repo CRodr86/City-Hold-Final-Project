@@ -4,6 +4,20 @@
 
 #areaP {
   color: #023047;
-  font-family: Ubuntu;
+  font-family: "Ubuntu", sans-serif;
   font-size: small;
+}
+
+.card-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: small;
+  font-weight: 600;
+}
+
+.proposalsCard {
+  border: 3px solid #ffffff;
+}
+
+.proposalsCard:hover {
+  border: 3px solid #f88500;
 }

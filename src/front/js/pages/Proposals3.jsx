@@ -62,10 +62,15 @@ const Proposals3 = () => {
                 </div>
               </div>
               <div className="row d-flex justify-content-center">
-                <div className="col-8">
+                <div className="col-9">
                   <div className="row">
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/ios/50/000000/get-on-bus.png" />
                           <p className="card-text">Transport</p>
@@ -73,7 +78,12 @@ const Proposals3 = () => {
                       </div>
                     </div>
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/ios/50/000000/building-with-rooftop-terrace.png" />
                           <p className="card-text">Buidings</p>
@@ -81,7 +91,12 @@ const Proposals3 = () => {
                       </div>
                     </div>
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/50/000000/external-car-car-itim2101-lineal-itim2101-1.png" />
                           <p className="card-text">Traffic</p>
@@ -89,7 +104,12 @@ const Proposals3 = () => {
                       </div>
                     </div>
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/ios/50/000000/deciduous-tree.png" />
                           <p className="card-text">Nature</p>
@@ -97,7 +117,12 @@ const Proposals3 = () => {
                       </div>
                     </div>
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/dotty/50/000000/protected-bike-lane.png" />
                           <p className="card-text">Cycling</p>
@@ -105,7 +130,12 @@ const Proposals3 = () => {
                       </div>
                     </div>
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/ios/50/000000/crossroad.png" />
                           <p className="card-text">Streets</p>
@@ -113,7 +143,12 @@ const Proposals3 = () => {
                       </div>
                     </div>
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/ios/50/000000/train-platform.png" />
                           <p className="card-text">Trains</p>
@@ -121,7 +156,12 @@ const Proposals3 = () => {
                       </div>
                     </div>
                     <div className="col-3">
-                      <div class="card text-center mb-4">
+                      <div
+                        class="card text-center mb-4 proposalsCard"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                      >
                         <div className="card-body">
                           <img src="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png" />
                           <p className="card-text">Education</p>
