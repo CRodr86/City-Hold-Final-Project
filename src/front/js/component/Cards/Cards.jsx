@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import "./cards.css"
 import{FaCity, FaBusAlt, FaEnvelopeOpenText, FaFileAlt, FaIdBadge, FaPersonBooth, FaStore, FaUsersCog} from "react-icons/fa"
 import{GiTeamIdea} from "react-icons/gi"
@@ -16,66 +17,99 @@ const Cards = () => {
       <div className="container">
         <div className="row mt-5">
           <div className="col-md-4">
-            <div class="card p-4 h-100">
-              <div className="card-body">
-                <h5 className="card-title-upper"><FaEnvelopeOpenText style={iconStyles}/> Proposals</h5>
-                <p className="card-text">
-                We are glad to hear and resolve any proposal or claim that you may have. 
-                </p>
+            <HashLink to={"#"} style={{ textDecoration: 'none' }}>
+              <div class="card p-4 h-100">
+                <div className="card-body">
+                  <h5 className="card-title-upper">
+                    <FaEnvelopeOpenText style={iconStyles} /> Proposals
+                  </h5>
+                  <p className="card-text">
+                    We are glad to hear and resolve any proposal or claim that
+                    you may have.
+                  </p>
+                </div>
               </div>
-            </div>
+            </HashLink>
           </div>
           <div className="col-md-4">
-            <div class="card p-4 h-100">
-              <div className="card-body">
-                <h5 className="card-title-upper"> <FaCity style={iconStyles}/> Projects</h5>
-                <p className="card-text">
-                Keep updated of all the offcial projects that are being developed in your city.
-                </p>
+            <HashLink to={"/projects"} style={{ textDecoration: 'none' }}>
+              <div class="card p-4 h-100">
+                <div className="card-body">
+                  <h5 className="card-title-upper">
+                    {" "}
+                    <FaCity style={iconStyles} /> Projects
+                  </h5>
+                  <p className="card-text">
+                    Keep updated of all the offcial projects that are being
+                    developed in your city.
+                  </p>
+                </div>
               </div>
-            </div>
+            </HashLink>
           </div>
           <div className="col-md-4">
-            <div class="card p-4 h-100">
-              <div className="card-body">
-                <h5 className="card-title-upper"> <FaPersonBooth style={iconStyles}/> Public Voting</h5>
-                <p className="card-text">
-                You are your city’s voice. Participate in the matters that are being put to vote.
-                </p>
+            <HashLink to={"/publicvoting"} style={{ textDecoration: 'none' }}>
+              {" "}
+              <div class="card p-4 h-100">
+                <div className="card-body">
+                  <h5 className="card-title-upper">
+                    {" "}
+                    <FaPersonBooth style={iconStyles} /> Public Voting
+                  </h5>
+                  <p className="card-text">
+                    You are your city’s voice. Participate in the matters that
+                    are being put to vote.
+                  </p>
+                </div>
               </div>
-            </div>
+            </HashLink>
           </div>
         </div>
         <div className="row mt-4">
           <div className="col-md-4">
-            <div class="card p-4 h-100">
-              <div className="card-body">
-                <h5 className="card-title-upper"> <FaBusAlt style={iconStyles}/> Services</h5>
-                <p className="card-text">
-                Transportation schedules and routes, city bike, park information and more.
-                </p>
+            <HashLink to={"#"} style={{ textDecoration: 'none' }}>
+              <div class="card p-4 h-100">
+                <div className="card-body">
+                  <h5 className="card-title-upper">
+                    {" "}
+                    <FaBusAlt style={iconStyles} /> Services
+                  </h5>
+                  <p className="card-text">
+                    Transportation schedules and routes, city bike, park
+                    information and more.
+                  </p>
+                </div>
               </div>
-            </div>
+            </HashLink>
           </div>
           <div className="col-md-4 ">
-            <div class="card p-4 h-100">
-              <div className="card-body">
-                <h5 className="card-title-upper"> <FaIdBadge style={iconStyles}/> Citizen File</h5>
-                <p className="card-text">
-                Update and follow up the status of  your proposal or claim. 
-                </p>
+            <HashLink to={"/myfile"} style={{ textDecoration: 'none' }}>
+              <div class="card p-4 h-100">
+                <div className="card-body">
+                  <h5 className="card-title-upper">
+                    {" "}
+                    <FaIdBadge style={iconStyles} /> Citizen File
+                  </h5>
+                  <p className="card-text">
+                    Update and follow up the status of your proposal or claim.
+                  </p>
+                </div>
               </div>
-            </div>
+            </HashLink>
           </div>
           <div className="col-md-4 ">
-            <div class="card p-4 h-100">
-              <div className="card-body">
-                <h5 className="card-title-upper"><FaStore style={iconStyles}/> City News</h5>
-                <p className="card-text">
-                Follow most recent and all the daily events of your city.
-                </p>
+            <HashLink to={"#"} style={{ textDecoration: 'none' }}>
+              <div class="card p-4 h-100">
+                <div className="card-body">
+                  <h5 className="card-title-upper">
+                    <FaStore style={iconStyles} /> City News
+                  </h5>
+                  <p className="card-text">
+                    Follow most recent and all the daily events of your city.
+                  </p>
+                </div>
               </div>
-            </div>
+            </HashLink>
           </div>
         </div>
       </div>

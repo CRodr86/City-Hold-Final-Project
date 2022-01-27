@@ -60,7 +60,7 @@ const Navbar = () => {
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"
-                to="#"
+                to="/myfile"
                 pageName="My File"
               />
               <NavbarItem

@@ -1,19 +1,23 @@
 .card-title-upper{
     font-family: Ubuntu;
     color: #010B13;
+    text-decoration: none;
 }
 
 .card-text{
     font-family: Open Sans;
     color: #010B13;
     font-size: medium;
-    
+    text-decoration: none;
 }
 
 .card{
     border: solid 1px #e5e5e5;
     
+    
 }
+
+
 
 .col-md-4 :hover{
     background: #e5e5e5;
