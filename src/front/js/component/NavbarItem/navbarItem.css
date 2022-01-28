@@ -3,5 +3,6 @@
 }
 
 #navitem:hover{
-  border-bottom: 1px solid #023047;
+  /* border-bottom: 1px solid #023047; */
+  text-decoration: underline;
 }

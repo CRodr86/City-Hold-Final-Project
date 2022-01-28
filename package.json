@@ -81,6 +81,11 @@
 		"react-icons": "^4.3.1",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.2.0",
+<<<<<<< HEAD
 		"react-stepper-enhanced": "^1.0.0"
+=======
+		"react-router-hash-link": "^2.4.3",
+		"react-visibility-sensor": "^5.1.1"
+>>>>>>> f5fb4a826d86ca0e500d9b4d4e5c30848bcec058
 	}
 }

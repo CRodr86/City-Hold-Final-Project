@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .mainBtn {
   background: #f88500;
   color: #e5e5e5;
@@ -5,3 +6,17 @@
   font-family: Ubuntu;
   letter-spacing: 1px;
 }
+=======
+#main_button{
+    background: #F88500 ;
+    color: #e5e5e5;
+    border: #F88500;
+    font-family: Ubuntu;
+    letter-spacing: 1px;
+}
+
+#main_button:hover{
+    background: #FFB703;
+
+}
+>>>>>>> f5fb4a826d86ca0e500d9b4d4e5c30848bcec058
