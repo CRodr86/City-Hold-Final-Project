@@ -6,6 +6,7 @@ import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
 import MyProfile from "./MyProfile.jsx";
 import MyProposalsEmpty from "./MyProposalsEmpty.jsx";
 import MyFilePassword from "./MyFilePassword.jsx";
+import MyProposalsFull from "./MyProposalsFull.jsx";
 
 
 
@@ -80,7 +81,7 @@ const MyFile = (props) => {
               role="tabpanel"
               aria-labelledby="v-pills-messages-tab"
             >
-              <MyProposalsEmpty />
+              <MyProposalsFull />
             </div>
             <div
               class="tab-pane fade"

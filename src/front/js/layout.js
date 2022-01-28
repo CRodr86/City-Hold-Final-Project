@@ -13,6 +13,7 @@ import ThankYou from "./pages/ThankYou.jsx";
 import ProjectDetails from "./pages/ProjectDetails.jsx";
 import ProjectsHome from "./pages/ProjectsHome.jsx";
 import MyFile from "./pages/MyFile.jsx";
+import MyFileMoreInfo from "./pages/MyFileMoreInfo.jsx";
 
 
 const Layout = () => {
@@ -33,6 +34,7 @@ const Layout = () => {
           <Route exact path="/publicvotingmultipoll" component={PublicVotingMultiPoll}/>
           <Route exact path="/projectdetails" component={ProjectDetails}/>
           <Route exact path="/myfile" component={MyFile}/>
+          <Route exact path="/myfiledetails" component={MyFileMoreInfo}/>
           <Route exact path="/thankyou" component={ThankYou}/>
         </Switch>
         <Footer />
