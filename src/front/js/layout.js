@@ -8,6 +8,7 @@ import Proposals1 from "./pages/Proposals1.jsx";
 import Proposals2 from "./pages/Proposals2.jsx";
 import Proposals3 from "./pages/Proposals3.jsx";
 import Proposals4 from "./pages/Proposals4.jsx";
+import Proposals5 from "./pages/Proposals5.jsx";
 
 //create your first component
 const Layout = () => {
@@ -34,6 +35,9 @@ const Layout = () => {
           </Route>
           <Route exact path="/proposals-4">
             <Proposals4 />
+          </Route>
+          <Route exact path="/proposals-5">
+            <Proposals5 />
           </Route>
         </Switch>
         <Footer />
