@@ -9,11 +9,11 @@ import NewsCard from "../NewsCard/NewsCard.jsx";
 const TrendingNews = () => {
   return (
     <div className="container trending-news">
-      <div className="row mb-3">
+      <div className="row">
         <h3>Trending News</h3>
       </div>
       <div className="row">
-        <div className="col-4">
+        <div className="col-lg-4 col-md-4 col-12 mt-3">
           <NewsCard
             imgSrc={photoNews1}
             imgAlt="Planting a tree"
@@ -29,7 +29,7 @@ const TrendingNews = () => {
                 the bulk of the card's content."
           />
         </div>
-        <div className="col-8">
+        <div className="col-lg-8 col-md-8 col-12 mt-3">
           <div className="card p-4 border-4 rounded-0 bigCard">
             <img
               src={photoNews3}
