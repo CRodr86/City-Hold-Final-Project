@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/proposals3.css";
 import FormInput from "../component/FormInput/FormInput.jsx";
 import MainButton from "../component/MainButton/MainButton.jsx";
+import { HashLink } from "react-router-hash-link";
 
 const Proposals3 = () => {
   return (
@@ -226,12 +227,12 @@ const Proposals3 = () => {
       <div className="row d-flex justify-content-center mt-4 pb-5">
         <div className="col-3">
           <div className="d-flex justify-content-start">
-            <MainButton buttonText="Back" toLink="/proposals-2" />
+            <MainButton buttonText="Back" to="/proposals-2" />
           </div>
         </div>
         <div className="col-3">
           <div className="d-flex justify-content-end">
-            <MainButton buttonText="Next" toLink="/proposals-4" />
+            <MainButton buttonText="Next" to="/proposals-4" />
           </div>
         </div>
       </div>

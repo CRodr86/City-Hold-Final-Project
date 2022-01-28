@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/proposals1.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
+import { HashLink } from "react-router-hash-link";
 
 const Proposals1 = () => {
   return (
@@ -65,7 +66,7 @@ const Proposals1 = () => {
       </div>
       <div className="row mt-2 pb-5">
         <div className="col d-flex justify-content-center">
-          <MainButton buttonText="Start" toLink="/proposals-2" />
+          <MainButton buttonText="Start" to="/proposals-2" />
         </div>
       </div>
     </div>

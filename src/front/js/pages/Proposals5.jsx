@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/proposals5.css";
-import FormInput from "../component/FormInput/FormInput.jsx";
 import MainButton from "../component/MainButton/MainButton.jsx";
+import { HashLink } from "react-router-hash-link";
 
 const Proposals5 = () => {
   return (
@@ -111,12 +111,12 @@ const Proposals5 = () => {
       <div className="row d-flex justify-content-center mt-4 pb-5">
         <div className="col-3">
           <div className="d-flex justify-content-start">
-            <MainButton buttonText="Back" toLink="/proposals-4" />
+            <MainButton buttonText="Back" to="/proposals-4" />
           </div>
         </div>
         <div className="col-3">
           <div className="d-flex justify-content-end">
-            <MainButton buttonText="Submit" toLink="/" />
+            <MainButton buttonText="Submit" to="/" />
           </div>
         </div>
       </div>
