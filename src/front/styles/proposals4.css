@@ -1,0 +1,9 @@
+#filesBox {
+  border: 3px dashed #c4c4c4;
+}
+
+.documentsBoxText {
+  font-family: "Open Sans", sans-serif;
+  font-size: larger;
+  color: #c4c4c4;
+}

@@ -36,9 +36,10 @@ const Navbar = () => {
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"
-                to="#"
-                pageName="Proposals"></NavbarItem>
-           
+                to="/proposals"
+                pageName="Proposals"
+              ></NavbarItem>
+
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"

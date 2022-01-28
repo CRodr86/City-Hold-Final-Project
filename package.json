@@ -74,6 +74,7 @@
 	},
 	"dependencies": {
 		"animejs": "^3.2.1",
+		"hashlink": "^0.12.1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-countup": "^6.1.1",
@@ -82,6 +83,7 @@
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.2.0",
 		"react-router-hash-link": "^2.4.3",
+		"react-stepper-enhanced": "^1.0.0",
 		"react-visibility-sensor": "^5.1.1"
 	}
 }

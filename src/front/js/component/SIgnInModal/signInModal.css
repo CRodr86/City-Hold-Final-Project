@@ -3,7 +3,7 @@
 }
 
 .nav-item button {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu", sans-serif !important;
   background-color: #e5e5e5 !important;
 }
 
