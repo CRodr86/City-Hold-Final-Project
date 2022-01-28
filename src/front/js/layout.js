@@ -5,13 +5,11 @@ import PojectsHome from "./pages/ProjectsHome.jsx";
 import injectContext from "./store/appContext";
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Footer from "./component/Footer/Footer.jsx";
-<<<<<<< HEAD
 import Proposals1 from "./pages/Proposals1.jsx";
 import Proposals2 from "./pages/Proposals2.jsx";
 import Proposals3 from "./pages/Proposals3.jsx";
 import Proposals4 from "./pages/Proposals4.jsx";
 import Proposals5 from "./pages/Proposals5.jsx";
-=======
 import PublicVotingHome from "./pages/PublicVotingHome.jsx";
 import PublicVotingAllVotes from "./pages/PublicVotingAllVotes.jsx";
 import PublicVotingSinglePoll from "./pages/PublicVotingSinglePoll.jsx";
@@ -22,7 +20,6 @@ import ProjectsHome from "./pages/ProjectsHome.jsx";
 import MyFile from "./pages/MyFile.jsx";
 import MyFileMoreInfo from "./pages/MyFileMoreInfo.jsx";
 
->>>>>>> f5fb4a826d86ca0e500d9b4d4e5c30848bcec058
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -34,7 +31,6 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <Navbar />
         <Switch>
-<<<<<<< HEAD
           <Route exact path="/">
             <Home />
           </Route>
@@ -53,7 +49,6 @@ const Layout = () => {
           <Route exact path="/proposals-5">
             <Proposals5 />
           </Route>
-=======
           <Route exact path="/" component={Home}/>
           <Route exact path="/projects" component={ProjectsHome}/>
           <Route exact path="/publicvoting" component={PublicVotingHome}/>
@@ -64,7 +59,6 @@ const Layout = () => {
           <Route exact path="/myfile" component={MyFile}/>
           <Route exact path="/myfiledetails" component={MyFileMoreInfo}/>
           <Route exact path="/thankyou" component={ThankYou}/>
->>>>>>> f5fb4a826d86ca0e500d9b4d4e5c30848bcec058
         </Switch>
         <Footer />
       </BrowserRouter>
