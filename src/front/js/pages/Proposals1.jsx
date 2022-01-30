@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/proposals1.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import { HashLink } from "react-router-hash-link";
+import StepperItem from "../component/StepperItem/StepperItem.jsx";
 
 const Proposals1 = () => {
   return (
@@ -19,30 +20,22 @@ const Proposals1 = () => {
               ></div>
             </div>
             <div className="d-flex justify-content-between">
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-              >
-                1
-              </button>
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-              >
-                2
-              </button>
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelInactive"
-              >
-                3
-              </button>
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelInactive"
-              >
-                4
-              </button>
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                stepLabel="1"
+              />
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                stepLabel="2"
+              />
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                stepLabel="3"
+              />
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                stepLabel="4"
+              />
             </div>
           </div>
         </div>

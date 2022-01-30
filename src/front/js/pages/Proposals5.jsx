@@ -19,30 +19,22 @@ const Proposals5 = () => {
               ></div>
             </div>
             <div className="d-flex justify-content-between">
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-              >
-                1
-              </button>
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-              >
-                2
-              </button>
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelInactive"
-              >
-                3
-              </button>
-              <button
-                type="button"
-                className="translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelActive"
-              >
-                4
-              </button>
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                stepLabel="1"
+              />
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                stepLabel="2"
+              />
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                stepLabel="3"
+              />
+              <StepperItem
+                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
+                stepLabel="4"
+              />
             </div>
           </div>
         </div>
