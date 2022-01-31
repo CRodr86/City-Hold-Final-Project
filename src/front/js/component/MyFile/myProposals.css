@@ -8,11 +8,13 @@
 .table_header {
   color: #023047;
   font-family: Ubuntu;
+  font-size: small;
 }
 
 .table_content {
   color: #010b13;
   font-family: Open Sans;
+  font-size: small;
   /* border: solid 1px #e5e5e5; */
 
 }
