@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "./aboutBanner.css";
 import{FaDesktop, FaPeopleArrows, FaBullseye} from "react-icons/fa";
 import AboutBannerImg1 from "../../../img/AboutBannerImg1.png";
-import AboutBannerImg2 from "../../../img/AboutBannerImg2.png"
+import AboutBannerImg2 from "../../../img/AboutBannerImg2.png";
+import AboutUsBanner from "../../../img/AboutUsBanner.png";
 
 const iconStyles = {
     color: "#F88500",
@@ -26,11 +27,11 @@ const AboutBanner = () => {
               <li className="about_li"> <FaBullseye className="fa-li" style={iconStyles}/>By allowing authorities to manage information more efficiently we aim to speed up the resolution of public problems</li>
             </ul>
           </div>
-          <div className="col-4 d-none d-md-block ps-5 ">
-              <div className="square ">
-              <img src={AboutBannerImg1} alt="Street corssing people" id="about_img_1" />
-              <img src={AboutBannerImg2} alt="Connected hands picture" id="about_img_2" />
-              </div>
+          <div className="col-4 d-none d-lg-block mt-5 img-fluid ">
+              {/* <div className="square "> */}
+              {/* <img src={AboutBannerImg1} alt="Street corssing people" id="about_img_1" /> */}
+              <img src={AboutUsBanner} alt="Connected hands picture" />
+              {/* </div> */}
               
           </div>
         </div>
