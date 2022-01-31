@@ -13,7 +13,7 @@ const SignUpModal = () => {
       <div class="col-12 d-flex justify-content-end">
         <button
           type="submit"
-          class="btn btn-primary border-0 px-5 mb-3"
+          class="btn btn-primary border-0 px-5 my-3"
           id="signUpButton"
         >
           Sign up

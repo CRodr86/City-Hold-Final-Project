@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/proposals5.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import StepperItem from "../component/StepperItem/StepperItem.jsx";
+import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
 import { HashLink } from "react-router-hash-link";
 
 const Proposals5 = () => {
@@ -43,60 +44,45 @@ const Proposals5 = () => {
       <div className="row d-flex justify-content-center mt-1">
         <div className="col-8 text-center">
           <h3 id="proposals1Header">
-            Documents will help us to evaluate your proposal
+            We will be reviewing your proposal in the next few days.
           </h3>
         </div>
       </div>
       <div className="row d-flex justify-content-center mt-5">
         <div className="col-6 form-bg py-5 px-4 rounded-3">
           <div className="row mt-1">
-            <div className="col">
-              <p id="areaP">Documents</p>
+            <div className="col-12 mb-5" id="proposals5Text">
+              <p>You will recieve an email with the confirmation.</p>
+              <p> Your proposal Id is: 654879</p>
+              <p>
+                If you have any questions or in any time you want to update or
+                add additional information to your proposal you can access your
+                file.
+              </p>
+              <p>
+                Please let us know how do you want to recieve information about
+                your proposal.
+              </p>
             </div>
           </div>
           <div className="row">
-            <div className="col bg-white rounded-3 mx-2 mb-3">
-              <div className="row">
-                <div
-                  className="col rounded-3 m-3 d-flex justify-content-center"
-                  id="filesBox"
-                >
-                  <span className="align-middle m-4 documentsBoxText">
-                    Drag and drop your files here or...
-                  </span>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col mb-3 d-flex justify-content-center">
-                  <MainButton buttonText="Attach your files" />
-                </div>
-              </div>
+            <div className="col-md-6">
+              <SelectMenu
+                label="You would like to receive"
+                class="form-select border-0"
+                value1="Email"
+                value2="SMS"
+                value3="WhatsApp message"
+              />
             </div>
-          </div>
-          <div className="row">
-            <div className="col mb-3">
-              <label className="form-label">
-                Please provide a description of the image or video
-              </label>
-              <select
-                className="form-select border-0"
-                aria-label="Default select example"
-              >
-                <option selected>Open this select menu</option>
-                <option valueName="1">Text</option>
-                <option valueName="2">Photo</option>
-                <option valueName="3">Video</option>
-              </select>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <label className="form-label">Type of documents</label>
-              <textarea
-                class="form-control"
-                placeholder="Hint Text"
-                id="textarea"
-              ></textarea>
+            <div className="col-md-6">
+              <SelectMenu
+                label="Contact me by"
+                class="form-select border-0"
+                value1="Phone"
+                value2="Email"
+                value3="WhatsApp"
+              />
             </div>
           </div>
         </div>
