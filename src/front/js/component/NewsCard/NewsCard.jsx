@@ -6,10 +6,10 @@ const NewsCard = (props) => {
     <div className="card border-0 me-4 smallCard rounded-0">
       <img
         src={props.imgSrc}
-        className="card-img-top rounded-0"
+        className="card-img-top rounded-0 "
         alt={props.imgAlt}
       />
-      <div className="card-body">
+      <div className="card-body bg-white">
         <h5 className="card-title">{props.cardTitle}</h5>
         <p className="card-text">{props.cardText}</p>
       </div>

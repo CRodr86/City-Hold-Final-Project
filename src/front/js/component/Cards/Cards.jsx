@@ -25,8 +25,9 @@ const Cards = () => {
     <>
       <div className="container">
         <div className="row mt-5">
-          <div className="col-md-4">
-            <HashLink to={"/proposals"} style={{ textDecoration: "none" }}>
+
+          <div className="col-md-4 card_wrapper">
+            <HashLink to={"#"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">
@@ -40,8 +41,9 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
-          <div className="col-md-4">
-            <HashLink to={"/projects"} style={{ textDecoration: "none" }}>
+
+          <div className="col-md-4 card_wrapper">
+            <HashLink to={"/projects"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">
@@ -56,8 +58,9 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
-          <div className="col-md-4">
-            <HashLink to={"/publicvoting"} style={{ textDecoration: "none" }}>
+
+          <div className="col-md-4 card_wrapper">
+            <HashLink to={"/publicvoting"} style={{ textDecoration: 'none' }}>
               {" "}
               <div class="card p-4 h-100">
                 <div className="card-body">
@@ -74,7 +77,7 @@ const Cards = () => {
             </HashLink>
           </div>
         </div>
-        <div className="row mt-4">
+        <div className="row mt-4 card_wrapper">
           <div className="col-md-4">
             <HashLink to={"#"} style={{ textDecoration: "none" }}>
               <div class="card p-4 h-100">
@@ -91,8 +94,9 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
-          <div className="col-md-4 ">
-            <HashLink to={"/myfile"} style={{ textDecoration: "none" }}>
+
+          <div className="col-md-4 card_wrapper">
+            <HashLink to={"/myfile"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">
@@ -106,8 +110,9 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
-          <div className="col-md-4 ">
-            <HashLink to={"#"} style={{ textDecoration: "none" }}>
+
+          <div className="col-md-4 card_wrapper">
+            <HashLink to={"/news"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">
