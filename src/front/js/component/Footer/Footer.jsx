@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           <div className="col"></div>
           <div className="col">
-            <h5>Pages</h5>
+            <h5 className="footerLabel">Pages</h5>
             <ul className="nav flex-column">
               <FooterLink href="#" link="Home" />
               <FooterLink href="#" link="Proposals" />
@@ -25,14 +25,14 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col">
-            <h5>Sign in</h5>
+            <h5 className="footerLabel">Sign in</h5>
             <ul className="nav flex-column">
               <FooterLink href="#" link="My Account" />
               <FooterLink href="#" link="Sign up" />
             </ul>
           </div>
           <div className="col">
-            <h5>Contact us</h5>
+            <h5 className="footerLabel">Contact us</h5>
             <ul className="nav flex-column">
               <FooterLink href="#" link="ICONS" />
               <FooterLink href="#" link="city-hold@th.com" />
@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="row row-cols-2 mt-5">
+        <div className="row row-cols-2 mt-2">
           <div className="col">
             <p>Copyright © 2021 Town-Hold Team</p>
           </div>

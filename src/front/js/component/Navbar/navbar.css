@@ -12,10 +12,9 @@
   height: 35px;
   background-color: #f88500;
   letter-spacing: 1px;
-  
 }
-#dropdownMenuLink:hover{
-  background: #FFB703;
+#dropdownMenuLink:hover {
+  background: #ffb703;
 }
 
 .dropdown-menu {
