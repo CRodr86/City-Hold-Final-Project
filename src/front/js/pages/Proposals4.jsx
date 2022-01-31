@@ -5,12 +5,19 @@ import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import { HashLink } from "react-router-hash-link";
 import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
 import TextArea from "../component/TextArea/TextArea.jsx";
+import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
+let bgImg = {
+  background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
+  backgroundPosition: `center`,
+  backgroundSize: "cover",
+  height: "max-content",
+};
 
 const Proposals4 = () => {
   return (
-    <div className="container-fluid proposals1-body">
+    <div className="container-fluid w-100 proposals1-body" style={bgImg}>
       <div className="row d-flex justify-content-center pt-5">
-        <div className="col-4">
+        <div className="col-8 col-md-6 col-lg-4">
           <div className="m-4">
             <div className="progress stepperProgress">
               <div
