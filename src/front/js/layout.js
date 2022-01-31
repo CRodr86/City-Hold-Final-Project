@@ -19,6 +19,7 @@ import ProjectsHome from "./pages/ProjectsHome.jsx";
 import MyFile from "./pages/MyFile.jsx";
 import MyFileMoreInfo from "./pages/MyFileMoreInfo.jsx";
 import Services from "./pages/Services.jsx";
+import News from "./pages/News.jsx";
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -58,6 +59,7 @@ const Layout = () => {
           <Route exact path="/myfiledetails" component={MyFileMoreInfo} />
           <Route exact path="/thankyou" component={ThankYou} />
           <Route exact path="/services" component={Services} />
+          <Route exact path="/news" component={News} />
         </Switch>
         <Footer />
       </BrowserRouter>

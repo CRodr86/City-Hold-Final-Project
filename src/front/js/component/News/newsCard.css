@@ -1,0 +1,12 @@
+#news_wrapper{
+    background: #e5e5e5;
+}
+
+.news_section_title {
+    color: #023047;
+    font-family: Ubuntu;
+  }
+
+  .card_col{
+      background: white;
+  }

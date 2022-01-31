@@ -67,7 +67,7 @@ const Navbar = () => {
               <NavbarItem
                 liClassName="nav-item mx-2 me-5"
                 aClassName="nav-link"
-                to="#"
+                to="/news"
                 pageName="News"
               />
             </ul>
