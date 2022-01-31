@@ -5,6 +5,8 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import { HashLink } from "react-router-hash-link";
 import ProposalsCard from "../component/ProposalsCard/ProposalsCard.jsx";
+import ProposalsCheckbox from "../component/ProposalsCheckbox/ProposalsCheckbox.jsx";
+import TextArea from "../component/TextArea/TextArea.jsx";
 
 const Proposals3 = () => {
   return (
@@ -47,7 +49,7 @@ const Proposals3 = () => {
           <h3 id="proposals1Header">A detailed description of your proposal</h3>
         </div>
       </div>
-      <div className="row d-flex justify-content-center mt-5">
+      <div className="row d-flex justify-content-center mt-3">
         <div className="col-xl-6 col-lg-8 col-md-8 col-10 form-bg py-5 px-4 rounded-3">
           <div className="row justify-content-center mt-1">
             <div className="col">
@@ -105,33 +107,7 @@ const Proposals3 = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
-              <div class="mb-3">
-                <label className="form-label">Select a type</label>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckSuggestion"
-                  />
-                  <label className="form-check-label" for="flexCheckSuggestion">
-                    Suggestion
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckClaim"
-                  />
-                  <label className="form-check-label" for="flexCheckClaim">
-                    Claim
-                  </label>
-                </div>
-              </div>
-            </div>
+            <ProposalsCheckbox />
             <FormInput
               divClassName="col-6"
               labelFor="formDate"
@@ -143,14 +119,7 @@ const Proposals3 = () => {
             />
           </div>
           <div className="row">
-            <div className="col">
-              <label className="form-label">Describe your proposal</label>
-              <textarea
-                class="form-control"
-                placeholder="Hint Text"
-                id="textarea"
-              ></textarea>
-            </div>
+            <TextArea label="Describe your proposal" />
           </div>
         </div>
       </div>

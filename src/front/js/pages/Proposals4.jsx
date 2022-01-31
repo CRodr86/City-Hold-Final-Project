@@ -3,6 +3,8 @@ import "../../styles/proposals4.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import { HashLink } from "react-router-hash-link";
+import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
+import TextArea from "../component/TextArea/TextArea.jsx";
 
 const Proposals4 = () => {
   return (
@@ -47,7 +49,7 @@ const Proposals4 = () => {
           </h3>
         </div>
       </div>
-      <div className="row d-flex justify-content-center mt-5">
+      <div className="row d-flex justify-content-center mt-3">
         <div className="col-6 form-bg py-5 px-4 rounded-3">
           <div className="row mt-1">
             <div className="col">
@@ -74,30 +76,16 @@ const Proposals4 = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col mb-3">
-              <label className="form-label">
-                Please provide a description of the image or video
-              </label>
-              <select
-                className="form-select border-0"
-                aria-label="Default select example"
-              >
-                <option selected>Open this select menu</option>
-                <option valueName="1">Text</option>
-                <option valueName="2">Photo</option>
-                <option valueName="3">Video</option>
-              </select>
-            </div>
+            <SelectMenu
+              label="Type of documents"
+              class="form-select border-0"
+              value1="Text"
+              value2="Photo"
+              value3="Video"
+            />
           </div>
           <div className="row">
-            <div className="col">
-              <label className="form-label">Type of documents</label>
-              <textarea
-                class="form-control"
-                placeholder="Hint Text"
-                id="textarea"
-              ></textarea>
-            </div>
+            <TextArea label="Please provide a description of the image or video" />
           </div>
         </div>
       </div>

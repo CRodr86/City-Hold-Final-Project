@@ -47,9 +47,9 @@ const Proposals1 = () => {
           </h3>
         </div>
       </div>
-      <div className="row d-flex justify-content-center mt-5">
+      <div className="row d-flex justify-content-center mt-3">
         <div className="col-7 text-center">
-          <p className="proposals text">
+          <p className="proposalsText">
             Please fill all the following proposal form so we can give you the
             best answer to your problem or suggestion. Once you finish we will
             review it and give you an answer as soon as posible. You can always

@@ -1,21 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
-import "./cards.css"
-import{FaCity, FaBusAlt, FaEnvelopeOpenText, FaFileAlt, FaIdBadge, FaPersonBooth, FaStore, FaUsersCog} from "react-icons/fa"
-import{GiTeamIdea} from "react-icons/gi"
+import { HashLink } from "react-router-hash-link";
+import "./cards.css";
+import {
+  FaCity,
+  FaBusAlt,
+  FaEnvelopeOpenText,
+  FaFileAlt,
+  FaIdBadge,
+  FaPersonBooth,
+  FaStore,
+  FaUsersCog,
+} from "react-icons/fa";
+import { GiTeamIdea } from "react-icons/gi";
 const iconStyles = {
-    color: "#023047",
-    display: "inline-block",
-    margin: "5px",
-    fontSize: "35px"
+  color: "#023047",
+  display: "inline-block",
+  margin: "5px",
+  fontSize: "35px",
 };
 
 const Cards = () => {
-	return (
+  return (
     <>
       <div className="container">
         <div className="row mt-5">
+
           <div className="col-md-4 card_wrapper">
             <HashLink to={"#"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
@@ -31,6 +41,7 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
+
           <div className="col-md-4 card_wrapper">
             <HashLink to={"/projects"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
@@ -47,6 +58,7 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
+
           <div className="col-md-4 card_wrapper">
             <HashLink to={"/publicvoting"} style={{ textDecoration: 'none' }}>
               {" "}
@@ -67,7 +79,7 @@ const Cards = () => {
         </div>
         <div className="row mt-4 card_wrapper">
           <div className="col-md-4">
-            <HashLink to={"#"} style={{ textDecoration: 'none' }}>
+            <HashLink to={"#"} style={{ textDecoration: "none" }}>
               <div class="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">
@@ -82,6 +94,7 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
+
           <div className="col-md-4 card_wrapper">
             <HashLink to={"/myfile"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
@@ -97,6 +110,7 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
+
           <div className="col-md-4 card_wrapper">
             <HashLink to={"/news"} style={{ textDecoration: 'none' }}>
               <div class="card p-4 h-100">
@@ -117,4 +131,4 @@ const Cards = () => {
   );
 };
 
-export default Cards
+export default Cards;
