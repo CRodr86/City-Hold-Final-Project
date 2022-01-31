@@ -6,6 +6,11 @@
   color: #e5e5e5;
 }
 
+.proposalsText {
+  font-family: "Open Sans", sans-serif;
+  color: #e5e5e5;
+}
+
 .stepperProgress {
   background-color: #e5e5e5;
   height: 3px;

@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/proposals4.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
+import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import { HashLink } from "react-router-hash-link";
 
 const Proposals4 = () => {
@@ -82,9 +83,9 @@ const Proposals4 = () => {
                 aria-label="Default select example"
               >
                 <option selected>Open this select menu</option>
-                <option valueName="1">One</option>
-                <option valueName="2">Two</option>
-                <option valueName="3">Three</option>
+                <option valueName="1">Text</option>
+                <option valueName="2">Photo</option>
+                <option valueName="3">Video</option>
               </select>
             </div>
           </div>

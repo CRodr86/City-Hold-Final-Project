@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/proposals2.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import SignUpForm from "../component/SignUpForm/SignUpForm.jsx";
+import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import { HashLink } from "react-router-hash-link";
 
 const Proposals2 = () => {
@@ -41,7 +42,7 @@ const Proposals2 = () => {
         </div>
       </div>
       <div className="row d-flex justify-content-center mt-1">
-        <div className="col-6 text-center">
+        <div className="col text-center">
           <h3 id="proposals1Header">
             To provide the right solution we need to know you better
           </h3>

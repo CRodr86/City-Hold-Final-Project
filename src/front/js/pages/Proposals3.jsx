@@ -2,7 +2,9 @@ import React from "react";
 import "../../styles/proposals3.css";
 import FormInput from "../component/FormInput/FormInput.jsx";
 import MainButton from "../component/MainButton/MainButton.jsx";
+import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import { HashLink } from "react-router-hash-link";
+import ProposalsCard from "../component/ProposalsCard/ProposalsCard.jsx";
 
 const Proposals3 = () => {
   return (
@@ -46,7 +48,7 @@ const Proposals3 = () => {
         </div>
       </div>
       <div className="row d-flex justify-content-center mt-5">
-        <div className="col-6 form-bg py-5 px-4 rounded-3">
+        <div className="col-xl-6 col-lg-8 col-md-8 col-10 form-bg py-5 px-4 rounded-3">
           <div className="row justify-content-center mt-1">
             <div className="col">
               <div className="row">
@@ -55,112 +57,48 @@ const Proposals3 = () => {
                 </div>
               </div>
               <div className="row d-flex justify-content-center">
-                <div className="col-9">
+                <div className="col-10">
                   <div className="row">
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/ios/50/000000/get-on-bus.png" />
-                          <p className="card-text">Transport</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/ios/50/000000/building-with-rooftop-terrace.png" />
-                          <p className="card-text">Buidings</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/50/000000/external-car-car-itim2101-lineal-itim2101-1.png" />
-                          <p className="card-text">Traffic</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/ios/50/000000/deciduous-tree.png" />
-                          <p className="card-text">Nature</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/dotty/50/000000/protected-bike-lane.png" />
-                          <p className="card-text">Cycling</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/ios/50/000000/crossroad.png" />
-                          <p className="card-text">Streets</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/ios/50/000000/train-platform.png" />
-                          <p className="card-text">Trains</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3">
-                      <div
-                        class="card text-center mb-4 proposalsCard"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        title="Tooltip on bottom"
-                      >
-                        <div className="card-body">
-                          <img src="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png" />
-                          <p className="card-text">Education</p>
-                        </div>
-                      </div>
-                    </div>
+                    <ProposalsCard
+                      tooltip="Bus and subway services"
+                      imgSrc="https://img.icons8.com/ios/50/000000/get-on-bus.png"
+                      text="Transport"
+                    />
+                    <ProposalsCard
+                      tooltip="Buildings construction and maintenance"
+                      imgSrc="https://img.icons8.com/ios/50/000000/building-with-rooftop-terrace.png"
+                      text="Buidings"
+                    />
+                    <ProposalsCard
+                      tooltip="Traffic lights, streets way and traffic safety"
+                      imgSrc="https://img.icons8.com/external-itim2101-lineal-itim2101/50/000000/external-car-car-itim2101-lineal-itim2101-1.png"
+                      text="Traffic"
+                    />
+                    <ProposalsCard
+                      tooltip="Parks, squares and afforestation"
+                      imgSrc="https://img.icons8.com/ios/50/000000/deciduous-tree.png"
+                      text="Nature"
+                    />
+                    <ProposalsCard
+                      tooltip="Bike lanes and cyclist safety"
+                      imgSrc="https://img.icons8.com/dotty/50/000000/protected-bike-lane.png"
+                      text="Cycling"
+                    />
+                    <ProposalsCard
+                      tooltip="Streets maintenance"
+                      imgSrc="https://img.icons8.com/ios/50/000000/crossroad.png"
+                      text="Streets"
+                    />
+                    <ProposalsCard
+                      tooltip="Trains stations, lines, maintenance..."
+                      imgSrc="https://img.icons8.com/ios/50/000000/train-platform.png"
+                      text="Trains"
+                    />
+                    <ProposalsCard
+                      tooltip="Schools, colleges and universitys"
+                      imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
+                      text="Education"
+                    />
                   </div>
                 </div>
               </div>

@@ -41,7 +41,7 @@ const Proposals1 = () => {
         </div>
       </div>
       <div className="row d-flex justify-content-center mt-1">
-        <div className="col-8 text-center">
+        <div className="col text-center">
           <h3 id="proposals1Header">
             Tell us your idea to make the city better
           </h3>
@@ -49,7 +49,7 @@ const Proposals1 = () => {
       </div>
       <div className="row d-flex justify-content-center mt-5">
         <div className="col-7 text-center">
-          <p>
+          <p className="proposals text">
             Please fill all the following proposal form so we can give you the
             best answer to your problem or suggestion. Once you finish we will
             review it and give you an answer as soon as posible. You can always
