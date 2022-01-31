@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import PojectsHome from "./pages/ProjectsHome.jsx";
 import injectContext from "./store/appContext";
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Footer from "./component/Footer/Footer.jsx";
@@ -19,6 +18,7 @@ import ProjectDetails from "./pages/ProjectDetails.jsx";
 import ProjectsHome from "./pages/ProjectsHome.jsx";
 import MyFile from "./pages/MyFile.jsx";
 import MyFileMoreInfo from "./pages/MyFileMoreInfo.jsx";
+import Services from "./pages/Services.jsx";
 import News from "./pages/News.jsx";
 
 const Layout = () => {
@@ -58,6 +58,7 @@ const Layout = () => {
           <Route exact path="/myfile" component={MyFile} />
           <Route exact path="/myfiledetails" component={MyFileMoreInfo} />
           <Route exact path="/thankyou" component={ThankYou} />
+          <Route exact path="/services" component={Services} />
           <Route exact path="/news" component={News} />
         </Switch>
         <Footer />

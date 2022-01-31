@@ -10,5 +10,12 @@
 
 .nav-link {
   font-family: "Open Sans", sans-serif !important;
+  font-size: medium;
   color: #010b13 !important;
+}
+
+.footerLabel {
+  font-family: "Ubuntu", sans-serif;
+  font-size: medium;
+  color: #023047;
 }

@@ -79,7 +79,7 @@ const Cards = () => {
         </div>
         <div className="row mt-4 card_wrapper">
           <div className="col-md-4">
-            <HashLink to={"#"} style={{ textDecoration: "none" }}>
+            <HashLink to={"/services"} style={{ textDecoration: "none" }}>
               <div class="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">
