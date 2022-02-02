@@ -11,3 +11,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+body::before {
+    display: block;
+    content: '';
+    height: 65px;
+  }

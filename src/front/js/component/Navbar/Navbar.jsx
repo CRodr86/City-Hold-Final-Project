@@ -7,7 +7,7 @@ import "./navbar.css";
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div className="container">
           <a className="navbar-brand" href="#">
             <Logo width="45.33px" height="53.33px" viewBox="0 0 2.2 2.58" />

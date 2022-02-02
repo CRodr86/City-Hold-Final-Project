@@ -14,7 +14,7 @@ height: 'max-content'
 const GeneralBackground = (props) => {
 	return (
     <>
-      <div className="container w-100" id="banner_wrapper">
+      <div className="container-fluid w-100" id="banner_wrapper">
         <div className="row ">
           <div className="col-12 ">
             <div className={props.gralBgClassName}  style={bgImg}>
