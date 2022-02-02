@@ -61,5 +61,11 @@
 
 .table{
   --bs-table-hover-bg: #023047;
-  --bs-table-hover-color: #E5E5E5
+  --bs-table-hover-color: #E5E5E5;
+
 }
+
+/* .table-responsive-md{
+width: 100%;
+overflow-x: auto; 
+} */
