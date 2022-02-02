@@ -27,8 +27,8 @@ const Services = () => {
           <div className="row justify-content-center mt-1">
             <div className="col">
               <div className="row d-flex justify-content-center">
-                <div className="col-10">
-                  <div className="row">
+                <div className="col">
+                  <div className="row row-cols-lg-5 row-cols-md-2 row-cols-2">
                     <ProposalsCard
                       tooltip="Bus and subway services"
                       imgSrc="https://img.icons8.com/ios/50/000000/get-on-bus.png"
@@ -63,6 +63,16 @@ const Services = () => {
                       tooltip="Trains stations, lines, maintenance..."
                       imgSrc="https://img.icons8.com/ios/50/000000/train-platform.png"
                       text="Trains"
+                    />
+                    <ProposalsCard
+                      tooltip="Schools, colleges and universitys"
+                      imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
+                      text="Education"
+                    />
+                    <ProposalsCard
+                      tooltip="Schools, colleges and universitys"
+                      imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
+                      text="Education"
                     />
                     <ProposalsCard
                       tooltip="Schools, colleges and universitys"

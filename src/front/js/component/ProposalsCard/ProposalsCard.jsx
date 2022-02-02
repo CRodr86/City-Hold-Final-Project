@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ProposalsCard = (props) => {
   return (
-    <div className="col-lg-3 col-md-6 col-6">
+    <div className={props.class}>
       <div
         class="card text-center mb-4 proposalsCard"
         data-bs-toggle="tooltip"
@@ -23,6 +23,7 @@ ProposalsCard.propTypes = {
   tooltip: PropTypes.string,
   imgSrc: PropTypes.string,
   text: PropTypes.string,
+  class: PropTypes.string,
 };
 
 export default ProposalsCard;

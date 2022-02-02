@@ -69,41 +69,49 @@ const Proposals3 = () => {
                 <div className="col-10">
                   <div className="row">
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Bus and subway services"
                       imgSrc="https://img.icons8.com/ios/50/000000/get-on-bus.png"
                       text="Transport"
                     />
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Buildings construction and maintenance"
                       imgSrc="https://img.icons8.com/ios/50/000000/building-with-rooftop-terrace.png"
                       text="Buidings"
                     />
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Traffic lights, streets way and traffic safety"
                       imgSrc="https://img.icons8.com/external-itim2101-lineal-itim2101/50/000000/external-car-car-itim2101-lineal-itim2101-1.png"
                       text="Traffic"
                     />
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Parks, squares and afforestation"
                       imgSrc="https://img.icons8.com/ios/50/000000/deciduous-tree.png"
                       text="Nature"
                     />
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Bike lanes and cyclist safety"
                       imgSrc="https://img.icons8.com/dotty/50/000000/protected-bike-lane.png"
                       text="Cycling"
                     />
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Streets maintenance"
                       imgSrc="https://img.icons8.com/ios/50/000000/crossroad.png"
                       text="Streets"
                     />
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Trains stations, lines, maintenance..."
                       imgSrc="https://img.icons8.com/ios/50/000000/train-platform.png"
                       text="Trains"
                     />
                     <ProposalsCard
+                      class="col-lg-3 col-md-6 col-6"
                       tooltip="Schools, colleges and universitys"
                       imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
                       text="Education"
