@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import "./footer.css";
 import Logo from "../Logo/Logo.jsx";
 import FooterLink from "../FooterLink/FooterLink.jsx";
+import FooterIcons from "../FooterIcons/FooterIcons.jsx";
 
 const Footer = () => {
   return (
@@ -18,25 +19,29 @@ const Footer = () => {
           <div className="col">
             <h5 className="footerLabel">Pages</h5>
             <ul className="nav flex-column">
-              <FooterLink href="#" link="Home" />
-              <FooterLink href="#" link="Proposals" />
-              <FooterLink href="#" link="Projects" />
-              <FooterLink href="#" link="Public Voting" />
+              <FooterLink to="/" pageName="Home" />
+              <FooterLink to="/proposals" pageName="Proposals" />
+              <FooterLink to="/projects" pageName="Projects" />
+              <FooterLink to="/publicvoting" pageName="Public Voting" />
             </ul>
           </div>
           <div className="col">
             <h5 className="footerLabel">Sign in</h5>
             <ul className="nav flex-column">
-              <FooterLink href="#" link="My Account" />
-              <FooterLink href="#" link="Sign up" />
+              <FooterLink to="myfile" pageName="My Account" />
+              <FooterLink
+                toggle="modal"
+                target="#signInModal"
+                pageName="Sign up"
+              />
             </ul>
           </div>
           <div className="col">
             <h5 className="footerLabel">Contact us</h5>
             <ul className="nav flex-column">
-              <FooterLink href="#" link="ICONS" />
-              <FooterLink href="#" link="city-hold@th.com" />
-              <FooterLink href="#" link="+34 915 581 158" />
+              <FooterIcons />
+              <FooterLink to="#" pageName="city-hold@th.com" />
+              <FooterLink to="#" pageName="+34 915 581 158" />
             </ul>
           </div>
         </div>

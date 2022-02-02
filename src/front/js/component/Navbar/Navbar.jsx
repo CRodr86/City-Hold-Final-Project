@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo.jsx";
 import SignInModal from "../SIgnInModal/SignInModal.jsx";
 import NavbarItem from "../NavbarItem/NavbarItem.jsx";

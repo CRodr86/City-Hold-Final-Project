@@ -1,19 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { HashLink } from "react-router-hash-link";
+import { string } from "prop-types";
 
 const FooterLink = (props) => {
   return (
     <li className="nav-item mb-2">
-      <a href={props.href} className="nav-link p-0 text-muted">
-        {props.link}
-      </a>
+      <HashLink
+        className="nav-link p-0 text-muted"
+        to={props.to}
+        data-bs-toggle={props.toggle}
+        data-bs-target={props.target}
+      >
+        {props.pageName}
+      </HashLink>
     </li>
   );
 };
 
 FooterLink.propTypes = {
-  href: PropTypes.string,
-  link: PropTypes.string,
+  to: PropTypes.string,
+  pageName: PropTypes.string,
+  toggle: PropTypes.string,
+  target: PropTypes.string,
 };
 
 export default FooterLink;
