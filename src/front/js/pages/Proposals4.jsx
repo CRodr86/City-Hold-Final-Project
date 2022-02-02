@@ -15,100 +15,102 @@ let bgImg = {
 
 const Proposals4 = () => {
   return (
-    <div className="container-fluid w-100 proposals1-body" style={bgImg}>
-      <div className="row d-flex justify-content-center pt-5">
-        <div className="col-8 col-md-6 col-lg-4">
-          <div className="m-4">
-            <div className="progress stepperProgress">
-              <div
-                className="progress-bar stepperProgress-bar"
-                role="progressbar"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <div className="d-flex justify-content-between">
-              <StepperItem
-                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                stepLabel="1"
-              />
-              <StepperItem
-                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                stepLabel="2"
-              />
-              <StepperItem
-                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
-                stepLabel="3"
-              />
-              <StepperItem
-                stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                stepLabel="4"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="row d-flex justify-content-center mt-1">
-        <div className="col-8 text-center">
-          <h3 id="proposals1Header">
-            Documents will help us to evaluate your proposal
-          </h3>
-        </div>
-      </div>
-      <div className="row d-flex justify-content-center mt-3">
-        <div className="col-6 form-bg py-5 px-4 rounded-3">
-          <div className="row mt-1">
-            <div className="col">
-              <p id="areaP">Documents</p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col bg-white rounded-3 mx-2 mb-3">
-              <div className="row">
+    <>
+      <div className="container-fluid w-100 proposals1-body" style={bgImg}>
+        <div className="row d-flex justify-content-center pt-5">
+          <div className="col-8 col-md-6 col-lg-4">
+            <div className="m-4">
+              <div className="progress stepperProgress">
                 <div
-                  className="col rounded-3 m-3 d-flex justify-content-center"
-                  id="filesBox"
-                >
-                  <span className="align-middle m-4 documentsBoxText">
-                    Drag and drop your files here or...
-                  </span>
-                </div>
+                  className="progress-bar stepperProgress-bar"
+                  role="progressbar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
               </div>
-              <div className="row">
-                <div className="col mb-3 d-flex justify-content-center">
-                  <MainButton buttonText="Attach your files" />
-                </div>
+              <div className="d-flex justify-content-between">
+                <StepperItem
+                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepLabel="1"
+                />
+                <StepperItem
+                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepLabel="2"
+                />
+                <StepperItem
+                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
+                  stepLabel="3"
+                />
+                <StepperItem
+                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepLabel="4"
+                />
               </div>
             </div>
           </div>
-          <div className="row">
-            <SelectMenu
-              label="Type of documents"
-              class="form-select border-0"
-              value1="Text"
-              value2="Photo"
-              value3="Video"
-            />
+        </div>
+        <div className="row d-flex justify-content-center mt-1">
+          <div className="col-8 text-center">
+            <h3 id="proposals1Header">
+              Documents will help us to evaluate your proposal
+            </h3>
           </div>
-          <div className="row">
-            <TextArea label="Please provide a description of the image or video" />
+        </div>
+        <div className="row d-flex justify-content-center mt-3">
+          <div className="col-6 form-bg py-5 px-4 rounded-3">
+            <div className="row mt-1">
+              <div className="col">
+                <p id="areaP">Documents</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col bg-white rounded-3 mx-2 mb-3">
+                <div className="row">
+                  <div
+                    className="col rounded-3 m-3 d-flex justify-content-center"
+                    id="filesBox"
+                  >
+                    <span className="align-middle m-4 documentsBoxText">
+                      Drag and drop your files here or...
+                    </span>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col mb-3 d-flex justify-content-center">
+                    <MainButton buttonText="Attach your files" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <SelectMenu
+                label="Type of documents"
+                class="form-select border-0"
+                value1="Text"
+                value2="Photo"
+                value3="Video"
+              />
+            </div>
+            <div className="row">
+              <TextArea label="Please provide a description of the image or video" />
+            </div>
+          </div>
+        </div>
+        <div className="row d-flex justify-content-center mt-4 pb-5">
+          <div className="col-3">
+            <div className="d-flex justify-content-start">
+              <MainButton buttonText="Back" to="/proposals-3" />
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="d-flex justify-content-end">
+              <MainButton buttonText="Next" to="/proposals-5" />
+            </div>
           </div>
         </div>
       </div>
-      <div className="row d-flex justify-content-center mt-4 pb-5">
-        <div className="col-3">
-          <div className="d-flex justify-content-start">
-            <MainButton buttonText="Back" to="/proposals-3" />
-          </div>
-        </div>
-        <div className="col-3">
-          <div className="d-flex justify-content-end">
-            <MainButton buttonText="Next" to="/proposals-5" />
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
