@@ -31,7 +31,7 @@ const Services = () => {
                   <ProposalsCard
                     tooltip="Bus and subway services"
                     imgSrc="https://img.icons8.com/ios/50/000000/get-on-bus.png"
-                    text="Transport"
+                    text="Urban Buses"
                   />
                   <ProposalsCard
                     tooltip="Buildings construction and maintenance"
