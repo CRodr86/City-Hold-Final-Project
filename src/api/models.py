@@ -15,7 +15,7 @@ class User(db.Model):
     zip_code = db.Column(db.String(20), unique=False, nullable=False)
     years_of_residence = db.Column(db.String(20), unique=False, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
-    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    
 
     def __repr__(self):
         return '<User %r>' % self.name
@@ -36,10 +36,10 @@ class User(db.Model):
 
 
 class Proposal(db.Model):
-    __tablename__ = 'proposal'
+    # __tablename__ = 'proposal'
     id = db.Column(db.Integer, primary_key=True)
     # proponent = db.Column(db.String, db.ForeignKey(User.name))
-    # user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    user_id = db.Column(db.Integer, db.ForeignKey(User.id))
     area = db.Column(db.String(20), unique=False, nullable=False)
     proposal_type = db.Column(db.String(20), unique=False, nullable=False)
     date = db.Column(db.String, unique=False, nullable=False)
@@ -56,8 +56,7 @@ class Proposal(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            # "proponent": self.proponent,
-            # "user_id" : self.user_id,
+            "user_id" : self.user_id,
             "area": self.area,
             "proposal type": self.proposal_type,
             "date": self.date,
