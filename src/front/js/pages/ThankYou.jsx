@@ -13,10 +13,10 @@ const ThankYou = () => {
         <GeneralBackground gralBgClassName="bg-image px-2 py-5 text-center"
         primaryText="Thank you for participating"
         h1ClassName="px-3 mt-3 mb-5" 
-        btnPosition1="btn col-md-4 pt-5 mt-4 "
-        button1= {<MainButton to="/publicvotingselect" buttonText="More projects"/>}
-        btnPosition2="btn col-md-4 pt-5 mt-4"
-        button2= {<MainButton to="/" buttonText="Return to Home"/>}
+        btnPosition1= "d-grid gap-2 col-6 mx-auto mb-3"
+        btnPosition2="d-grid gap-2 col-6 mx-auto"
+        button1= {<MainButton to="/publicvotingselect" buttonText="More Projects"/>}
+        button2= {<MainButton to="/" buttonText="Return Home"/>}
         
         />
 
