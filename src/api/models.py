@@ -50,8 +50,8 @@ class Proposal(db.Model):
     contact_by = db.Column(db.String(20), unique=False, nullable=False)
     confirmation_by = db.Column(db.String(20), unique=False, nullable=False)
 
-    # def __repr__(self):
-    #     return '<Proposal %r>' % self.proponent
+    def __repr__(self):
+        return '<Proposal %r>' % self.user_id
 
     def serialize(self):
         return {

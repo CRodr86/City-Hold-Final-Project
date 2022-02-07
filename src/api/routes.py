@@ -59,3 +59,12 @@ def get_proposals():
     proposals = Proposal.query.all()
     all_proposals = list(map(lambda x: x.serialize(), proposals))
     return jsonify(all_proposals), 200
+
+@api.route('/proposal/<int:id>/<int:user_id>', methods=['GET'])
+def get_one_proposal(id):
+    proposal_x = Proposal.query.get(id)
+    # user_x =Proposal.query.get(user_id)
+    if proposal_x is None:
+        return 'Proposal not found', 404
+    else:
+        return jsonify(proposal_x.serialize()), 200
