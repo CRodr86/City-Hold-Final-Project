@@ -3,6 +3,13 @@ import "./footer.css";
 import Logo from "../Logo/Logo.jsx";
 import FooterLink from "../FooterLink/FooterLink.jsx";
 import FooterIcons from "../FooterIcons/FooterIcons.jsx";
+import { BsArrowUpCircle } from "react-icons/bs";
+const iconStyles = {
+  color: "#023047",
+  display: "inline-block",
+  margin: "5px",
+  fontSize: "35px",
+};
 
 const Footer = () => {
   return (
@@ -60,6 +67,11 @@ const Footer = () => {
               GDPR
             </a>
           </div>
+          <a
+						href="#upper-b-elem"
+						className="d-inline nav-link ps-5 pb-5">
+						<BsArrowUpCircle style={iconStyles} />
+					</a>
         </div>
       </div>
     </footer>
