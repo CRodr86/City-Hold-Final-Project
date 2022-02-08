@@ -18,7 +18,7 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
-#User routes
+#User endpoints
 
 @api.route('/user', methods=['GET'])
 def get_users():
@@ -52,7 +52,7 @@ def delete_user(id):
         db.session.commit()
         return jsonify("User deleted"), 200
 
-#Proposals routes
+#Proposals endpoints
 
 @api.route('/proposal', methods=['GET'])
 def get_proposals():
@@ -60,11 +60,28 @@ def get_proposals():
     all_proposals = list(map(lambda x: x.serialize(), proposals))
     return jsonify(all_proposals), 200
 
-@api.route('/proposal/<int:id>/<int:user_id>', methods=['GET'])
+@api.route('/proposal/<int:id>', methods=['GET'])
 def get_one_proposal(id):
     proposal_x = Proposal.query.get(id)
-    # user_x =Proposal.query.get(user_id)
     if proposal_x is None:
         return 'Proposal not found', 404
     else:
         return jsonify(proposal_x.serialize()), 200
+
+@api.route('/proposal', methods=['POST'])
+def create_proposal():
+    request_body = request.get_json()
+    new_proposal = Proposal(area= request_body["area"], proposal_type= request_body["proposal type"], date= request_body["date"], description= request_body["description"], documents= request_body["documents"], document_type= request_body["document type"], document_description= request_body["document description"], contact_by= request_body["contact by"], confirmation_by= request_body["confirmation by"])
+    db.session.add(new_proposal)
+    db.session.commit()
+    return jsonify(request_body), 201
+
+@api.route('/proposal/<int:id>', methods=['DELETE'])
+def delete_proposal(id):
+    proposal_x = Proposal.query.get(id)
+    if proposal_x is None:
+        return 'Proposal not found', 404
+    else:
+        db.session.delete(proposal_x)
+        db.session.commit()
+        return jsonify("Proposal deleted"), 200
