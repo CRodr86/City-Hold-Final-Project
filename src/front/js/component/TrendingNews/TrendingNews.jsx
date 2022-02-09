@@ -17,16 +17,14 @@ const TrendingNews = () => {
           <NewsCard
             imgSrc={photoNews1}
             imgAlt="Planting a tree"
-            cardTitle="Some News"
-            cardText="Some quick example text to build on the card title and make up
-                the bulk of the card's content."
+            cardTitle="5000 new trees planted"
+            cardText="Citizens form all around the area were a fundamental piece in this activity. Ellis Park will now have 5000 new trees."
           />
           <NewsCard
             imgSrc={photoNews2}
             imgAlt="Paving work"
-            cardTitle="Another News"
-            cardText="Some quick example text to build on the card title and make up
-                the bulk of the card's content."
+            cardTitle="New Sidewalks for Grant St."
+            cardText="The City Hall approved the construction of wider sidewalks. A total of 1 million USD will be invested."
           />
         </div>
         <div className="col-lg-8 col-md-8 col-12 mt-3">
@@ -37,24 +35,21 @@ const TrendingNews = () => {
               alt="New mall build model"
             />
             <div className="card-body">
-              <h3 className="card-title">Card title</h3>
+              <h3 className="card-title">Cultural Center will be finished by 2023</h3>
               <p className="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                nulla purus, consequat vel sem vitae, lacinia vehicula tellus.
-                Duis tincidunt vulputate est, ultrices lobortis lectus. Fusce
-                sed lorem sed quam iaculis condimentum. Nulla accumsan luctus
-                nibh, quis aliquet nisi pharetra nec. Suspendisse non posuere
-                lorem. Fusce faucibus, urna in bibendum placerat, dolor dolor
-                efficitur orci, vel volutpat quam justo ac metus.
+              Citizens approved the construction of the New Michael Scott
+                  Cultural Center. In a vote held on January 23, 63% of the
+                  citizens voted for this proposal. The cultural center will
+                  have two theatre halls, four cinemas and one new concert hall.
               </p>
               <ProgressBar
-                label="Proposal One"
+                label="Yes"
                 id="progress1"
                 valueNow="63"
                 value="63%"
               />
               <ProgressBar
-                label="Proposal Two"
+                label="No"
                 id="progress2"
                 valueNow="37"
                 value="37%"

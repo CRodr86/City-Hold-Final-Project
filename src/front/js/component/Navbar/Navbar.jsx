@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import Logo from "../Logo/Logo.jsx";
 import SignInModal from "../SIgnInModal/SignInModal.jsx";
 import NavbarItem from "../NavbarItem/NavbarItem.jsx";
 import "./navbar.css";
+import { Context } from "../../store/appContext.js";
+import MainButton from "../MainButton/MainButton.jsx";
 
 const Navbar = () => {
+  const {store, actions} = useContext(Context);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -70,7 +73,7 @@ const Navbar = () => {
                 pageName="News"
               />
             </ul>
-            <div className="d-flex">
+            {!store.token ? <div className="d-flex">
               <div className="dropdown ms-5">
                 <a
                   className="btn btn-secondary dropdown-toggle border-0"
@@ -102,7 +105,12 @@ const Navbar = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> : <MainButton buttonText="Logout" onClick={() => actions.logout()} to="/"
+              />
+        
+               
+                }
+            
           </div>
         </div>
       </nav>

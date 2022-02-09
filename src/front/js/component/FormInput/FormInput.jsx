@@ -13,6 +13,8 @@ const FormInput = (props) => {
         placeholder={props.inputPlaceholder}
         aria-label={props.inputAriaLabel}
         id={props.inputId}
+        value={props.value}
+        onChange={props.onChange}
       />
     </div>
   );
@@ -28,6 +30,8 @@ FormInput.propTypes = {
   inputPlaceholder: PropTypes.string,
   inputAriaLabel: PropTypes.string,
   inputId: PropTypes.string,
+  value: PropTypes.func,
+  onChange: PropTypes.func,
 };
 
 export default FormInput;
