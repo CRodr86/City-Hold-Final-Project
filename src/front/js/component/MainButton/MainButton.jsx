@@ -12,7 +12,7 @@ const MainButton = (props) => {
         data-bs-target={props.dataTarget}
       >
         {" "}
-        <button type="button" className="btn btn-warning px-5" id="main_button">
+        <button type="button" className="btn btn-warning px-5" id="main_button" onClick={props.onClick}>
           {props.buttonText}
         </button>
       </HashLink>
@@ -26,6 +26,7 @@ MainButton.propTypes = {
   to: PropTypes.string,
   dataToggle: PropTypes.string,
   dataTarget: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default MainButton;

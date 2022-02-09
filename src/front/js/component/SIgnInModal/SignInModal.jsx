@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext, useState} from "react";
+import { Context } from "../../store/appContext.js";
 import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
 import SignUpModal from "../SignUpModal/SignUpModal.jsx";
 import "./signInModal.css";
 
 const SignInModal = () => {
+  
   return (
     <div
       className="modal fade"
