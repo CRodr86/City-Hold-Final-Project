@@ -28,11 +28,11 @@ class User(db.Model):
             "name": self.name,
             "lastname": self.lastname,
             "email": self.email,
-            "home phone": self.home_phone,
-            "mobile phone": self.mobile_phone,
+            "home_phone": self.home_phone,
+            "mobile_phone": self.mobile_phone,
             "address": self.address,
-            "zip code": self.zip_code,
-            "years of residence": self.years_of_residence,
+            "zip_code": self.zip_code,
+            "years_of_residence": self.years_of_residence,
             # do not serialize the password, its a security breach
         }
 
