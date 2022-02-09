@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <Logo width="45.33px" height="53.33px" viewBox="0 0 2.2 2.58" />
           </a>
           <button
@@ -63,7 +63,7 @@ const Navbar = () => {
               <NavbarItem
                 liClassName="nav-item mx-2"
                 aClassName="nav-link"
-                to="/myfile"
+                to="/myfilehome"
                 pageName="My File"
               />
               <NavbarItem
@@ -74,39 +74,9 @@ const Navbar = () => {
               />
             </ul>
             {!store.token ? <div className="d-flex">
-              <div className="dropdown ms-5">
-                <a
-                  className="btn btn-secondary dropdown-toggle border-0"
-                  href="#"
-                  role="button"
-                  id="dropdownMenuLink"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Sign in
-                </a>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="dropdownMenuLink"
-                >
-                  <li>
-                    <a
-                      className="dropdown-item"
-                      data-bs-toggle="modal"
-                      data-bs-target="#signInModal"
-                    >
-                      Sign in
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Sign up
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div> : <MainButton buttonText="Logout" onClick={() => actions.logout()} to="/"
-              />
+            <MainButton to="#" dataToggle="modal" dataTarget="#signInModal"  buttonText="Sign In"  />
+            </div> :<div className="d-flex"> <MainButton buttonText="Logout" onClick={() => actions.logout()} to="/" 
+              /> <p className="ms-3 mb-0">Welcome ¡Insert Username!</p> </div>
         
                
                 }

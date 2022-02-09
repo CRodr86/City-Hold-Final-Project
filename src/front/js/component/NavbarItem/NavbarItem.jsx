@@ -10,6 +10,8 @@ const NavbarItem = (props) => {
         <HashLink
           className={props.aClassName}
           aria-current={props.ariaCurrent}
+          data-bs-toggle={props.dataToggle}
+          data-bs-target={props.dataTarget}
           to={props.to}
         >
           {props.pageName}
@@ -25,6 +27,8 @@ NavbarItem.propTypes = {
   ariaCurrent: PropTypes.string,
   to: PropTypes.string,
   pageName: PropTypes.string,
+  dataToggle: PropTypes.string,
+  dataTarget: PropTypes.string,
 };
 
 export default NavbarItem;

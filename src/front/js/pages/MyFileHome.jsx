@@ -6,20 +6,20 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 
 
 
-const PublicVotingHome = (props) => {
+const MyFileHome = (props) => {
 
   const history = useHistory();
   const token = sessionStorage.getItem("token");
 
   if (token && token != "" && token != undefined){
-    history.push("/publicvotingselect")
+    history.push("/myfileprivate")
   }
   return (
     <>
       <UpperBanner
         bgClassName="bg-image text-center"
-        primaryText="Your opinion matters"
-        secondaryText="Please sign up or log in to participate in the public voting"
+        primaryText="Welcome to City-Hold"
+        secondaryText="Please sign up or log in to access your file."
         button={<MainButton to="#" dataToggle="modal" dataTarget="#signInModal"  buttonText="Start"  />}
         
       />
@@ -31,4 +31,4 @@ const PublicVotingHome = (props) => {
 
 
 
-export default PublicVotingHome;
+export default MyFileHome;
