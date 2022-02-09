@@ -17,7 +17,7 @@ const MyAccountModal = () => {
 };
 
 if (token && token != "" && token != undefined){
-  history.push("/private")
+  history.push("/")
 }
   return (
     <>

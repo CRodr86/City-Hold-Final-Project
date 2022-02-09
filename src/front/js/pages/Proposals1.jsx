@@ -4,6 +4,8 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 import { HashLink } from "react-router-hash-link";
 import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 let bgImg = {
   background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
   backgroundPosition: `center`,
@@ -12,6 +14,14 @@ let bgImg = {
 };
 
 const Proposals1 = () => {
+
+  const history = useHistory();
+  const token = sessionStorage.getItem("token");
+
+  if (token && token != "" && token != undefined){
+    history.push("/proposals-2")
+  }
+
   return (
     <>
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
@@ -67,7 +77,7 @@ const Proposals1 = () => {
         </div>
         <div className="row mt-2 pb-5">
           <div className="col d-flex justify-content-center">
-            <MainButton buttonText="Start" to="/proposals-2" />
+            <MainButton buttonText="Start" to="#" dataToggle="modal" dataTarget="#signInModal" />
           </div>
         </div>
       </div>

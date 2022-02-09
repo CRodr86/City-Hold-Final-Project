@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import FormInput from "../FormInput/FormInput.jsx";
+// import { useState } from "react";
 
 const SignUpForm = () => {
+
+  const [input, setInput] = useState("");
+  const inputTextChanger = ev => {
+		setInput(ev.target.value);
+	};
+
   return (
     <form className="row g-3">
       <FormInput
@@ -13,6 +20,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your first name"
         inputAriaLabel="First name"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-md-6"
@@ -23,6 +31,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your last name"
         inputAriaLabel="Last name"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-md-6"
@@ -33,6 +42,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Email"
         inputAriaLabel="Email2"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-md-6"
@@ -43,6 +53,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Password"
         inputAriaLabel="Password2"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-md-6"
@@ -53,6 +64,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Home phone number"
         inputAriaLabel="homePhone"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-md-6"
@@ -63,6 +75,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Mobile phone number"
         inputAriaLabel="mobilePhone"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-12"
@@ -73,6 +86,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress1"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-12"
@@ -83,6 +97,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress2"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-md-6"
@@ -93,6 +108,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Zip Code"
         inputAriaLabel="zipCode"
+        onChange={inputTextChanger}
       />
       <FormInput
         divClassName="col-md-6"
@@ -103,6 +119,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Years of residence"
         inputAriaLabel="yearsOfResidence"
+        onChange={inputTextChanger}
       />
     </form>
   );

@@ -16,10 +16,11 @@ import PublicVotingMultiPoll from "./pages/PublicVotingMultiPoll.jsx";
 import ThankYou from "./pages/ThankYou.jsx";
 import ProjectDetails from "./pages/ProjectDetails.jsx";
 import ProjectsHome from "./pages/ProjectsHome.jsx";
-import MyFile from "./pages/MyFile.jsx";
+import MyFilePrivate from "./pages/MyFilePrivate.jsx";
 import MyFileMoreInfo from "./pages/MyFileMoreInfo.jsx";
 import Services from "./pages/Services.jsx";
 import News from "./pages/News.jsx";
+import MyFileHome from "./pages/MyFileHome.jsx";
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -55,7 +56,8 @@ const Layout = () => {
             component={PublicVotingMultiPoll}
           />
           <Route exact path="/projectdetails" component={ProjectDetails} />
-          <Route exact path="/myfile" component={MyFile} />
+          <Route exact path="/myfileprivate" component={MyFilePrivate} />
+          <Route exact path="/myfilehome" component={MyFileHome} />
           <Route exact path="/myfiledetails" component={MyFileMoreInfo} />
           <Route exact path="/thankyou" component={ThankYou} />
           <Route exact path="/services" component={Services} />

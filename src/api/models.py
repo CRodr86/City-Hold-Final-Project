@@ -16,6 +16,7 @@ class User(db.Model):
     zip_code = db.Column(db.String(20), unique=False, nullable=False)
     years_of_residence = db.Column(db.String(20), unique=False, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
+    proposals = db.relationship('Proposal')
     
 
     def __repr__(self):
@@ -27,11 +28,11 @@ class User(db.Model):
             "name": self.name,
             "lastname": self.lastname,
             "email": self.email,
-            "home phone": self.home_phone,
-            "mobile phone": self.mobile_phone,
+            "home_phone": self.home_phone,
+            "mobile_phone": self.mobile_phone,
             "address": self.address,
-            "zip code": self.zip_code,
-            "years of residence": self.years_of_residence,
+            "zip_code": self.zip_code,
+            "years_of_residence": self.years_of_residence,
             # do not serialize the password, its a security breach
         }
 
@@ -48,8 +49,8 @@ class Proposal(db.Model):
     document_description = db.Column(db.String(1000), unique=False, nullable=True)
     contact_by = db.Column(db.String(20), unique=False, nullable=False)
     confirmation_by = db.Column(db.String(20), unique=False, nullable=False)
-    # proponent_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    # proponent = db.relationship(User)
+    proponent_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+  
 
     # def __repr__(self):
     #     return '<Proposal %r>' % self.user_id
@@ -63,10 +64,10 @@ class Proposal(db.Model):
             "description": self.description,
             "documents": self.documents,
             "document type": self.document_type,
-            "document description": self.document_description,
-            "contact by": self.contact_by,
+            "document_description": self.document_description,
+            "contact_by": self.contact_by,
             "confirmation by": self.confirmation_by,
-            # "proponent_id" : self.proponent_id,
+            "proponent_id" : self.proponent_id,
             # "proponent" : self.proponent,
             # do not serialize the password, its a security breach
         }

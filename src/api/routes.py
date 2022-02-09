@@ -40,7 +40,7 @@ def get_one_user(id):
 @api.route('/user', methods=['POST'])
 def create_users():
     request_body = request.get_json()
-    new_user = User(name= request_body["name"], lastname= request_body["lastname"], email= request_body["email"], home_phone= request_body["home phone"], mobile_phone= request_body["mobile phone"], address= request_body["address"], zip_code= request_body["zip code"], years_of_residence= request_body["years of residence"], password= request_body["password"])
+    new_user = User(name= request_body["name"], lastname= request_body["lastname"], email= request_body["email"], home_phone= request_body["home_phone"], mobile_phone= request_body["mobile_phone"], address= request_body["address"], zip_code= request_body["zip_code"], years_of_residence= request_body["years_of_residence"], password= request_body["password"])
     db.session.add(new_user)
     db.session.commit()
     return jsonify(request_body), 201

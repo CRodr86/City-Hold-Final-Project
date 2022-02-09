@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const resp = await fetch(
-            "https://3001-crodr86-cityholdfinalpr-mad0r4aeh86.ws-eu30.gitpod.io/api/token",
+            "https://3001-crodr86-cityholdfinalpr-mad0r4aeh86.ws-eu31.gitpod.io/api/token",
             opts
           );
           if (resp.status !== 200) {
@@ -58,6 +58,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 	},
 
       getMessage: () => {
+        // const store = getStore();
+        // const opts = {
+        //   headers: {
+        //     "Authorization" : "Bearer" = store.token
+        //   }
+        // }
         // fetching data from the backend
         fetch(process.env.BACKEND_URL + "/api/hello")
           .then((resp) => resp.json())

@@ -6,7 +6,7 @@ import MyFileComponent from "../component/MyFile/MyFileComponent.jsx";
 
 
 
-const MyFile = () => {
+const MyFilePrivate = () => {
   return (
     <>
         <GeneralBackground gralBgClassName="bg-image px-2 py-5 text-center"
@@ -23,4 +23,4 @@ const MyFile = () => {
   );
 };
 
-export default MyFile;
+export default MyFilePrivate;
