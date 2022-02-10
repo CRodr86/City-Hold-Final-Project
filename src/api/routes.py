@@ -71,6 +71,14 @@ def get_one_proposal(id):
     else:
         return jsonify(proposal_x.serialize()), 200
 
+@api.route('/proposalofuser/<int:proponent_id>', methods=['GET'])
+def get_user_proposal(proponent_id):
+    proposal_x = Proposal.query.get(proponent_id)
+    if proposal_x is None:
+        return 'User does not have any proposals', 404
+    else:
+        return jsonify(proposal_x.serialize()), 200
+
 @api.route('/proposal', methods=['POST'])
 def create_proposal():
     request_body = request.get_json()
