@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const resp = await fetch(
-            "https://3001-crodr86-cityholdfinalpr-mad0r4aeh86.ws-eu31.gitpod.io/api/token",
+            "https://3001-crodr86-cityholdfinalpr-xhpw0iaxvhj.ws-eu31.gitpod.io/api/token",
             opts
           );
           if (resp.status !== 200) {

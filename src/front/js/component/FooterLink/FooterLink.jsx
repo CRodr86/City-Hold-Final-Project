@@ -7,7 +7,7 @@ const FooterLink = (props) => {
   return (
     <li className="nav-item mb-2">
       <HashLink
-        className="nav-link p-0 text-muted"
+        className="nav-link p-0 text-muted footer-nav-link"
         to={props.to}
         data-bs-toggle={props.toggle}
         data-bs-target={props.target}

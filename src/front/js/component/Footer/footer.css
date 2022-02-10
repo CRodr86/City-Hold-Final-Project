@@ -5,12 +5,12 @@
 .footer p {
   font-family: "Open Sans", sans-serif;
   color: #010b13;
-  font-size: medium;
+  font-size: small;
 }
 
-.nav-link {
+.footer-nav-link {
   font-family: "Open Sans", sans-serif !important;
-  font-size: medium;
+  font-size: small;
   color: #010b13 !important;
 }
 

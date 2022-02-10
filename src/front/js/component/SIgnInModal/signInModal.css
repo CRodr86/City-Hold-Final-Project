@@ -30,9 +30,7 @@
 }
 
 #logInButton:hover {
-  font-family: "Ubuntu", sans-serif;
-  color: #023047;
-  background-color: #da7400;
+  background: #FFB703;
 }
 
 #signUpButton {
@@ -42,9 +40,7 @@
 }
 
 #signUpButton:hover {
-  font-family: "Ubuntu", sans-serif;
-  color: #023047;
-  background-color: #da7400;
+  background: #FFB703;
 }
 
 .form-label {

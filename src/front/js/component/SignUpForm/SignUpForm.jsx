@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormInput from "../FormInput/FormInput.jsx";
-// import { useState } from "react";
+
 
 const SignUpForm = () => {
 
@@ -9,8 +9,32 @@ const SignUpForm = () => {
 		setInput(ev.target.value);
 	};
 
+  const addNewUser = () => {
+    		fetch("https://3001-crodr86-cityholdfinalpr-xhpw0iaxvhj.ws-eu31.gitpod.io/api/user", {
+    			method: "POST",
+    			body: JSON.stringify(input),
+    			headers: { "Content-Type": "application/json" }
+    		})
+    			.then(response => {
+    				return response.json();
+    			})
+    			.then(data => {
+    				console.log(data);
+    			})
+    			.catch(error => {
+    				console.log("Error", error);
+    			});
+    	};
+    
   return (
-    <form className="row g-3">
+
+    <div
+      className="tab-pane fade"
+      id="pills-signUp"
+      role="tabpanel"
+      aria-labelledby="pills-signUp-tab"
+    >
+      <form className="row g-3">
       <FormInput
         divClassName="col-md-6"
         labelFor="formFirstName"
@@ -20,6 +44,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your first name"
         inputAriaLabel="First name"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -31,6 +56,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your last name"
         inputAriaLabel="Last name"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -42,6 +68,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Email"
         inputAriaLabel="Email2"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -53,6 +80,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Password"
         inputAriaLabel="Password2"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -64,6 +92,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Home phone number"
         inputAriaLabel="homePhone"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -75,6 +104,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Mobile phone number"
         inputAriaLabel="mobilePhone"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -86,6 +116,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress1"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -97,6 +128,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress2"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -108,6 +140,7 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Zip Code"
         inputAriaLabel="zipCode"
+        value={input}
         onChange={inputTextChanger}
       />
       <FormInput
@@ -119,9 +152,23 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Years of residence"
         inputAriaLabel="yearsOfResidence"
+        value={input}
         onChange={inputTextChanger}
       />
     </form>
+      <div class="col-12 d-flex justify-content-end">
+        <button
+          type="submit"
+          class="btn btn-primary border-0 px-5 my-3"
+          id="signUpButton"
+          onClick={addNewUser}
+        >
+          Sign up
+        </button>
+      </div>
+    </div>
+
+    
   );
 };
 

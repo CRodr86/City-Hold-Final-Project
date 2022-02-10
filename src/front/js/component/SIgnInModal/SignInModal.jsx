@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import { Context } from "../../store/appContext.js";
 import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
-import SignUpModal from "../SignUpModal/SignUpModal.jsx";
+import SignUpForm from "../SignUpForm/SignUpForm.jsx";
 import "./signInModal.css";
 
 const SignInModal = () => {
@@ -57,7 +57,7 @@ const SignInModal = () => {
           <div className="modal-body">
             <div className="tab-content" id="pills-tabContent">
               <MyAccountModal />
-              <SignUpModal />
+              <SignUpForm />
             </div>
           </div>
         </div>

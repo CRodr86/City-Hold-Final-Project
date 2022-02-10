@@ -2,6 +2,7 @@ import React, {useContext, useState } from "react";
 import { Context } from "../../store/appContext.js";
 import FormInput from "../FormInput/FormInput.jsx";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import "./myAccountModal.css"
 
 const MyAccountModal = () => {
 
