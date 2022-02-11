@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 const FormInput = (props) => {
-
+  // const [input, setInput] = useState("");
+  // const inputTextChanger = ev => {
+	// 	setInput(ev.target.value);
+	// };
 
 
   return (
@@ -19,6 +22,7 @@ const FormInput = (props) => {
         id={props.inputId}
         value={props.value}
         onChange={props.onChange}
+        name={props.name}
       />
     </div>
   );
@@ -36,6 +40,7 @@ FormInput.propTypes = {
   inputId: PropTypes.string,
   value: PropTypes.func,
   onChange: PropTypes.func,
+  name: PropTypes.string,
 };
 
 export default FormInput;

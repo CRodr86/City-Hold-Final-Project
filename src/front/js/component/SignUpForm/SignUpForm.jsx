@@ -4,16 +4,32 @@ import FormInput from "../FormInput/FormInput.jsx";
 
 const SignUpForm = () => {
 
-  const [input, setInput] = useState("");
+  const initialValues = {
+    firstName : "",
+    lastName : "",
+    email : "",
+    password : "",
+    homePhone : "",
+    mobilePhone : "",
+    adress1 : "",
+    adress2 : "",
+    zipCode : "",
+    yearsOfResidence : "",
+  };
+
+  const [input, setInput] = useState(initialValues);
   const inputTextChanger = ev => {
-		setInput(ev.target.value);
+    const {name, value} = ev.target;
+		setInput({...input, [name]: value,});
 	};
 
   const addNewUser = () => {
     		fetch("https://3001-crodr86-cityholdfinalpr-xhpw0iaxvhj.ws-eu31.gitpod.io/api/user", {
     			method: "POST",
     			body: JSON.stringify(input),
+          mode: "no-cors",
     			headers: { "Content-Type": "application/json" }
+          
     		})
     			.then(response => {
     				return response.json();
@@ -44,8 +60,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your first name"
         inputAriaLabel="First name"
-        value={input}
+        value={input.firstName}
         onChange={inputTextChanger}
+        name="firstName"
       />
       <FormInput
         divClassName="col-md-6"
@@ -56,8 +73,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your last name"
         inputAriaLabel="Last name"
-        value={input}
+        value={input.lastName}
         onChange={inputTextChanger}
+        name="lastName"
       />
       <FormInput
         divClassName="col-md-6"
@@ -68,8 +86,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Email"
         inputAriaLabel="Email2"
-        value={input}
+        value={input.email}
         onChange={inputTextChanger}
+        name="email"
       />
       <FormInput
         divClassName="col-md-6"
@@ -80,8 +99,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Password"
         inputAriaLabel="Password2"
-        value={input}
+        value={input.password}
         onChange={inputTextChanger}
+        name="password"
       />
       <FormInput
         divClassName="col-md-6"
@@ -92,8 +112,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Home phone number"
         inputAriaLabel="homePhone"
-        value={input}
+        value={input.homePhone}
         onChange={inputTextChanger}
+        name="homePhone"
       />
       <FormInput
         divClassName="col-md-6"
@@ -104,8 +125,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Mobile phone number"
         inputAriaLabel="mobilePhone"
-        value={input}
+        value={input.mobilePhone}
         onChange={inputTextChanger}
+        name="mobilePhone"
       />
       <FormInput
         divClassName="col-12"
@@ -116,8 +138,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress1"
-        value={input}
+        value={input.adress1}
         onChange={inputTextChanger}
+        name="adress1"
       />
       <FormInput
         divClassName="col-12"
@@ -128,8 +151,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress2"
-        value={input}
+        value={input.adress2}
         onChange={inputTextChanger}
+        name="adress2"
       />
       <FormInput
         divClassName="col-md-6"
@@ -140,8 +164,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Zip Code"
         inputAriaLabel="zipCode"
-        value={input}
+        value={input.zipCode}
         onChange={inputTextChanger}
+        name="zipCode"
       />
       <FormInput
         divClassName="col-md-6"
@@ -152,8 +177,9 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Years of residence"
         inputAriaLabel="yearsOfResidence"
-        value={input}
+        value={input.yearsOfResidence}
         onChange={inputTextChanger}
+        name="yearsOfResidence"
       />
     </form>
       <div class="col-12 d-flex justify-content-end">

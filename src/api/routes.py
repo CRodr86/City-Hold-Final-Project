@@ -39,8 +39,28 @@ def get_one_user(id):
 
 @api.route('/user', methods=['POST'])
 def create_users():
-    request_body = request.get_json()
-    new_user = User(name= request_body["name"], lastname= request_body["lastname"], email= request_body["email"], home_phone= request_body["home_phone"], mobile_phone= request_body["mobile_phone"], address= request_body["address"], zip_code= request_body["zip_code"], years_of_residence= request_body["years_of_residence"], password= request_body["password"])
+    firstName, lastName, email, password, homePhone, mobilePhone, adress1, adress2, zipCode, yearsOfResidence = request.json.get(
+        "firstName" , None
+    ), request.json.get(
+        "lastName", None
+    ), request.json.get(
+        "email", None
+    ), request.json.get(
+        "password", None
+    ), request.json.get(
+        "homePhone", None
+    ), request.json.get(
+        "mobilePhone", None
+    ), request.json.get(
+        "adress1", None
+    ), request.json.get(
+        "adress2", None
+    ), request.json.get(
+        "zipCode", None
+    ), request.json.get(
+        "yearsOfResidence", None
+    )
+    new_user = User(name= request_body["name"], lastname= request_body["lastname"], email= request_body["email"], home_phone= request_body["home_phone"],  mobile_phone= request_body["mobile_phone"], address= request_body["address1"], zip_code= request_body["zip_code"], years_of_residence= request_body["years_of_residence"])
     db.session.add(new_user)
     db.session.commit()
     return jsonify(request_body), 201
