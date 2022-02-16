@@ -1,46 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import FormInput from "../FormInput/FormInput.jsx";
-
+import { Context } from "../../store/appContext.js";
 
 const SignUpForm = () => {
 
-  const initialValues = {
-    firstName : "",
-    lastName : "",
-    email : "",
-    password : "",
-    homePhone : "",
-    mobilePhone : "",
-    adress1 : "",
-    adress2 : "",
-    zipCode : "",
-    yearsOfResidence : "",
-  };
+  // const initialValues = {
+  //   name : "",
+  //   lastname : "",
+  //   email : "",
+  //   password : "",
+  //   homePhone : "",
+  //   mobilePhone : "",
+  //   address1 : "",
+  //   address2 : "",
+  //   zipCode : "",
+  //   yearsOfResidence : "",
+  // };
 
-  const [input, setInput] = useState(initialValues);
-  const inputTextChanger = ev => {
-    const {name, value} = ev.target;
-		setInput({...input, [name]: value,});
-	};
+  // const [input, setInput] = useState(initialValues);
+  // const inputTextChanger = ev => {
+  //   const {name, value} = ev.target;
+	// 	setInput({...input, [name]: value});
+	// };
 
-  const addNewUser = () => {
-    		fetch("https://3001-crodr86-cityholdfinalpr-xhpw0iaxvhj.ws-eu32.gitpod.io/api/user", {
-    			method: "POST",
-    			body: JSON.stringify(input),
-          mode: "no-cors",
-    			headers: { "Content-Type": "application/json" }
+  // const addNewUser = () => {
+  //   		fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
+  //   			method: "POST",
+  //   			body: JSON.stringify(input),
+  //         mode: "no-cors",
+  //   			headers: { "Content-Type": "application/json" }
           
-    		})
-    			.then(response => {
-    				return response.json();
-    			})
-    			.then(data => {
-    				console.log(data);
-    			})
-    			.catch(error => {
-    				console.log("Error", error);
-    			});
-    	};
+  //   		})
+  //   			.then(response => {
+  //   				return response.json();
+  //   			})
+  //   			.then(data => {
+  //   				console.log(data);
+  //   			})
+  //   			.catch(error => {
+  //   				console.log("Error", error);
+  //   			});
+  //   	};
+
+  const { store, actions } = useContext(Context);
+  const[name, setName] = useState("");
+  const[lastname, setLastname] = useState("");
+  const[email, setEmail] = useState("");
+  const[password, setPassword] = useState("");
+  const[homePhone, setHomePhone] = useState("");
+  const[mobilePhone, setMobilePhone] = useState("");
+  const[address1, setAddress1] = useState("");
+  const[address2, setAddress2] = useState("");
+  const[zipCode, setZipCode] = useState("");
+  const [yearsOfResidence, setYearsOfResidence ] = useState("");
+  // const history = useHistory();
+
+  const handleSignUp = (e) =>{
+    e.preventDefault();
+    actions.createNewUser(name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence)
+};
     
   return (
 
@@ -60,8 +78,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your first name"
         inputAriaLabel="First name"
-        value={input.firstName}
-        onChange={inputTextChanger}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
         name="firstName"
       />
       <FormInput
@@ -73,8 +91,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your last name"
         inputAriaLabel="Last name"
-        value={input.lastName}
-        onChange={inputTextChanger}
+        value={lastname}
+        onChange={(e) => setLastname(e.target.value)}
         name="lastName"
       />
       <FormInput
@@ -86,8 +104,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Email"
         inputAriaLabel="Email2"
-        value={input.email}
-        onChange={inputTextChanger}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         name="email"
       />
       <FormInput
@@ -99,8 +117,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Password"
         inputAriaLabel="Password2"
-        value={input.password}
-        onChange={inputTextChanger}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         name="password"
       />
       <FormInput
@@ -112,8 +130,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Home phone number"
         inputAriaLabel="homePhone"
-        value={input.homePhone}
-        onChange={inputTextChanger}
+        value={homePhone}
+        onChange={(e) => setHomePhone(e.target.value)}
         name="homePhone"
       />
       <FormInput
@@ -125,8 +143,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Mobile phone number"
         inputAriaLabel="mobilePhone"
-        value={input.mobilePhone}
-        onChange={inputTextChanger}
+        value={mobilePhone}
+        onChange={(e) => setMobilePhone(e.target.value)}
         name="mobilePhone"
       />
       <FormInput
@@ -138,8 +156,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress1"
-        value={input.adress1}
-        onChange={inputTextChanger}
+        value={address1}
+        onChange={(e) => setAddress1(e.target.value)}
         name="adress1"
       />
       <FormInput
@@ -151,8 +169,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Type your adress"
         inputAriaLabel="adress2"
-        value={input.adress2}
-        onChange={inputTextChanger}
+        value={address2}
+        onChange={(e) => setAddress2(e.target.value)}
         name="adress2"
       />
       <FormInput
@@ -164,8 +182,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Zip Code"
         inputAriaLabel="zipCode"
-        value={input.zipCode}
-        onChange={inputTextChanger}
+        value={zipCode}
+        onChange={(e) => setZipCode(e.target.value)}
         name="zipCode"
       />
       <FormInput
@@ -177,8 +195,8 @@ const SignUpForm = () => {
         inputClassName="form-control"
         inputPlaceholder="Years of residence"
         inputAriaLabel="yearsOfResidence"
-        value={input.yearsOfResidence}
-        onChange={inputTextChanger}
+        value={yearsOfResidence}
+        onChange={(e) => setYearsOfResidence(e.target.value)}
         name="yearsOfResidence"
       />
     </form>
@@ -187,7 +205,7 @@ const SignUpForm = () => {
           type="submit"
           class="btn btn-primary border-0 px-5 my-3"
           id="signUpButton"
-          onClick={addNewUser}
+          onClick={handleSignUp}
         >
           Sign up
         </button>

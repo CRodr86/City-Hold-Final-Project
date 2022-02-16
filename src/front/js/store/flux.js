@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const resp = await fetch(
-            "https://3001-crodr86-cityholdfinalpr-xhpw0iaxvhj.ws-eu32.gitpod.io/api/token",
+            "https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/token",
             opts
           );
           if (resp.status !== 200) {
@@ -56,6 +56,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 		sessionStorage.removeItem("token");
 		setStore({token: null});
 	},
+
+  createNewUser: (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) =>{
+    fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
+        			method: "POST",
+        			body: JSON.stringify({name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence}),
+              mode: "no-cors",
+        			headers: { "Content-Type": "application/json" }
+              
+        		})
+        			.then(resp => {
+        				resp.json();
+        			})
+        			.then(data => {
+        				console.log(data);
+        			})
+        			.catch(error => {
+        				console.log("Error", error);
+        			});
+  },
 
       getMessage: () => {
         // const store = getStore();

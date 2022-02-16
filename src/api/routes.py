@@ -40,9 +40,9 @@ def get_one_user(id):
 @api.route('/user', methods=['POST'])
 def create_users():
     firstName, lastName, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence = request.json.get(
-        "firstName" , None
+        "name" , None
     ), request.json.get(
-        "lastName", None
+        "lastname", None
     ), request.json.get(
         "email", None
     ), request.json.get(
@@ -64,7 +64,7 @@ def create_users():
     new_user = User(name= firstName, lastname= lastName, email= email, password= password, home_phone= homePhone,  mobile_phone= mobilePhone, address1= address1, address2= address2, zip_code= zipCode, years_of_residence= yearsOfResidence)
     db.session.add(new_user)
     db.session.commit()
-    return jsonify(new_user), 201
+    return jsonify(new_user.serialize()), 201
 
 @api.route('/user/<int:id>', methods=['DELETE'])
 def delete_user(id):
