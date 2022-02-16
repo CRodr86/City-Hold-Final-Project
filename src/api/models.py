@@ -12,7 +12,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     home_phone = db.Column(db.String(20), unique=False, nullable=True)
     mobile_phone = db.Column(db.String(20), unique=True, nullable=False)
-    address1 = db.Column(db.String(240), unique=False, nullable=False)
+    address1 = db.Column(db.String(240), unique=False, nullable=True)
     address2 = db.Column(db.String(240), unique=False, nullable=True)
     zip_code = db.Column(db.String(20), unique=False, nullable=False)
     years_of_residence = db.Column(db.String(20), unique=False, nullable=False)
@@ -31,7 +31,8 @@ class User(db.Model):
             "email": self.email,
             "home_phone": self.home_phone,
             "mobile_phone": self.mobile_phone,
-            "address": self.address,
+            "address1": self.address1,
+            "address2": self.address2,
             "zip_code": self.zip_code,
             "years_of_residence": self.years_of_residence,
             # do not serialize the password, its a security breach

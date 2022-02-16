@@ -39,7 +39,7 @@ def get_one_user(id):
 
 @api.route('/user', methods=['POST'])
 def create_users():
-    firstName, lastName, email, password, homePhone, mobilePhone, adress1, adress2, zipCode, yearsOfResidence = request.json.get(
+    firstName, lastName, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence = request.json.get(
         "firstName" , None
     ), request.json.get(
         "lastName", None
@@ -52,16 +52,16 @@ def create_users():
     ), request.json.get(
         "mobilePhone", None
     ), request.json.get(
-        "adress1", None
+        "address1", None
     ), request.json.get(
-        "adress2", None
+        "address2", None
     ), request.json.get(
         "zipCode", None
     ), request.json.get(
         "yearsOfResidence", None
     )
     # encriptar contraseña
-    new_user = User(name= firstName['firstName'], lastname= lastName['lastName'], email= email['email'], password= password['password'], home_phone= homePhone['homePhone'],  mobile_phone= mobilePhone['mobilePhone'], address1= address1['address1'],address2= address2['address2'], zip_code= zipCode['zipCode'], years_of_residence= yearsOfResidence['yearsOfResidence'])
+    new_user = User(name= firstName, lastname= lastName, email= email, password= password, home_phone= homePhone,  mobile_phone= mobilePhone, address1= address1, address2= address2, zip_code= zipCode, years_of_residence= yearsOfResidence)
     db.session.add(new_user)
     db.session.commit()
     return jsonify(new_user), 201
