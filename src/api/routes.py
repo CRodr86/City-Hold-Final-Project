@@ -60,10 +60,11 @@ def create_users():
     ), request.json.get(
         "yearsOfResidence", None
     )
-    new_user = User(name= request_body["name"], lastname= request_body["lastname"], email= request_body["email"], home_phone= request_body["home_phone"],  mobile_phone= request_body["mobile_phone"], address= request_body["address1"], zip_code= request_body["zip_code"], years_of_residence= request_body["years_of_residence"])
+    # encriptar contraseña
+    new_user = User(name= firstName['firstName'], lastname= lastName['lastName'], email= email['email'], password= password['password'], home_phone= homePhone['homePhone'],  mobile_phone= mobilePhone['mobilePhone'], address1= address1['address1'],address2= address2['address2'], zip_code= zipCode['zipCode'], years_of_residence= yearsOfResidence['yearsOfResidence'])
     db.session.add(new_user)
     db.session.commit()
-    return jsonify(request_body), 201
+    return jsonify(new_user), 201
 
 @api.route('/user/<int:id>', methods=['DELETE'])
 def delete_user(id):

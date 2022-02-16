@@ -24,7 +24,7 @@ const SignUpForm = () => {
 	};
 
   const addNewUser = () => {
-    		fetch("https://3001-crodr86-cityholdfinalpr-xhpw0iaxvhj.ws-eu31.gitpod.io/api/user", {
+    		fetch("https://3001-crodr86-cityholdfinalpr-xhpw0iaxvhj.ws-eu32.gitpod.io/api/user", {
     			method: "POST",
     			body: JSON.stringify(input),
           mode: "no-cors",
