@@ -57,24 +57,55 @@ const getState = ({ getStore, getActions, setStore }) => {
 		setStore({token: null});
 	},
 
-  createNewUser: (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) =>{
-    fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
-        			method: "POST",
-        			body: JSON.stringify({name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence}),
-              mode: "no-cors",
-        			headers: { "Content-Type": "application/json" }
-              
-        		})
-        			.then(resp => {
-        				resp.json();
-        			})
-        			.then(data => {
-        				console.log(data);
-        			})
-        			.catch(error => {
-        				console.log("Error", error);
-        			});
+  createNewUser: async (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) => {
+    const opts = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept" : "application/json",
+      },
+      body: JSON.stringify({
+        name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence
+      }),
+      mode: "cors",
+    };
+    try {
+      const resp = await fetch ("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", opts
+      );
+
+    // if (resp.status !== 200) {
+    //   alert("An error has ocurred");
+    //   return false;
+    // }
+          const data = await resp.json();
+          console.log("this came from backend", data);
+          // setStore(data)
+    }
+    catch (error){
+      console.error("There has been an error", error);
+    }
   },
+  // createNewUser: (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) =>{
+  //   fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
+  //       			method: "POST",
+  //       			body: JSON.stringify({name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence}),
+  //             mode: "no-cors",
+  //       			headers: { "Content-Type": "application/json",
+  //             "Accept": "application/json" }
+              
+  //       		})
+  //       			.then(resp => {
+  //               console.log(resp)
+  //       				resp.json();
+                
+  //       			})
+  //       			.then(data => {
+  //       				console.log(data);
+  //       			})
+  //       			.catch(error => {
+  //       				console.log("Error", error);
+  //       			});
+  // },
 
       getMessage: () => {
         // const store = getStore();

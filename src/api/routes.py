@@ -7,6 +7,7 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 api = Blueprint('api', __name__)
@@ -61,6 +62,16 @@ def create_users():
         "yearsOfResidence", None
     )
     # encriptar contraseña
+    # comprobar contraseña
+if check_password_hash(password, passwordDB):
+  # generas token
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
+else:
+    return jsonify({'message': 'Password doesn't match'}), 500
+
+#  generar hash
+passwordHashed = generate_password_hash(password)
     new_user = User(name= firstName, lastname= lastName, email= email, password= password, home_phone= homePhone,  mobile_phone= mobilePhone, address1= address1, address2= address2, zip_code= zipCode, years_of_residence= yearsOfResidence)
     db.session.add(new_user)
     db.session.commit()
@@ -129,3 +140,12 @@ def create_token():
 
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
+
+#     # comprobar contraseña
+# if check_password_hash(password, passwordDB):
+#   # generas token
+# else:
+#   return jsonify({'message': 'Password doesn't match'}), 500
+
+# # generar hash
+# passwordHashed = generate_password_hash(password)
