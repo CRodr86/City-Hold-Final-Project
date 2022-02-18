@@ -14,12 +14,11 @@ let bgImg = {
 };
 
 const Proposals1 = () => {
-
   const history = useHistory();
   const token = sessionStorage.getItem("token");
 
-  if (token && token != "" && token != undefined){
-    history.push("/proposals-2")
+  if (token && token != "" && token != undefined) {
+    history.push("/proposals-2");
   }
 
   return (
@@ -27,7 +26,7 @@ const Proposals1 = () => {
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
         <div className="row d-flex justify-content-center pt-5">
           <div className="col-8 col-md-6 col-lg-4">
-            <div className="m-4">
+            <div className="position-relative m-4">
               <div className="progress stepperProgress">
                 <div
                   className="progress-bar stepperProgress-bar"
@@ -39,20 +38,16 @@ const Proposals1 = () => {
               </div>
               <div className="d-flex justify-content-between">
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepClass="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
                   stepLabel="1"
                 />
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepClass="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
                   stepLabel="2"
                 />
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepClass="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelInactive"
                   stepLabel="3"
-                />
-                <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                  stepLabel="4"
                 />
               </div>
             </div>
@@ -77,7 +72,12 @@ const Proposals1 = () => {
         </div>
         <div className="row mt-2 pb-5">
           <div className="col d-flex justify-content-center">
-            <MainButton buttonText="Start" to="#" dataToggle="modal" dataTarget="#signInModal" />
+            <MainButton
+              buttonText="Start"
+              to="#"
+              dataToggle="modal"
+              dataTarget="#signInModal"
+            />
           </div>
         </div>
       </div>

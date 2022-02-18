@@ -21,7 +21,7 @@ const Proposals3 = () => {
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
         <div className="row d-flex justify-content-center pt-5">
           <div className="col-8 col-md-6 col-lg-4">
-            <div className="m-4">
+            <div className="position-relative m-4">
               <div className="progress stepperProgress">
                 <div
                   className="progress-bar stepperProgress-bar"
@@ -33,20 +33,16 @@ const Proposals3 = () => {
               </div>
               <div className="d-flex justify-content-between">
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepClass="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
                   stepLabel="1"
                 />
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
+                  stepClass="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
                   stepLabel="2"
                 />
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepClass="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelInactive"
                   stepLabel="3"
-                />
-                <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                  stepLabel="4"
                 />
               </div>
             </div>
@@ -71,48 +67,64 @@ const Proposals3 = () => {
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Bus and subway services"
+                      inputId="transport"
+                      labelFor="transport"
                       imgSrc="https://img.icons8.com/ios/50/000000/get-on-bus.png"
                       text="Transport"
                     />
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Buildings construction and maintenance"
+                      inputId="buildings"
+                      labelFor="buildings"
                       imgSrc="https://img.icons8.com/ios/50/000000/building-with-rooftop-terrace.png"
                       text="Buidings"
                     />
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Traffic lights, streets way and traffic safety"
+                      inputId="traffic"
+                      labelFor="traffic"
                       imgSrc="https://img.icons8.com/external-itim2101-lineal-itim2101/50/000000/external-car-car-itim2101-lineal-itim2101-1.png"
                       text="Traffic"
                     />
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Parks, squares and afforestation"
+                      inputId="nature"
+                      labelFor="nature"
                       imgSrc="https://img.icons8.com/ios/50/000000/deciduous-tree.png"
                       text="Nature"
                     />
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Bike lanes and cyclist safety"
+                      inputId="cycling"
+                      labelFor="cycling"
                       imgSrc="https://img.icons8.com/dotty/50/000000/protected-bike-lane.png"
                       text="Cycling"
                     />
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Streets maintenance"
+                      inputId="streets"
+                      labelFor="streets"
                       imgSrc="https://img.icons8.com/ios/50/000000/crossroad.png"
                       text="Streets"
                     />
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Trains stations, lines, maintenance..."
+                      inputId="trains"
+                      labelFor="trains"
                       imgSrc="https://img.icons8.com/ios/50/000000/train-platform.png"
                       text="Trains"
                     />
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
                       tooltip="Schools, colleges and universitys"
+                      inputId="education"
+                      labelFor="education"
                       imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
                       text="Education"
                     />
@@ -140,7 +152,7 @@ const Proposals3 = () => {
         <div className="row d-flex justify-content-center mt-4 pb-5">
           <div className="col-3">
             <div className="d-flex justify-content-start">
-              <MainButton buttonText="Back" to="/proposals-2" />
+              <MainButton buttonText="Back" to="/proposals" />
             </div>
           </div>
           <div className="col-3">

@@ -19,7 +19,7 @@ const Proposals4 = () => {
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
         <div className="row d-flex justify-content-center pt-5">
           <div className="col-8 col-md-6 col-lg-4">
-            <div className="m-4">
+            <div className="position-relative m-4">
               <div className="progress stepperProgress">
                 <div
                   className="progress-bar stepperProgress-bar"
@@ -31,20 +31,16 @@ const Proposals4 = () => {
               </div>
               <div className="d-flex justify-content-between">
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepClass="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
                   stepLabel="1"
                 />
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
+                  stepClass="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
                   stepLabel="2"
                 />
                 <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
+                  stepClass="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelInactive"
                   stepLabel="3"
-                />
-                <StepperItem
-                  stepClass="translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                  stepLabel="4"
                 />
               </div>
             </div>

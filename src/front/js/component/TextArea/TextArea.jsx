@@ -6,7 +6,7 @@ const TextArea = (props) => {
     <div className="col">
       <label className="form-label">{props.label}</label>
       <textarea
-        class="form-control"
+        className="form-control"
         placeholder="Hint Text"
         id="textarea"
       ></textarea>

@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import "./multiPollSelector.css";
 import PropTypes from "prop-types";
 
-
-
 const MultiPollSelector = (props) => {
-	return (
+  return (
     <>
       <div
         className="container h-100 w-75 p-0 py-3 rounded"
@@ -22,13 +20,16 @@ const MultiPollSelector = (props) => {
             >
               <input
                 type="radio"
-                className="btn-check "
+                className="btn-check"
                 name="btnradio"
                 id="btnradio1"
                 autocomplete="off"
               />
-              <label className="each_button btn btn-outline-primary rounded" for="btnradio1">
-              Tucson St.
+              <label
+                className="each_button btn btn-outline-primary rounded"
+                for="btnradio1"
+              >
+                Tucson St.
               </label>
 
               <input
@@ -38,8 +39,11 @@ const MultiPollSelector = (props) => {
                 id="btnradio2"
                 autocomplete="off"
               />
-              <label className=" each_button btn btn-outline-primary rounded" for="btnradio2">
-              Main St. 
+              <label
+                className=" each_button btn btn-outline-primary rounded"
+                for="btnradio2"
+              >
+                Main St.
               </label>
 
               <input
@@ -49,8 +53,11 @@ const MultiPollSelector = (props) => {
                 id="btnradio3"
                 autocomplete="off"
               />
-              <label className=" each_button btn btn-outline-primary rounded" for="btnradio3">
-              Grant St. 
+              <label
+                className=" each_button btn btn-outline-primary rounded"
+                for="btnradio3"
+              >
+                Grant St.
               </label>
               <input
                 type="radio"
@@ -59,8 +66,11 @@ const MultiPollSelector = (props) => {
                 id="btnradio4"
                 autocomplete="off"
               />
-              <label className=" each_button btn btn-outline-primary rounded" for="btnradio4">
-              All of the above
+              <label
+                className=" each_button btn btn-outline-primary rounded"
+                for="btnradio4"
+              >
+                All of the above
               </label>
             </div>
           </div>
@@ -70,10 +80,6 @@ const MultiPollSelector = (props) => {
   );
 };
 
-MultiPollSelector.propTypes = {
+MultiPollSelector.propTypes = {};
 
-
-};
-
-
-export default MultiPollSelector
+export default MultiPollSelector;

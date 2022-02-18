@@ -8,21 +8,19 @@ import MyProposalsEmpty from "./MyProposalsEmpty.jsx";
 import MyFilePassword from "./MyFilePassword.jsx";
 import MyProposalsFull from "./MyProposalsFull.jsx";
 
-
-
 const MyFile = (props) => {
-	return (
+  return (
     <>
       <div className="container h-100 w-75 p-0 rounded" id="myfile_wrapper">
-        <div class="d-flex align-items-start">
+        <div className="d-flex align-items-start">
           <div
-            class="nav flex-column nav-pills w-50"
+            className="nav flex-column nav-pills w-50"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
           >
             <button
-              class="profile_nav_btn nav-link active text-start"
+              className="profile_nav_btn nav-link active text-start"
               id="v-pills-home-tab"
               data-bs-toggle="pill"
               data-bs-target="#v-pills-home"
@@ -34,7 +32,7 @@ const MyFile = (props) => {
               My Profile
             </button>
             <button
-              class="profile_nav_btn nav-link text-start"
+              className="profile_nav_btn nav-link text-start"
               id="v-pills-profile-tab"
               data-bs-toggle="pill"
               data-bs-target="#v-pills-profile"
@@ -46,7 +44,7 @@ const MyFile = (props) => {
               Change password
             </button>
             <button
-              class="profile_nav_btn nav-link text-start"
+              className="profile_nav_btn nav-link text-start"
               id="v-pills-messages-tab"
               data-bs-toggle="pill"
               data-bs-target="#v-pills-messages"
@@ -58,9 +56,9 @@ const MyFile = (props) => {
               My proposals
             </button>
           </div>
-          <div class="tab-content" id="v-pills-tabContent">
+          <div className="tab-content" id="v-pills-tabContent">
             <div
-              class="tab-pane fade show active"
+              className="tab-pane fade show active"
               id="v-pills-home"
               role="tabpanel"
               aria-labelledby="v-pills-home-tab"
@@ -68,15 +66,15 @@ const MyFile = (props) => {
               <MyProfile />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="v-pills-profile"
               role="tabpanel"
               aria-labelledby="v-pills-profile-tab"
             >
-            <MyFilePassword />
+              <MyFilePassword />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="v-pills-messages"
               role="tabpanel"
               aria-labelledby="v-pills-messages-tab"
@@ -84,7 +82,7 @@ const MyFile = (props) => {
               <MyProposalsFull />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="v-pills-settings"
               role="tabpanel"
               aria-labelledby="v-pills-settings-tab"
@@ -98,10 +96,6 @@ const MyFile = (props) => {
   );
 };
 
-MyFile.propTypes = {
+MyFile.propTypes = {};
 
-
-};
-
-
-export default MyFile
+export default MyFile;

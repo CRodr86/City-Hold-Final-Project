@@ -1,5 +1,5 @@
 import React from "react";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 import "./myFile.css";
 import PropTypes from "prop-types";
 import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
@@ -9,21 +9,19 @@ import MyFilePassword from "./MyFilePassword.jsx";
 import MyProposalsFull from "./MyProposalsFull.jsx";
 import MainButton from "../MainButton/MainButton.jsx";
 
-
-
 const MyProposalDetail = (props) => {
-	return (
+  return (
     <>
       <div className="container h-100 w-75 p-0 rounded" id="myfile_wrapper">
-        <div class="d-flex align-items-start ">
+        <div className="d-flex align-items-start ">
           <div
-            class="nav flex-column nav-pills w-100"
+            className="nav flex-column nav-pills w-100"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
           >
             <button
-              class="profile_nav_btn nav-link active text-start"
+              className="profile_nav_btn nav-link active text-start"
               id="v-pills-home-tab"
               data-bs-toggle="pill"
               data-bs-target="#v-pills-home"
@@ -35,15 +33,15 @@ const MyProposalDetail = (props) => {
               My proposal details
             </button>
           </div>
-          <div class="tab-content" id="v-pills-tabContent">
+          <div className="tab-content" id="v-pills-tabContent">
             <div
-              class="tab-pane fade show active"
+              className="tab-pane fade show active"
               id="v-pills-home"
               role="tabpanel"
               aria-labelledby="v-pills-home-tab"
             >
               <div className="row g-1 bg-white m-auto p-3 text-start w-100">
-                <table class="table ">
+                <table className="table ">
                   <thead>
                     <tr>
                       <th scope="col" className="table_header">
@@ -69,7 +67,7 @@ const MyProposalDetail = (props) => {
                     </tr>
                   </tbody>
                 </table>
-                <table class="table">
+                <table className="table">
                   <thead>
                     <th scope="col" className="table_header pt-3">
                       Your proposal information
@@ -99,10 +97,6 @@ const MyProposalDetail = (props) => {
   );
 };
 
-MyProposalDetail.propTypes = {
+MyProposalDetail.propTypes = {};
 
-
-};
-
-
-export default MyProposalDetail
+export default MyProposalDetail;

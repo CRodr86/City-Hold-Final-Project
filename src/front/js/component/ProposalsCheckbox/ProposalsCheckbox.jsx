@@ -3,7 +3,7 @@ import React from "react";
 const ProposalsCheckbox = () => {
   return (
     <div className="col-6">
-      <div class="mb-3">
+      <div className="mb-3">
         <label className="form-label">Select a type</label>
         <div className="form-check">
           <input
