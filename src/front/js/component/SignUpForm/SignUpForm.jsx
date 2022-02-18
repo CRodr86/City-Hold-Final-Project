@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import FormInput from "../FormInput/FormInput.jsx";
 import { Context } from "../../store/appContext.js";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const SignUpForm = () => {
 
@@ -53,11 +54,12 @@ const SignUpForm = () => {
   const[address2, setAddress2] = useState("");
   const[zipCode, setZipCode] = useState("");
   const [yearsOfResidence, setYearsOfResidence ] = useState("");
-  // const history = useHistory();
+  const history = useHistory();
 
   const handleSignUp = (e) =>{
     e.preventDefault();
-    actions.createNewUser(name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence)
+    actions.createNewUser(name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence);
+    history.push("/")
 };
     
   return (
