@@ -5,7 +5,7 @@ const ProposalsCard = (props) => {
   return (
     <div className={props.class}>
       <div
-        class="card text-center mb-4 proposalsCard"
+        className="card text-center mb-4 proposalsCard"
         data-bs-toggle="tooltip"
         data-bs-placement="bottom"
         title={props.tooltip}
