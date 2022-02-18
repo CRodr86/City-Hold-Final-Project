@@ -35,17 +35,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const resp = await fetch(
-            "https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/token",
+            process.env.BACKEND_URL + "/api/token",
             opts
           );
           if (resp.status !== 200) {
-            alert("An error has ocurred");
+            alert("Bad email or password");
             return false;
           }
           const data = await resp.json();
           console.log("this came from backend", data);
-          sessionStorage.setItem("token", data.access_token);
-          setStore({ token: data.access_token });
+          sessionStorage.setItem("jwt-token", data.token);
+          setStore({ token: data.token });
           return true;
         } catch (error) {
           console.error("There has been an error", error);
@@ -53,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
 	  logout: () => {
-		sessionStorage.removeItem("token");
+		sessionStorage.removeItem("jwt-token");
 		setStore({token: null});
 	},
 
@@ -70,7 +70,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       mode: "cors",
     };
     try {
-      const resp = await fetch ("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", opts
+      const resp = await fetch (process.env.BACKEND_URL + "/api/user", opts
       );
 
     // if (resp.status !== 200) {
@@ -85,6 +85,36 @@ const getState = ({ getStore, getActions, setStore }) => {
       console.error("There has been an error", error);
     }
   },
+
+  createProposal: async (area, proposal_type, date, description, documents, document_type, document_description, contact_by, confirmation_by) => {
+    const opts = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept" : "application/json",
+      },
+      body: JSON.stringify({
+        area: area, proposal_type: proposal_type, date: date, description: description, documents: documents, document_type: document_type, document_description: document_description, contact_by: contact_by, confirmation_by:confirmation_by
+      }),
+      mode: "cors",
+    };
+    try {
+      const resp = await fetch (process.env.BACKEND_URL + "/api/proposal", opts
+      );
+
+    // if (resp.status !== 200) {
+    //   alert("An error has ocurred");
+    //   return false;
+    // }
+          const data = await resp.json();
+          console.log("this came from backend", data);
+          // setStore(data)
+    }
+    catch (error){
+      console.error("There has been an error", error);
+    }
+  },
+  
   // createNewUser: (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) =>{
   //   fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
   //       			method: "POST",

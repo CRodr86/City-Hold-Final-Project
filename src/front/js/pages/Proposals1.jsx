@@ -15,10 +15,10 @@ let bgImg = {
 
 const Proposals1 = () => {
   const history = useHistory();
-  const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("jwt-token");
 
   if (token && token != "" && token != undefined) {
-    history.push("/proposals-2");
+    history.push("/proposals-3");
   }
 
   return (

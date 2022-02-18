@@ -9,7 +9,7 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 const PublicVotingHome = (props) => {
 
   const history = useHistory();
-  const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("jwt-token");
 
   if (token && token != "" && token != undefined){
     history.push("/publicvotingselect")

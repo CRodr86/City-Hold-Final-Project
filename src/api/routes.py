@@ -63,19 +63,19 @@ def create_users():
     )
     # encriptar contraseña
     # comprobar contraseña
-if check_password_hash(password, passwordDB):
-  # generas token
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
-else:
-    return jsonify({'message': 'Password doesn't match'}), 500
+    if check_password_hash(password, passwordDB):
+        # generas token
+        access_token = create_access_token(identity=email)
+        return  jsonify({"token": access_token})
+    else:
+        return jsonify({"message": "Password doesn't match"}), 500
 
 #  generar hash
-passwordHashed = generate_password_hash(password)
-    new_user = User(name= firstName, lastname= lastName, email= email, password= password, home_phone= homePhone,  mobile_phone= mobilePhone, address1= address1, address2= address2, zip_code= zipCode, years_of_residence= yearsOfResidence)
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify(new_user.serialize()), 201
+        passwordHashed = generate_password_hash(password)
+        new_user = User(name= firstName, lastname= lastName, email= email, password= password, home_phone= homePhone,  mobile_phone= mobilePhone, address1= address1, address2= address2, zip_code= zipCode, years_of_residence= yearsOfResidence)
+        db.session.add(new_user)
+        db.session.commit()
+        return jsonify(new_user.serialize()), 201
 
 @api.route('/user/<int:id>', methods=['DELETE'])
 def delete_user(id):
@@ -135,11 +135,13 @@ def delete_proposal(id):
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    if email != "test@test.com" or password != "test":
+    user = User.query.filter_by(email=email, password=password).first()
+    if user != None:
+        access_token = create_access_token(identity= user.id)
+        return jsonify({"token": access_token, "user": user.id})
+    else:
         return jsonify({"msg": "Bad email or password"}), 401
-
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+        
 
 #     # comprobar contraseña
 # if check_password_hash(password, passwordDB):

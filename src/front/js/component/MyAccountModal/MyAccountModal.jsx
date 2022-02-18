@@ -10,7 +10,7 @@ const MyAccountModal = () => {
   const[email, setEmail] = useState("");
   const [password, setPassword ] = useState("");
   const history = useHistory();
-  const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("jwt-token");
 
   const handleSignIn = (e) =>{
     e.preventDefault();
