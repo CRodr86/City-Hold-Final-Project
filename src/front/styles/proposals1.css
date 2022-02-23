@@ -1,0 +1,35 @@
+.proposals1-body {
+  background-color: #023047;
+}
+
+#proposals1Header {
+  color: #e5e5e5;
+}
+
+.proposalsText {
+  font-family: "Open Sans", sans-serif;
+  color: #e5e5e5;
+}
+
+.stepperProgress {
+  background-color: #e5e5e5;
+  height: 3px;
+}
+
+.stepperProgress-bar {
+  width: 0;
+}
+
+.stepLabelInactive {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #023047;
+  background-color: #e5e5e5;
+  font-family: Ubuntu;
+  font-size: larger;
+}
+
+.stepLabelInactive:hover,
+.stepLabelInactive:focus {
+  background-color: #ffb703;
+}

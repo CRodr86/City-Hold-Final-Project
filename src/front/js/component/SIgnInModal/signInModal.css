@@ -1,0 +1,55 @@
+.modal-content {
+  background-color: #e5e5e5 !important;
+}
+
+.nav-item button {
+  font-family: "Ubuntu", sans-serif !important;
+  background-color: #e5e5e5 !important;
+}
+
+.nav-pills .nav-link.active,
+.show > .nav-pills .nav-link {
+  color: #023047 !important;
+  text-decoration: underline;
+}
+.nav-pills .nav-link,
+.show > .nav-pills .nav-link {
+  color: #02304798 !important;
+}
+
+#forgot {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #023047;
+}
+
+#logInButton {
+  font-family: "Ubuntu", sans-serif;
+  color: #ffffff;
+  background-color: #f88400;
+}
+
+#logInButton:hover {
+  background: #FFB703;
+}
+
+#signUpButton {
+  font-family: "Ubuntu", sans-serif;
+  color: #ffffff;
+  background-color: #f88500;
+}
+
+#signUpButton:hover {
+  background: #FFB703;
+}
+
+.form-label {
+  font-family: "Ubuntu", sans-serif;
+  font-size: small;
+  color: #023047;
+}
+
+.form-control {
+  background-color: #f8fafc;
+  border: 0;
+}

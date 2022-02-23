@@ -1,0 +1,45 @@
+#carousel_item_wrapper{
+    border: solid #023047 2px ;
+    color: #023047;
+    font-family: Open Sans;
+}
+
+#details_button{
+    color: #023047;
+    border: #F88500 solid 1px;
+    font-family: Ubuntu;
+    font-size: medium;
+    
+}
+
+#details_button:hover{
+    background: rgb(2, 48, 71);
+    color: #e5e5e5;
+    border: #023047;
+}
+
+#vote_button{
+    background: rgb(248, 133, 0) ;
+    color: #023047;
+    border: #F88500;
+    font-family: Ubuntu;
+    font-size: medium;
+    
+}
+
+#vote_button:hover{
+    color: #e5e5e5;
+    background: #023047;
+}
+
+#carousel_card_title{
+    font-size: large;
+}
+
+#carousel_card_description{
+    font-size: small;
+}
+
+#carousel_card_toptxt{
+    font-size: medium;
+}

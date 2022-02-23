@@ -1,0 +1,7 @@
+.btn-check:checked + .cardButton {
+  background: #f8840033;
+}
+
+.btn-check:focus + .cardButton {
+  box-shadow: 0 0 0 0.25rem rgba(2, 48, 71, 0.541);
+}

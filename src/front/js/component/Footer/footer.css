@@ -1,0 +1,21 @@
+.footer {
+  background-color: #e5e5e5;
+}
+
+.footer p {
+  font-family: "Open Sans", sans-serif;
+  color: #010b13;
+  font-size: small;
+}
+
+.footer-nav-link {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: small;
+  color: #010b13 !important;
+}
+
+.footerLabel {
+  font-family: "Ubuntu", sans-serif;
+  font-size: medium;
+  color: #023047;
+}

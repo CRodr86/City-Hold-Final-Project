@@ -1,0 +1,25 @@
+#buttons_wrapper{
+    background: #e5e5e5;
+
+}
+#single_poll_item1, #single_poll_item2{
+    border: solid #F88500 3px;
+    border-radius: 25px;
+    color: #023047;
+    /* height: 6em;
+    width: 6em; */
+    font-family: Ubuntu;
+    font-size: xx-large;
+}
+
+#single_poll_item1:hover{
+    background: rgba(0, 128, 0, 0.603);
+    color: #e5e5e5;
+    border-color:#023047;
+}
+
+#single_poll_item2:hover{
+    background: rgba(255, 0, 0, 0.603);
+    color: #e5e5e5;
+    border-color:#023047;
+}
