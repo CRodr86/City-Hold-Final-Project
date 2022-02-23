@@ -59,7 +59,7 @@ const SignUpForm = () => {
   const handleSignUp = (e) =>{
     e.preventDefault();
     actions.createNewUser(name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence);
-    history.push("/")
+    history.push("/welcome")
 };
     
   return (
@@ -202,10 +202,10 @@ const SignUpForm = () => {
         name="yearsOfResidence"
       />
     </form>
-      <div class="col-12 d-flex justify-content-end">
+      <div className="col-12 d-flex justify-content-end">
         <button
           type="submit"
-          class="btn btn-primary border-0 px-5 my-3"
+          className="btn btn-primary border-0 px-5 my-3"
           id="signUpButton"
           onClick={handleSignUp}
         >

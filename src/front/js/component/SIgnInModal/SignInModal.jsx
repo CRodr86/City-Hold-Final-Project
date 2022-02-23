@@ -10,7 +10,7 @@ const SignInModal = () => {
     <div
       className="modal fade"
       id="signInModal"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="signInModalLabel"
       aria-hidden="true"
     >

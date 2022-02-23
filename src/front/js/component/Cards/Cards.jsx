@@ -96,7 +96,7 @@ const Cards = () => {
 
           <div className="col-md-4 card_wrapper">
             <HashLink to={"/myfilehome"} style={{ textDecoration: "none" }}>
-              <div class="card p-4 h-100">
+              <div className="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">
                     {" "}

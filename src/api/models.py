@@ -16,7 +16,7 @@ class User(db.Model):
     address2 = db.Column(db.String(240), unique=False, nullable=True)
     zip_code = db.Column(db.String(20), unique=False, nullable=False)
     years_of_residence = db.Column(db.String(20), unique=False, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(1000), unique=False, nullable=False)
     proposals = db.relationship('Proposal')
     
 

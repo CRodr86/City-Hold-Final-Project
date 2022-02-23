@@ -18,7 +18,7 @@ const ProposalsCard = (props) => {
           id={props.inputId}
           autocomplete="off"
         />
-        <label className="btn cardButton" for={props.labelFor}>
+        <label className="btn cardButton" htmlFor={props.labelFor}>
           <div className="card-body">
             <img src={props.imgSrc} />
             <p className="card-text">{props.text}</p>

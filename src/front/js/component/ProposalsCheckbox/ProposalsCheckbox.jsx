@@ -12,7 +12,7 @@ const ProposalsCheckbox = () => {
             value=""
             id="flexCheckSuggestion"
           />
-          <label className="form-check-label" for="flexCheckSuggestion">
+          <label className="form-check-label" htmlFor="flexCheckSuggestion">
             Suggestion
           </label>
         </div>
@@ -23,7 +23,7 @@ const ProposalsCheckbox = () => {
             value=""
             id="flexCheckClaim"
           />
-          <label className="form-check-label" for="flexCheckClaim">
+          <label className="form-check-label" htmlFor="flexCheckClaim">
             Claim
           </label>
         </div>

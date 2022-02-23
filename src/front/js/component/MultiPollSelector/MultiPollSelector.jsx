@@ -27,7 +27,7 @@ const MultiPollSelector = (props) => {
               />
               <label
                 className="each_button btn btn-outline-primary rounded"
-                for="btnradio1"
+                htmlFor="btnradio1"
               >
                 Tucson St.
               </label>
@@ -41,7 +41,7 @@ const MultiPollSelector = (props) => {
               />
               <label
                 className=" each_button btn btn-outline-primary rounded"
-                for="btnradio2"
+                htmlFor="btnradio2"
               >
                 Main St.
               </label>
@@ -55,7 +55,7 @@ const MultiPollSelector = (props) => {
               />
               <label
                 className=" each_button btn btn-outline-primary rounded"
-                for="btnradio3"
+                htmlFor="btnradio3"
               >
                 Grant St.
               </label>
@@ -68,7 +68,7 @@ const MultiPollSelector = (props) => {
               />
               <label
                 className=" each_button btn btn-outline-primary rounded"
-                for="btnradio4"
+                htmlFor="btnradio4"
               >
                 All of the above
               </label>
