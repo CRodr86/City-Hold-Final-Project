@@ -5,9 +5,8 @@ import { useState } from "react";
 const FormInput = (props) => {
   // const [input, setInput] = useState("");
   // const inputTextChanger = ev => {
-	// 	setInput(ev.target.value);
-	// };
-
+  // 	setInput(ev.target.value);
+  // };
 
   return (
     <div className={props.divClassName}>
@@ -23,6 +22,8 @@ const FormInput = (props) => {
         value={props.value}
         onChange={props.onChange}
         name={props.name}
+        required={props.required}
+
       />
     </div>
   );
@@ -41,6 +42,7 @@ FormInput.propTypes = {
   value: PropTypes.func,
   onChange: PropTypes.func,
   name: PropTypes.string,
+  required: PropTypes.bool,
 };
 
 export default FormInput;

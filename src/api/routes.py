@@ -64,7 +64,7 @@ def create_users():
     # encriptar contraseña
     #  generar hash
     passwordHashed = generate_password_hash(password)
-    new_user = User(name= firstName, lastname= lastName, email= email, password= passwordHashed, home_phone= homePhone,  mobile_phone= mobilePhone, address1= address1, address2= address2, zip_code= zipCode, years_of_residence= yearsOfResidence)
+    new_user = User(name= firstName, lastname= lastName, email= email, password= password, home_phone= homePhone,  mobile_phone= mobilePhone, address1= address1, address2= address2, zip_code= zipCode, years_of_residence= yearsOfResidence)
     db.session.add(new_user)
     db.session.commit()
     return jsonify(new_user.serialize()), 201
@@ -127,10 +127,16 @@ def delete_proposal(id):
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
+    name = request.json.get("name", None)
+    lastname = request.json.get("lastname", None)
+    homePhone = request.json.get("homePhone", None)
+    mobilePhone = request.json.get("mobilePhone", None)
+    address1 = request.json.get("address1", None)
+    zipCode = request.json.get("zipCode", None)
     user = User.query.filter_by(email=email, password=password).first()
     if user != None:
         access_token = create_access_token(identity= user.id)
-        return jsonify({"token": access_token, "user": user.id})
+        return jsonify({"token": access_token, "user": user.id, "name": user.name, "lastname": user.lastname, "homePhone": user.home_phone, "mobilePhone": user.mobile_phone, "address1":user.address1, "zipCode": user.zip_code, "email": user.email})
     else:
         return jsonify({"msg": "Bad email or password"}), 401
         
