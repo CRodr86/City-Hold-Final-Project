@@ -42,7 +42,7 @@ FormInput.propTypes = {
   value: PropTypes.func,
   onChange: PropTypes.func,
   name: PropTypes.string,
-  required: PropTypes.bool,
+  required: PropTypes.boo,
 };
 
 export default FormInput;
