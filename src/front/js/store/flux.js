@@ -1,5 +1,5 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
+  return {
     store: {
       message: null,
       demo: [
@@ -44,97 +44,134 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await resp.json();
           console.log("this came from backend", data);
           sessionStorage.setItem("jwt-token", data.token);
-          setStore({ token: data.token });
+          setStore({ token: data.token, name: data.name, lastname: data.lastname, email: data.email, homePhone: data.homePhone, mobilePhone: data.mobilePhone, address1: data.address1, zipCode: data.zipCode });
           return true;
         } catch (error) {
           console.error("There has been an error", error);
         }
       },
 
-	  logout: () => {
-		sessionStorage.removeItem("jwt-token");
-		setStore({token: null});
-	},
-
-  createNewUser: async (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) => {
-    const opts = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept" : "application/json",
+      logout: () => {
+        sessionStorage.removeItem("jwt-token");
+        setStore({ token: null, name: null, lastname: null, email:null, homePhone:null, mobilePhone:null, address1: null, zipCode: null });
       },
-      body: JSON.stringify({
-        name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence
-      }),
-      mode: "cors",
-    };
-    try {
-      const resp = await fetch (process.env.BACKEND_URL + "/api/user", opts
-      );
 
-    // if (resp.status !== 200) {
-    //   alert("An error has ocurred");
-    //   return false;
-    // }
+      createNewUser: async (
+        name,
+        lastname,
+        email,
+        password,
+        homePhone,
+        mobilePhone,
+        address1,
+        address2,
+        zipCode,
+        yearsOfResidence
+      ) => {
+        const opts = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            lastname: lastname,
+            email: email,
+            password: password,
+            homePhone: homePhone,
+            mobilePhone: mobilePhone,
+            address1: address1,
+            address2: address2,
+            zipCode: zipCode,
+            yearsOfResidence: yearsOfResidence,
+          }),
+          mode: "cors",
+        };
+        try {
+          const resp = await fetch(process.env.BACKEND_URL + "/api/user", opts);
+
+          // if (resp.status !== 200) {
+          //   alert("An error has ocurred");
+          //   return false;
+          // }
           const data = await resp.json();
           console.log("this came from backend", data);
           // setStore(data)
-    }
-    catch (error){
-      console.error("There has been an error", error);
-    }
-  },
-
-  createProposal: async (area, proposal_type, date, description, documents, document_type, document_description, contact_by, confirmation_by) => {
-    const opts = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept" : "application/json",
+        } catch (error) {
+          console.error("There has been an error", error);
+        }
       },
-      body: JSON.stringify({
-        area: area, proposal_type: proposal_type, date: date, description: description, documents: documents, document_type: document_type, document_description: document_description, contact_by: contact_by, confirmation_by:confirmation_by
-      }),
-      mode: "cors",
-    };
-    try {
-      const resp = await fetch (process.env.BACKEND_URL + "/api/proposal", opts
-      );
 
-    // if (resp.status !== 200) {
-    //   alert("An error has ocurred");
-    //   return false;
-    // }
+      createProposal: async (
+        area,
+        proposal_type,
+        date,
+        description,
+        documents,
+        document_type,
+        document_description,
+        contact_by,
+        confirmation_by
+      ) => {
+        const opts = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            area: area,
+            proposal_type: proposal_type,
+            date: date,
+            description: description,
+            documents: documents,
+            document_type: document_type,
+            document_description: document_description,
+            contact_by: contact_by,
+            confirmation_by: confirmation_by,
+          }),
+          mode: "cors",
+        };
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/proposal",
+            opts
+          );
+
+          // if (resp.status !== 200) {
+          //   alert("An error has ocurred");
+          //   return false;
+          // }
           const data = await resp.json();
           console.log("this came from backend", data);
           // setStore(data)
-    }
-    catch (error){
-      console.error("There has been an error", error);
-    }
-  },
-  
-  // createNewUser: (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) =>{
-  //   fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
-  //       			method: "POST",
-  //       			body: JSON.stringify({name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence}),
-  //             mode: "no-cors",
-  //       			headers: { "Content-Type": "application/json",
-  //             "Accept": "application/json" }
-              
-  //       		})
-  //       			.then(resp => {
-  //               console.log(resp)
-  //       				resp.json();
-                
-  //       			})
-  //       			.then(data => {
-  //       				console.log(data);
-  //       			})
-  //       			.catch(error => {
-  //       				console.log("Error", error);
-  //       			});
-  // },
+        } catch (error) {
+          console.error("There has been an error", error);
+        }
+      },
+
+      // createNewUser: (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) =>{
+      //   fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
+      //       			method: "POST",
+      //       			body: JSON.stringify({name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence}),
+      //             mode: "no-cors",
+      //       			headers: { "Content-Type": "application/json",
+      //             "Accept": "application/json" }
+
+      //       		})
+      //       			.then(resp => {
+      //               console.log(resp)
+      //       				resp.json();
+
+      //       			})
+      //       			.then(data => {
+      //       				console.log(data);
+      //       			})
+      //       			.catch(error => {
+      //       				console.log("Error", error);
+      //       			});
+      // },
 
       getMessage: () => {
         // const store = getStore();
@@ -156,7 +193,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
 
         //we have to loop the entire demo array to look for the respective index
-        
+
         const demo = store.demo.map((elm, i) => {
           if (i === index) elm.background = color;
           return elm;

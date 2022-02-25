@@ -1,4 +1,14 @@
-.form-control:focus{
-    border-color: #ffb703;
-    box-shadow: 0 0 0 0.25rem rgba(255, 184, 3, 0.253);
+.form-control:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 0 0.25rem rgba(255, 184, 3, 0.253);
+}
+
+#logInButton:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 0 0.25rem rgba(255, 184, 3, 0.253);
+}
+
+#signUpButton:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 0 0.25rem rgba(255, 184, 3, 0.253);
 }

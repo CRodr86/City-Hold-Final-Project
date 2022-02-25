@@ -1,3 +1,7 @@
+.proposalsCard {
+  min-width: 130px;
+}
+
 .btn-check:checked + .cardButton {
   background: #f8840033;
 }
