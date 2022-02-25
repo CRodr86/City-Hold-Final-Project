@@ -62,7 +62,7 @@ const Proposals3 = () => {
                 <p id="areaP">Select the area</p>
               </div>
               <div className="row d-flex justify-content-center">
-                <div className="col-10">
+                <div className="col-11 col-lg-12">
                   <div className="row">
                     <ProposalsCard
                       class="col-lg-3 col-md-6 col-6"
