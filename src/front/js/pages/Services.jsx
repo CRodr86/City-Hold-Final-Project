@@ -29,54 +29,54 @@ const Services = () => {
               <div className="col">
                 <div className="row d-flex justify-content-center row-cols-lg-5 row-cols-md-2 row-cols-2">
                   <ProposalsCard
-                    tooltip="Bus and subway services"
+                    tooltip="Bus hours and routes information"
                     imgSrc="https://img.icons8.com/ios/50/000000/get-on-bus.png"
-                    text="Urban Buses"
+                    text="Buses"
                   />
                   <ProposalsCard
-                    tooltip="Buildings construction and maintenance"
-                    imgSrc="https://img.icons8.com/ios/50/000000/building-with-rooftop-terrace.png"
-                    text="Buidings"
-                  />
-                  <ProposalsCard
-                    tooltip="Traffic lights, streets way and traffic safety"
-                    imgSrc="https://img.icons8.com/external-itim2101-lineal-itim2101/50/000000/external-car-car-itim2101-lineal-itim2101-1.png"
-                    text="Traffic"
-                  />
-                  <ProposalsCard
-                    tooltip="Parks, squares and afforestation"
-                    imgSrc="https://img.icons8.com/ios/50/000000/deciduous-tree.png"
-                    text="Nature"
-                  />
-                  <ProposalsCard
-                    tooltip="Bike lanes and cyclist safety"
-                    imgSrc="https://img.icons8.com/dotty/50/000000/protected-bike-lane.png"
-                    text="Cycling"
-                  />
-                  <ProposalsCard
-                    tooltip="Streets maintenance"
-                    imgSrc="https://img.icons8.com/ios/50/000000/crossroad.png"
-                    text="Streets"
-                  />
-                  <ProposalsCard
-                    tooltip="Trains stations, lines, maintenance..."
+                    tooltip="Subway information"
                     imgSrc="https://img.icons8.com/ios/50/000000/train-platform.png"
-                    text="Trains"
+                    text="Subway"
                   />
                   <ProposalsCard
-                    tooltip="Schools, colleges and universitys"
-                    imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
+                    tooltip="Taxes consulting and payment"
+                    imgSrc="https://img.icons8.com/ios/50/000000/general-ledger.png"
+                    text="Taxes"
+                  />
+                  <ProposalsCard
+                    tooltip="Employment Office"
+                    imgSrc="https://img.icons8.com/ios/50/000000/parse-from-clipboard.png"
+                    text="Employment"
+                  />
+                  <ProposalsCard
+                    tooltip="Education office"
+                    imgSrc="https://img.icons8.com/ios/50/000000/book-and-pencil.png"
                     text="Education"
                   />
                   <ProposalsCard
-                    tooltip="Schools, colleges and universitys"
-                    imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
-                    text="Education"
+                    tooltip="Police Office"
+                    imgSrc="https://img.icons8.com/ios/50/000000/police-badge.png"
+                    text="Police"
                   />
                   <ProposalsCard
-                    tooltip="Schools, colleges and universitys"
-                    imgSrc="https://img.icons8.com/pastel-glyph/50/000000/student-male--v2.png"
-                    text="Education"
+                    tooltip="Fire Department"
+                    imgSrc="https://img.icons8.com/ios/50/000000/fire-hydrant.png"
+                    text="Fire Dpt"
+                  />
+                  <ProposalsCard
+                    tooltip="Health"
+                    imgSrc="https://img.icons8.com/ios/50/000000/hospital-3.png"
+                    text="Health"
+                  />
+                  <ProposalsCard
+                    tooltip="Culture"
+                    imgSrc="https://img.icons8.com/ios/50/000000/theatre-mask.png"
+                    text="Culture"
+                  />
+                  <ProposalsCard
+                    tooltip="Sports"
+                    imgSrc="https://img.icons8.com/ios/50/000000/olympic-rings.png"
+                    text="Sports"
                   />
                 </div>
               </div>
