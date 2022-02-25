@@ -1,0 +1,71 @@
+#proposal_title {
+  color: #023047;
+  font-family: Open Sans;
+  font-size: large;
+  font-weight: bold;
+}
+
+.table_header {
+  color: #023047;
+  font-family: Ubuntu;
+  font-size: small;
+}
+
+.table_content {
+  color: #010b13;
+  font-family: Open Sans;
+  font-size: small;
+  /* border: solid 1px #e5e5e5; */
+
+}
+
+#btn_col_header {
+  color: white;
+}
+
+#btn_col {
+  background: #f88500;
+  color: #e5e5e5;
+  border: #f88500;
+  font-family: Ubuntu;
+  font-size: small;
+}
+
+#btn_col:hover {
+  background: #ffb703 !important;
+}
+
+.proposals_status_pending{
+    color: #010b13;
+    font-family: Open Sans;
+    font-size: small;
+    border: solid 1px #e5e5e5;
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.proposals_status_approved{
+    color: #010b13;
+    font-family: Open Sans;
+    font-size: small;
+    border: solid 1px #e5e5e5;
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+.proposals_status_rejected{
+    color: #010b13;
+     font-family: Open Sans;
+  font-size: small;
+  border: solid 1px #e5e5e5;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.table{
+  --bs-table-hover-bg: #023047;
+  --bs-table-hover-color: #E5E5E5;
+
+}
+
+/* .table-responsive-md{
+width: 100%;
+overflow-x: auto; 
+} */

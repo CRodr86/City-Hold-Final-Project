@@ -1,0 +1,29 @@
+#selector_wrapper{
+    background: #e5e5e5;
+    color: #023047;
+    font-family: Open Sans;
+}
+
+.each_button{
+    background: #023047;
+    color: #e5e5e5;
+    border-color: #023047;
+}
+
+.each_button:hover{
+    background: #F88500;
+    border-color: #F88500;
+    color: #023047;
+    font-weight: bolder;
+}
+
+.btn-check:checked+ .each_button{
+    background: #F88500;
+    border-color: #F88500;
+    color: #023047;
+    font-weight: bolder;
+}
+
+.btn-check:focus+ .each_button{
+    box-shadow: 0 0 0 0.25rem rgba(2, 48, 71, 0.541);
+}

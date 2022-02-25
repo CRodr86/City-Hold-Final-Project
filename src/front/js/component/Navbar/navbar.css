@@ -1,0 +1,27 @@
+.navbar {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: medium;
+}
+
+#dropdownMenuLink {
+  font-family: Ubuntu, sans-serif;
+  /* font-size: 18px; */
+  color: white !important;
+  width: 150px;
+  height: 35px;
+  background-color: #f88500;
+  letter-spacing: 1px;
+}
+#dropdownMenuLink:hover {
+  background: #ffb703;
+}
+
+.dropdown-menu {
+  background-color: #e5e5e5;
+}
+
+.dropdown-menu > li > a {
+  font-family: "Open Sans", sans-serif;
+  color: #023047;
+}
