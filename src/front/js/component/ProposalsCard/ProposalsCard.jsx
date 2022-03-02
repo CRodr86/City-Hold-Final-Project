@@ -14,9 +14,12 @@ const ProposalsCard = (props) => {
         <input
           type="radio"
           className="btn-check"
-          name="options"
+          name={props.name}
           id={props.inputId}
           autocomplete="off"
+          checked={props.checked}
+          value={props.value}
+          onChange={props.onChange}
         />
         <label className="btn cardButton" htmlFor={props.labelFor}>
           <div className="card-body">
@@ -36,6 +39,10 @@ ProposalsCard.propTypes = {
   imgSrc: PropTypes.string,
   text: PropTypes.string,
   class: PropTypes.string,
+  name: PropTypes.string,
+  checked: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.string,
 };
 
 export default ProposalsCard;
