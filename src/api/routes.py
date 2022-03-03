@@ -106,7 +106,7 @@ def get_user_proposal(proponent_id):
 @api.route('/proposal', methods=['POST'])
 def create_proposal():
     request_body = request.get_json()
-    new_proposal = Proposal(id= request_body["id"], area= request_body["area"], proposal_type= request_body["proposal_type"], date= request_body["date"], description= request_body["description"], documents= request_body["documents"], document_type= request_body["document_type"], document_description= request_body["document_description"], contact_by= request_body["contact_by"], confirmation_by= request_body["confirmation_by"], proponent_id= request_body["proponent_id"])
+    new_proposal = Proposal(area= request_body["area"], proposal_type= request_body["proposal_type"], date= request_body["date"], description= request_body["description"], documents= request_body["documents"], document_type= request_body["document_type"], document_description= request_body["document_description"], contact_by= request_body["contact_by"], confirmation_by= request_body["confirmation_by"], proponent_id= request_body["proponent_id"])
     db.session.add(new_proposal)
     db.session.commit()
     return jsonify(request_body), 201

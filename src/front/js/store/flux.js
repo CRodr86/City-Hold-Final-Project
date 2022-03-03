@@ -122,7 +122,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       createProposal: async (
-        // id,
         area,
         proposal_type,
         date,
@@ -141,7 +140,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             Accept: "application/json",
           },
           body: JSON.stringify({
-            // id: id,
             area: area,
             proposal_type: proposal_type,
             date: date,
@@ -162,20 +160,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
           const data = await resp.json();
           console.log("this came from backend", data);
-          // setStore({
-          //   id: data.id,
-          //   area: data.area,
-          //   proposal_type: data.proposal_type,
-          //   date: data.date,
-          //   description: data.description,
-          //   documents: data.mobilePhone,
-          //   document_type: data.document_type,
-          //   document_description: data.document_description,
-          //   contact_by: data.contact_by,
-          //   confirmation_by: data.confirmation_by,
-          //   proponent_id: data.proponent_id,
-          // });
-          // return true;
+          setStore({
+            area: data.area,
+            proposal_type: data.proposal_type,
+            date: data.date,
+            description: data.description,
+            documents: data.mobilePhone,
+            document_type: data.document_type,
+            document_description: data.document_description,
+            contact_by: data.contact_by,
+            confirmation_by: data.confirmation_by,
+            proponent_id: data.proponent_id,
+          });
+          return true;
         } catch (error) {
           console.error("There has been an error", error);
         }
