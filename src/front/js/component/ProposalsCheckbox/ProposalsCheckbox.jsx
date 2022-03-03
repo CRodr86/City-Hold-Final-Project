@@ -5,7 +5,7 @@ const ProposalsCheckbox = (props) => {
   return (
     <>
       {" "}
-      <label className={props.upperlabelClassName}>
+      <label className={props.upperLabelClassName}>
         {props.upperLabelText}
       </label>
       <div className={props.divClassName}>
@@ -55,6 +55,7 @@ ProposalsCheckbox.propTypes = {
   elementLabelClassName: PropTypes.string,
   htmlFor: PropTypes.string,
   elementText: PropTypes.string,
+  upperLabelClassName: PropTypes.string,
 };
 
 export default ProposalsCheckbox;

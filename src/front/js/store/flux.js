@@ -44,7 +44,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await resp.json();
           console.log("this came from backend", data);
           sessionStorage.setItem("jwt-token", data.token);
-          setStore({ token: data.token, name: data.name, lastname: data.lastname, email: data.email, homePhone: data.homePhone, mobilePhone: data.mobilePhone, address1: data.address1, zipCode: data.zipCode });
+          setStore({
+            token: data.token,
+            name: data.name,
+            lastname: data.lastname,
+            email: data.email,
+            homePhone: data.homePhone,
+            mobilePhone: data.mobilePhone,
+            address1: data.address1,
+            zipCode: data.zipCode,
+          });
           return true;
         } catch (error) {
           console.error("There has been an error", error);
@@ -53,7 +62,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       logout: () => {
         sessionStorage.removeItem("jwt-token");
-        setStore({ token: null, name: null, lastname: null, email:null, homePhone:null, mobilePhone:null, address1: null, zipCode: null });
+        setStore({
+          token: null,
+          name: null,
+          lastname: null,
+          email: null,
+          homePhone: null,
+          mobilePhone: null,
+          address1: null,
+          zipCode: null,
+        });
       },
 
       createNewUser: async (
@@ -104,6 +122,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       createProposal: async (
+        // id,
         area,
         proposal_type,
         date,
@@ -112,7 +131,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         document_type,
         document_description,
         contact_by,
-        confirmation_by
+        confirmation_by,
+        proponent_id
       ) => {
         const opts = {
           method: "POST",
@@ -121,6 +141,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             Accept: "application/json",
           },
           body: JSON.stringify({
+            // id: id,
             area: area,
             proposal_type: proposal_type,
             date: date,
@@ -130,6 +151,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             document_description: document_description,
             contact_by: contact_by,
             confirmation_by: confirmation_by,
+            proponent_id: proponent_id,
           }),
           mode: "cors",
         };
@@ -138,14 +160,22 @@ const getState = ({ getStore, getActions, setStore }) => {
             process.env.BACKEND_URL + "/api/proposal",
             opts
           );
-
-          // if (resp.status !== 200) {
-          //   alert("An error has ocurred");
-          //   return false;
-          // }
           const data = await resp.json();
           console.log("this came from backend", data);
-          // setStore(data)
+          // setStore({
+          //   id: data.id,
+          //   area: data.area,
+          //   proposal_type: data.proposal_type,
+          //   date: data.date,
+          //   description: data.description,
+          //   documents: data.mobilePhone,
+          //   document_type: data.document_type,
+          //   document_description: data.document_description,
+          //   contact_by: data.contact_by,
+          //   confirmation_by: data.confirmation_by,
+          //   proponent_id: data.proponent_id,
+          // });
+          // return true;
         } catch (error) {
           console.error("There has been an error", error);
         }

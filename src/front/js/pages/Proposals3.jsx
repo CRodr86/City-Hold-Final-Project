@@ -58,7 +58,7 @@ const Proposals3 = () => {
     setDocument_Description("");
     setContact_By("");
     setConfirmation_By("");
-    history.push("/proposals-4");
+    history.push("/proposals-5");
   };
 
   return (
@@ -66,7 +66,9 @@ const Proposals3 = () => {
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
         <div className="row d-flex justify-content-center pt-5">
           <div className="col-8 col-md-6 col-lg-4">
-            <div className="position-relative m-4">
+            {/* Deleted stepper because we only have one page of form*/}
+
+            {/* <div className="position-relative m-4">
               <div className="progress stepperProgress">
                 <div
                   className="progress-bar stepperProgress-bar"
@@ -90,14 +92,18 @@ const Proposals3 = () => {
                   stepLabel="3"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="row d-flex justify-content-center mt-1">
           <div className="col-8 text-center">
             <h3 id="proposals1Header">
-              A detailed description and backup documentation will help us evaluate your proposal
+              Please fill the following form to process your proposal
             </h3>
+            <h6 id="proposals1Header">
+              Keep in mind that a detailed description and backup documentation
+              will help us evaluate your proposal
+            </h6>
           </div>
         </div>
         {/* Area cards input */}
@@ -266,7 +272,7 @@ const Proposals3 = () => {
               />
             </div>
             {/* Document attachment input */}
-            <div className="row mt-1">
+            <div className="row mt-3">
               <div className="col">
                 <p id="areaP">Documents</p>
               </div>
@@ -308,30 +314,55 @@ const Proposals3 = () => {
                 value1="Text"
                 value2="Photo"
                 value3="Video"
+                selected1={document_type === "Text"}
+                selected2={document_type === "Photo"}
+                selected3={document_type === "Video"}
+                valueName1="1"
+                valueName2="2"
+                valueName3="3"
+                onChange={(e) => setDocument_Type(e.target.value)}
               />
             </div>
             {/* Document description input */}
             <div className="row">
-              <TextArea label="Please provide a description of the image or video" />
+              <TextArea
+                label="Please provide a description of the image or video"
+                value={document_description}
+                onChange={(e) => setDocument_Description(e.target.value)}
+              />
             </div>
             {/* How to contact user input */}
-            <div className="row">
-              <div className="col-md-6">
-                <SelectMenu
-                  label="You would like to receive"
-                  class="form-select border-0"
-                  value1="Email"
-                  value2="SMS"
-                  value3="WhatsApp message"
-                />
-              </div>
+            <div className="row mt-3">
               <div className="col-md-6">
                 <SelectMenu
                   label="Contact me by"
                   class="form-select border-0"
-                  value1="Phone"
+                  value1="Email"
+                  value2="Phone"
+                  value3="WhatsApp"
+                  valueName1="1"
+                  valueName2="2"
+                  valueName3="3"
+                  selected1={contact_by === "Email"}
+                  selected2={contact_by === "Phone"}
+                  selected3={contact_by === "WhatsApp"}
+                  onChange={(e) => setContact_By(e.target.value)}
+                />
+              </div>
+              <div className="col-md-6">
+                <SelectMenu
+                  label="Recieve confirmation by"
+                  class="form-select border-0"
+                  value1="SMS"
                   value2="Email"
                   value3="WhatsApp"
+                  valueName1="1"
+                  valueName2="2"
+                  valueName3="3"
+                  selected1={confirmation_by === "SMS"}
+                  selected2={confirmation_by === "Email"}
+                  selected3={confirmation_by === "WhatsApp"}
+                  onChange={(e) => setConfirmation_By(e.target.value)}
                 />
               </div>
             </div>
@@ -339,15 +370,10 @@ const Proposals3 = () => {
         </div>
         <div className="row d-flex justify-content-center mt-4 pb-5">
           <div className="col-3">
-            <div className="d-flex justify-content-start">
-              <MainButton buttonText="Back" to="/proposals" />
-            </div>
-          </div>
-          <div className="col-3">
-            <div className="d-flex justify-content-end">
+            <div className="d-flex justify-content-center">
               <MainButton
-                buttonText="Next"
-                to="/proposals-4"
+                buttonText="Submit"
+                to="/proposals-5"
                 onClick={handleProposal}
               />
             </div>
