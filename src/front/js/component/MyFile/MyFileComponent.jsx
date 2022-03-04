@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../store/appContext.js";
 import "./myFile.css";
 import PropTypes from "prop-types";
 import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
@@ -9,6 +10,7 @@ import MyFilePassword from "./MyFilePassword.jsx";
 import MyProposalsFull from "./MyProposalsFull.jsx";
 
 const MyFile = (props) => {
+  const { store, actions } = useContext(Context);
   return (
     <>
       <div className="container h-100 w-75 p-0 rounded" id="myfile_wrapper">
@@ -79,7 +81,7 @@ const MyFile = (props) => {
               role="tabpanel"
               aria-labelledby="v-pills-messages-tab"
             >
-              <MyProposalsFull />
+              {!store.area ? <MyProposalsEmpty /> : <MyProposalsFull />}
             </div>
             <div
               className="tab-pane fade"

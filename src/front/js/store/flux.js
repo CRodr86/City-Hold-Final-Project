@@ -44,7 +44,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await resp.json();
           console.log("this came from backend", data);
           sessionStorage.setItem("jwt-token", data.token);
-          setStore({ token: data.token, name: data.name, lastname: data.lastname, email: data.email, homePhone: data.homePhone, mobilePhone: data.mobilePhone, address1: data.address1, zipCode: data.zipCode });
+          setStore({
+            token: data.token,
+            name: data.name,
+            lastname: data.lastname,
+            email: data.email,
+            homePhone: data.homePhone,
+            mobilePhone: data.mobilePhone,
+            address1: data.address1,
+            zipCode: data.zipCode,
+          });
           return true;
         } catch (error) {
           console.error("There has been an error", error);
@@ -53,7 +62,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       logout: () => {
         sessionStorage.removeItem("jwt-token");
-        setStore({ token: null, name: null, lastname: null, email:null, homePhone:null, mobilePhone:null, address1: null, zipCode: null });
+        setStore({
+          token: null,
+          name: null,
+          lastname: null,
+          email: null,
+          homePhone: null,
+          mobilePhone: null,
+          address1: null,
+          zipCode: null,
+        });
       },
 
       createNewUser: async (
@@ -114,11 +132,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         contact_by,
         confirmation_by
       ) => {
+        const store = getStore();
+
         const opts = {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            Authorization: "Bearer " + store.token,
           },
           body: JSON.stringify({
             area: area,
@@ -138,46 +159,34 @@ const getState = ({ getStore, getActions, setStore }) => {
             process.env.BACKEND_URL + "/api/proposal",
             opts
           );
-
-          // if (resp.status !== 200) {
-          //   alert("An error has ocurred");
-          //   return false;
-          // }
+          if (resp.status !== 201) {
+            alert("Something went wrong");
+            return false;
+          }
           const data = await resp.json();
           console.log("this came from backend", data);
-          // setStore(data)
+          setStore({
+            area: data.area,
+            proposal_type: data.proposal_type,
+            date: data.date,
+            description: data.description,
+            documents: data.mobilePhone,
+            document_type: data.document_type,
+            document_description: data.document_description,
+            contact_by: data.contact_by,
+            confirmation_by: data.confirmation_by,
+          });
+          return true;
         } catch (error) {
           console.error("There has been an error", error);
         }
       },
 
-      // createNewUser: (name, lastname, email, password, homePhone, mobilePhone, address1, address2, zipCode, yearsOfResidence) =>{
-      //   fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
-      //       			method: "POST",
-      //       			body: JSON.stringify({name: name, lastname: lastname, email: email, password: password, homePhone:homePhone, mobilePhone:mobilePhone, address1:address1, address2:address2, zipCode:zipCode, yearsOfResidence:yearsOfResidence}),
-      //             mode: "no-cors",
-      //       			headers: { "Content-Type": "application/json",
-      //             "Accept": "application/json" }
-
-      //       		})
-      //       			.then(resp => {
-      //               console.log(resp)
-      //       				resp.json();
-
-      //       			})
-      //       			.then(data => {
-      //       				console.log(data);
-      //       			})
-      //       			.catch(error => {
-      //       				console.log("Error", error);
-      //       			});
-      // },
-
       getMessage: () => {
         // const store = getStore();
         // const opts = {
         //   headers: {
-        //     "Authorization" : "Bearer" = store.token
+        //     "Authorization" : "Bearer " + store.token
         //   }
         // }
         // fetching data from the backend

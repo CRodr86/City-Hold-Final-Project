@@ -104,12 +104,31 @@ def get_user_proposal(proponent_id):
         return jsonify(proposal_x.serialize()), 200
 
 @api.route('/proposal', methods=['POST'])
+@jwt_required()
 def create_proposal():
-    request_body = request.get_json()
-    new_proposal = Proposal(area= request_body["area"], proposal_type= request_body["proposal type"], date= request_body["date"], description= request_body["description"], documents= request_body["documents"], document_type= request_body["document type"], document_description= request_body["document description"], contact_by= request_body["contact by"], confirmation_by= request_body["confirmation by"])
+    area, proposal_type, date, description, documents, document_type, document_description, contact_by, confirmation_by = request.json.get(
+        "area", None
+    ), request.json.get(
+        "proposal_type", None
+    ), request.json.get(
+        "date", None
+    ), request.json.get(
+        "description", None
+    ), request.json.get(
+        "documents", None
+    ), request.json.get(
+        "document_type", None
+    ), request.json.get(
+        "document_description", None
+    ), request.json.get(
+        "contact_by", None
+    ), request.json.get(
+        "confirmation_by", None
+    )
+    new_proposal = Proposal(area= area, proposal_type= proposal_type, date= date, description= description, documents= documents, document_type= document_type, document_description= document_description, contact_by= contact_by, confirmation_by= confirmation_by)
     db.session.add(new_proposal)
     db.session.commit()
-    return jsonify(request_body), 201
+    return jsonify(new_proposal.serialize()), 201
 
 @api.route('/proposal/<int:id>', methods=['DELETE'])
 def delete_proposal(id):

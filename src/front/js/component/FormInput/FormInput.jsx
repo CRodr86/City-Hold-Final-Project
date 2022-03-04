@@ -24,6 +24,7 @@ const FormInput = (props) => {
         name={props.name}
         required={props.required}
 
+
       />
     </div>
   );

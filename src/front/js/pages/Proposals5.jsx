@@ -5,6 +5,7 @@ import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
 import { HashLink } from "react-router-hash-link";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
+
 let bgImg = {
   background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
   backgroundPosition: `center`,
@@ -13,36 +14,14 @@ let bgImg = {
 };
 
 const Proposals5 = () => {
+
+//  const { store, actions } = useContext(Context);
+
   return (
     <>
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
         <div className="row d-flex justify-content-center pt-5">
           <div className="col-8 col-md-6 col-lg-4">
-            <div className="position-relative m-4">
-              <div className="progress stepperProgress">
-                <div
-                  className="progress-bar stepperProgress-bar"
-                  role="progressbar"
-                  aria-valuenow="0"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-              <div className="d-flex justify-content-between">
-                <StepperItem
-                  stepClass="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                  stepLabel="1"
-                />
-                <StepperItem
-                  stepClass="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                  stepLabel="2"
-                />
-                <StepperItem
-                  stepClass="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelActive"
-                  stepLabel="3"
-                />
-              </div>
-            </div>
           </div>
         </div>
         <div className="row d-flex justify-content-center mt-1">
@@ -57,7 +36,7 @@ const Proposals5 = () => {
             <div className="row mt-1">
               <div className="col-12 mb-5" id="proposals5Text">
                 <p>You will recieve an email with the confirmation.</p>
-                <p> Your proposal Id is: 654879</p>
+                <p> Your proposal Id is: </p>
                 <p>
                   If you have any questions or in any time you want to update or
                   add additional information to your proposal you can access
@@ -69,37 +48,14 @@ const Proposals5 = () => {
                 </p>
               </div>
             </div>
-            <div className="row">
-              <div className="col-md-6">
-                <SelectMenu
-                  label="You would like to receive"
-                  class="form-select border-0"
-                  value1="Email"
-                  value2="SMS"
-                  value3="WhatsApp message"
-                />
-              </div>
-              <div className="col-md-6">
-                <SelectMenu
-                  label="Contact me by"
-                  class="form-select border-0"
-                  value1="Phone"
-                  value2="Email"
-                  value3="WhatsApp"
-                />
-              </div>
-            </div>
           </div>
         </div>
         <div className="row d-flex justify-content-center mt-4 pb-5">
           <div className="col-3">
-            <div className="d-flex justify-content-start">
-              <MainButton buttonText="Back" to="/proposals-4" />
-            </div>
           </div>
           <div className="col-3">
             <div className="d-flex justify-content-end">
-              <MainButton buttonText="Submit" to="/" />
+              <MainButton buttonText="Return Home" to="/" />
             </div>
           </div>
         </div>

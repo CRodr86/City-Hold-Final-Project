@@ -9,6 +9,8 @@ const TextArea = (props) => {
         className="form-control"
         placeholder="Hint Text"
         id="textarea"
+        onChange={props.onChange}
+        value={props.value}
       ></textarea>
     </div>
   );
@@ -16,6 +18,8 @@ const TextArea = (props) => {
 
 TextArea.propTypes = {
   label: PropTypes.string,
+  onChange: PropTypes.string,
+  value: PropTypes.string,
 };
 
 export default TextArea;

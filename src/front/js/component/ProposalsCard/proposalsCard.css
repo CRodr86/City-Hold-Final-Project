@@ -9,3 +9,26 @@
 .btn-check:focus + .cardButton {
   box-shadow: 0 0 0 0.25rem rgba(2, 48, 71, 0.541);
 }
+
+#getFileLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  background: #ffb703;
+}
+
+#getFileLink {
+ 
+  background: #f88500;
+  color: #e5e5e5;
+  border: #f88500;
+  padding: 10px;
+  border-radius: 7px;
+}
+/* #getFile{
+width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+} */
