@@ -61,14 +61,14 @@ class Proposal(db.Model):
         return {
             "id": self.id,
             "area": self.area,
-            "proposal type": self.proposal_type,
+            "proposal_type": self.proposal_type,
             "date": self.date,
             "description": self.description,
             "documents": self.documents,
-            "document type": self.document_type,
+            "document_type": self.document_type,
             "document_description": self.document_description,
             "contact_by": self.contact_by,
-            "confirmation by": self.confirmation_by,
+            "confirmation_by": self.confirmation_by,
             "proponent_id" : self.proponent_id,
             # "proponent" : self.proponent,
             # do not serialize the password, its a security breach

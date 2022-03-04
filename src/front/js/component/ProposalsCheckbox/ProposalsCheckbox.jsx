@@ -4,10 +4,6 @@ import PropTypes from "prop-types";
 const ProposalsCheckbox = (props) => {
   return (
     <>
-      {" "}
-      <label className={props.upperLabelClassName}>
-        {props.upperLabelText}
-      </label>
       <div className={props.divClassName}>
         <input
           className={props.inputClassName}

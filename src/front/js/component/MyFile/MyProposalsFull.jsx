@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./myProposals.css";
 import PropTypes from "prop-types";
 import MainButton from "../MainButton/MainButton.jsx";
 import { HashLink } from "react-router-hash-link";
+import { Context } from "../../store/appContext.js";
 
 const MyProposalsFull = (props) => {
+const { store, actions } = useContext(Context);
   return (
     <>
       <div className="row g-3 bg-white m-auto ps-5 pe-2 pb-5 text-start">
@@ -32,9 +34,9 @@ const MyProposalsFull = (props) => {
             </thead>
             <tbody>
               <tr className="table_content">
-                <td scope="row" data-title="Date">01/01/2022</td>
+                <td scope="row" data-title="Date">{store.date}</td>
                 <td data-title="Id">658742</td>
-                <td data-title="Area">Education</td>
+                <td data-title="Area">{store.area}</td>
                 <td data-title="Status" className="text-warning fw-bold">Pending</td>
                 <td data-title="Info" >
                   <HashLink to="/myfiledetails">
@@ -49,7 +51,7 @@ const MyProposalsFull = (props) => {
                   </HashLink>
                 </td>
               </tr>
-              <tr className="table_content">
+              {/* <tr className="table_content">
                 <td scope="row" data-title="Date">10/09/2021</td>
                 <td data-title="Id">632154</td>
                 <td data-title="Area">Transport</td>
@@ -84,13 +86,13 @@ const MyProposalsFull = (props) => {
                     </button>
                   </HashLink>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
 
         <div className="col text-center mt-4">
-          <MainButton buttonText="New proposal" to="#" />
+          <MainButton buttonText="New proposal" to="/proposals-3" />
         </div>
       </div>
     </>

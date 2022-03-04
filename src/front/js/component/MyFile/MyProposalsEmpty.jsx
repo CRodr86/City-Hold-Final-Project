@@ -15,7 +15,7 @@ const MyProposalsEmpty = (props) => {
         <div className="col-md-12 text-center">
           <p id="proposal_title">You have not sent any proposals yet</p>
         </div>
-        <div className="col text-center mt-4"><MainButton buttonText="New proposal" to="#"/></div>
+        <div className="col text-center mt-4"><MainButton buttonText="New proposal" to="/proposals-3"/></div>
       </div>
     </>
   );

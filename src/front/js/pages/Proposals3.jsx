@@ -220,9 +220,8 @@ const Proposals3 = () => {
             <div className="row">
               <div className="col-6">
                 <div className="mb-3">
+                  <label className="form-label">Select a type</label>
                   <ProposalsCheckbox
-                    upperLabelClassName="form-label"
-                    upperLabelText="Select a type"
                     divClassName="form-check"
                     inputClassName="form-check-input"
                     type="checkbox"
@@ -353,14 +352,14 @@ const Proposals3 = () => {
                 <SelectMenu
                   label="Recieve confirmation by"
                   class="form-select border-0"
-                  value1="SMS"
-                  value2="Email"
+                  value1="Email"
+                  value2="SMS"
                   value3="WhatsApp"
                   valueName1="1"
                   valueName2="2"
                   valueName3="3"
-                  selected1={confirmation_by === "SMS"}
-                  selected2={confirmation_by === "Email"}
+                  selected1={confirmation_by === "Email"}
+                  selected2={confirmation_by === "SMS"}
                   selected3={confirmation_by === "WhatsApp"}
                   onChange={(e) => setConfirmation_By(e.target.value)}
                 />
@@ -373,7 +372,7 @@ const Proposals3 = () => {
             <div className="d-flex justify-content-center">
               <MainButton
                 buttonText="Submit"
-                to="/proposals-5"
+                to="#"
                 onClick={handleProposal}
               />
             </div>

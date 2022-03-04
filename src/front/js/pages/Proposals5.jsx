@@ -1,11 +1,11 @@
-import React, { useContext} from "react";
+import React from "react";
 import "../../styles/proposals5.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
 import { HashLink } from "react-router-hash-link";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
-import { Context } from "../store/appContext.js";
+
 let bgImg = {
   background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
   backgroundPosition: `center`,
@@ -15,7 +15,7 @@ let bgImg = {
 
 const Proposals5 = () => {
 
- const { store, actions } = useContext(Context);
+//  const { store, actions } = useContext(Context);
 
   return (
     <>
@@ -36,7 +36,7 @@ const Proposals5 = () => {
             <div className="row mt-1">
               <div className="col-12 mb-5" id="proposals5Text">
                 <p>You will recieve an email with the confirmation.</p>
-                <p> Your proposal Id is: {store.id}</p>
+                <p> Your proposal Id is: </p>
                 <p>
                   If you have any questions or in any time you want to update or
                   add additional information to your proposal you can access
