@@ -39,9 +39,9 @@ const ProposalsCheckbox = (props) => {
 
 ProposalsCheckbox.propTypes = {
   name: PropTypes.string,
-  checked: PropTypes.string,
+  checked: PropTypes.bool,
   value: PropTypes.string,
-  onChange: PropTypes.string,
+  onChange: PropTypes.func,
   labelClassName: PropTypes.string,
   labelText: PropTypes.string,
   divClassName: PropTypes.string,

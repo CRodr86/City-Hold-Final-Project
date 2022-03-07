@@ -11,13 +11,13 @@ const SelectMenu = (props) => {
         onChange={props.onChange}
       >
         <option selected={props.selected}>Open this select menu</option>
-        <option valueName={props.valueName1} selected={props.selected1}>
+        <option valuename={props.valueName1} selected={props.selected1}>
           {props.value1}
         </option>
-        <option valueName={props.valueName2} selected={props.selected2}>
+        <option valuename={props.valueName2} selected={props.selected2}>
           {props.value2}
         </option>
-        <option valueName={props.valueName3} selected={props.selected3}>
+        <option valuename={props.valueName3} selected={props.selected3}>
           {props.value3}
         </option>
       </select>
@@ -35,10 +35,10 @@ SelectMenu.propTypes = {
   valueName1: PropTypes.string,
   valueName2: PropTypes.string,
   valueName3: PropTypes.string,
-  onChange: PropTypes.string,
-  selected1: PropTypes.string,
-  selected2: PropTypes.string,
-  selected3: PropTypes.string,
+  onChange: PropTypes.func,
+  selected1: PropTypes.bool,
+  selected2: PropTypes.bool,
+  selected3: PropTypes.bool,
 };
 
 export default SelectMenu;

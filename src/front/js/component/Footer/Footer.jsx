@@ -44,6 +44,7 @@ const Footer = () => {
                 toggle="modal"
                 target="#signInModal"
                 pageName="Sign up"
+to="#"
               />
             </ul>
           </div> 

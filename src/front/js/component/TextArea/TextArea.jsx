@@ -18,7 +18,7 @@ const TextArea = (props) => {
 
 TextArea.propTypes = {
   label: PropTypes.string,
-  onChange: PropTypes.string,
+  onChange: PropTypes.func,
   value: PropTypes.string,
 };
 

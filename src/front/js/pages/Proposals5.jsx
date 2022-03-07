@@ -1,8 +1,6 @@
 import React from "react";
 import "../../styles/proposals5.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
-import StepperItem from "../component/StepperItem/StepperItem.jsx";
-import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
 import { HashLink } from "react-router-hash-link";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
 
@@ -14,8 +12,6 @@ let bgImg = {
 };
 
 const Proposals5 = () => {
-
-//  const { store, actions } = useContext(Context);
 
   return (
     <>

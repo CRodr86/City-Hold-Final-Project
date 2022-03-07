@@ -16,7 +16,7 @@ const ProposalsCard = (props) => {
           className="btn-check"
           name={props.name}
           id={props.inputId}
-          autocomplete="off"
+          autoComplete="off"
           checked={props.checked}
           value={props.value}
           onChange={props.onChange}
@@ -40,9 +40,9 @@ ProposalsCard.propTypes = {
   text: PropTypes.string,
   class: PropTypes.string,
   name: PropTypes.string,
-  checked: PropTypes.string,
+  checked: PropTypes.bool,
   value: PropTypes.string,
-  onChange: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default ProposalsCard;

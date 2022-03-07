@@ -95,9 +95,9 @@ def get_one_proposal(id):
     else:
         return jsonify(proposal_x.serialize()), 200
 
-@api.route('/proposalofuser/<int:proponent_id>', methods=['GET'])
+@api.route('/proposalofuser/<int:user_id>', methods=['GET'])
 def get_user_proposal(proponent_id):
-    proposal_x = Proposal.query.get(proponent_id)
+    proposal_x = db
     if proposal_x is None:
         return 'User does not have any proposals', 404
     else:
@@ -125,7 +125,7 @@ def create_proposal():
     ), request.json.get(
         "confirmation_by", None
     )
-    new_proposal = Proposal(area= area, proposal_type= proposal_type, date= date, description= description, documents= documents, document_type= document_type, document_description= document_description, contact_by= contact_by, confirmation_by= confirmation_by)
+    new_proposal = Proposal(area= area, proposal_type= proposal_type, date= date, description= description, documents= documents, document_type= document_type, document_description= document_description, contact_by= contact_by, confirmation_by= confirmation_by, user_id= user_id)
     db.session.add(new_proposal)
     db.session.commit()
     return jsonify(new_proposal.serialize()), 201

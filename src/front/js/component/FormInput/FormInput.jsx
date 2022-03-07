@@ -40,10 +40,10 @@ FormInput.propTypes = {
   inputPlaceholder: PropTypes.string,
   inputAriaLabel: PropTypes.string,
   inputId: PropTypes.string,
-  value: PropTypes.func,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   name: PropTypes.string,
-  required: PropTypes.boo,
+  required: PropTypes.bool,
 };
 
 export default FormInput;

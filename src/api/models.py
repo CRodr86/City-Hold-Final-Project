@@ -51,7 +51,8 @@ class Proposal(db.Model):
     document_description = db.Column(db.String(1000), unique=False, nullable=True)
     contact_by = db.Column(db.String(20), unique=False, nullable=False)
     confirmation_by = db.Column(db.String(20), unique=False, nullable=False)
-    proponent_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user= db.relationship('User')
   
 
     # def __repr__(self):

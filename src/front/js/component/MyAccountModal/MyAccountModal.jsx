@@ -38,6 +38,7 @@ const MyAccountModal = () => {
             inputClassName="form-control"
             inputId="formEmail"
             inputPlaceholder="Email"
+            
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
