@@ -11,9 +11,6 @@ const SelectMenu = (props) => {
         onChange={props.onChange}
       >
         <option selected={props.selected}>Open this select menu</option>
-        <option valuename={props.valueName1} selected={props.selected1}>
-          {props.value1}
-        </option>
         <option valuename={props.valueName2} selected={props.selected2}>
           {props.value2}
         </option>

@@ -8,9 +8,14 @@ import MyProfile from "./MyProfile.jsx";
 import MyProposalsEmpty from "./MyProposalsEmpty.jsx";
 import MyFilePassword from "./MyFilePassword.jsx";
 import MyProposalsFull from "./MyProposalsFull.jsx";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const MyFile = (props) => {
   const { store, actions } = useContext(Context);
+  const getMyProposals = () => {
+    actions.getProposals();
+  
+  };
   return (
     <>
       <div className="container h-100 w-75 p-0 rounded" id="myfile_wrapper">
@@ -54,6 +59,7 @@ const MyFile = (props) => {
               role="tab"
               aria-controls="v-pills-messages"
               aria-selected="false"
+              onClick={getMyProposals}
             >
               My proposals
             </button>

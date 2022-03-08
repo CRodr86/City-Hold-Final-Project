@@ -45,14 +45,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("this came from backend", data);
           sessionStorage.setItem("jwt-token", data.token);
           setStore({
-            token: data.user.token,
+            token: data.token,
             name: data.user.name,
             lastname: data.user.lastname,
             email: data.user.email,
-            homePhone: data.user.homePhone,
-            mobilePhone: data.user.mobilePhone,
+            homePhone: data.user.home_phone,
+            mobilePhone: data.user.mobile_phone,
             address1: data.user.address1,
-            zipCode: data.user.zipCode,
+            zipCode: data.user.zip_code,
           });
           return true;
         } catch (error) {
@@ -170,7 +170,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             proposal_type: data.proposal_type,
             date: data.date,
             description: data.description,
-            documents: data.mobilePhone,
+            documents: data.documents,
             document_type: data.document_type,
             document_description: data.document_description,
             contact_by: data.contact_by,
@@ -180,6 +180,36 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.error("There has been an error", error);
         }
+      },
+
+      getProposals: () => {
+        const store = getStore();
+        const opts = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + store.token,
+          },
+        };
+        // fetching data from the backend
+        fetch(process.env.BACKEND_URL + "/api/proposalofuser", opts)
+          .then((resp) => resp.json())
+          .then((data) => {
+            const proposal = data.map((item) => {
+              return {
+                area: item.area,
+                proposal_type: item.proposal_type,
+                date: item.date,
+              };
+            });
+            console.log(proposal);
+            setStore({
+              proposal: proposal
+            });
+          })
+          .catch((error) =>
+            console.log("Error loading message from backend", error)
+          );
       },
 
       getMessage: () => {

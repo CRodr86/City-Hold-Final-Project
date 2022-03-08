@@ -101,8 +101,8 @@ def get_user_proposal():
     user_id = get_jwt_identity()
     print('user token', user_id)
     list_proposal = db.session.query(Proposal).filter(Proposal.proponent_id == user_id)
-    if len(list_proposal) == 0:
-        return jsonify([]), 200
+    # if len(list_proposal) == 0:
+    #     return jsonify([]), 200
     list_propsal_json = []
     for proposal in list_proposal:
         list_propsal_json.append(proposal.serialize())

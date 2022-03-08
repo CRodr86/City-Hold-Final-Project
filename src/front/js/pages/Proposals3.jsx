@@ -310,13 +310,10 @@ const Proposals3 = () => {
               <SelectMenu
                 label="Type of documents"
                 class="form-select border-0"
-                value1="Text"
                 value2="Photo"
                 value3="Video"
-                selected1={document_type === "Text"}
                 selected2={document_type === "Photo"}
                 selected3={document_type === "Video"}
-                valueName1="1"
                 valueName2="2"
                 valueName3="3"
                 onChange={(e) => setDocument_Type(e.target.value)}
@@ -350,7 +347,7 @@ const Proposals3 = () => {
               </div>
               <div className="col-md-6">
                 <SelectMenu
-                  label="Recieve confirmation by"
+                  label="Recieve information by"
                   class="form-select border-0"
                   value1="Email"
                   value2="SMS"
@@ -370,11 +367,7 @@ const Proposals3 = () => {
         <div className="row d-flex justify-content-center mt-4 pb-5">
           <div className="col-3">
             <div className="d-flex justify-content-center">
-              <MainButton
-                buttonText="Submit"
-                to="#"
-                onClick={handleProposal}
-              />
+              <MainButton buttonText="Submit" to="/#" onClick={handleProposal} />
             </div>
           </div>
         </div>
