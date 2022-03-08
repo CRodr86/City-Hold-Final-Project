@@ -95,17 +95,24 @@ def get_one_proposal(id):
     else:
         return jsonify(proposal_x.serialize()), 200
 
-@api.route('/proposalofuser/<int:user_id>', methods=['GET'])
-def get_user_proposal(proponent_id):
-    proposal_x = db
-    if proposal_x is None:
-        return 'User does not have any proposals', 404
-    else:
-        return jsonify(proposal_x.serialize()), 200
+@api.route('/proposalofuser', methods=['GET'])
+@jwt_required()
+def get_user_proposal():
+    user_id = get_jwt_identity()
+    print('user token', user_id)
+    list_proposal = db.session.query(Proposal).filter(Proposal.proponent_id == user_id)
+    if len(list_proposal) == 0:
+        return jsonify([]), 200
+    list_propsal_json = []
+    for proposal in list_proposal:
+        list_propsal_json.append(proposal.serialize())
+    return jsonify(list_propsal_json), 200
 
 @api.route('/proposal', methods=['POST'])
 @jwt_required()
 def create_proposal():
+    user_id = get_jwt_identity()
+    print(user_id)
     area, proposal_type, date, description, documents, document_type, document_description, contact_by, confirmation_by = request.json.get(
         "area", None
     ), request.json.get(
@@ -125,7 +132,7 @@ def create_proposal():
     ), request.json.get(
         "confirmation_by", None
     )
-    new_proposal = Proposal(area= area, proposal_type= proposal_type, date= date, description= description, documents= documents, document_type= document_type, document_description= document_description, contact_by= contact_by, confirmation_by= confirmation_by, user_id= user_id)
+    new_proposal = Proposal(area= area, proposal_type= proposal_type, date= date, description= description, documents= documents, document_type= document_type, document_description= document_description, contact_by= contact_by, confirmation_by= confirmation_by, proponent_id=user_id)
     db.session.add(new_proposal)
     db.session.commit()
     return jsonify(new_proposal.serialize()), 201
@@ -146,16 +153,11 @@ def delete_proposal(id):
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    name = request.json.get("name", None)
-    lastname = request.json.get("lastname", None)
-    homePhone = request.json.get("homePhone", None)
-    mobilePhone = request.json.get("mobilePhone", None)
-    address1 = request.json.get("address1", None)
-    zipCode = request.json.get("zipCode", None)
     user = User.query.filter_by(email=email, password=password).first()
     if user != None:
+        user_json = user.serialize()
         access_token = create_access_token(identity= user.id)
-        return jsonify({"token": access_token, "user": user.id, "name": user.name, "lastname": user.lastname, "homePhone": user.home_phone, "mobilePhone": user.mobile_phone, "address1":user.address1, "zipCode": user.zip_code, "email": user.email})
+        return jsonify({"token": access_token, "user": user_json })
     else:
         return jsonify({"msg": "Bad email or password"}), 401
         

@@ -45,14 +45,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("this came from backend", data);
           sessionStorage.setItem("jwt-token", data.token);
           setStore({
-            token: data.token,
-            name: data.name,
-            lastname: data.lastname,
-            email: data.email,
-            homePhone: data.homePhone,
-            mobilePhone: data.mobilePhone,
-            address1: data.address1,
-            zipCode: data.zipCode,
+            token: data.user.token,
+            name: data.user.name,
+            lastname: data.user.lastname,
+            email: data.user.email,
+            homePhone: data.user.homePhone,
+            mobilePhone: data.user.mobilePhone,
+            address1: data.user.address1,
+            zipCode: data.user.zipCode,
           });
           return true;
         } catch (error) {
