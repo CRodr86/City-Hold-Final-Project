@@ -12,15 +12,19 @@ const MyAccountModal = () => {
   const token = sessionStorage.getItem("jwt-token");
 
   const handleSignIn = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     actions.signIn(email, password);
     setEmail("");
     setPassword("");
   };
 
-  if (token && token != "" && token != undefined) {
-    history.push("/");
-  }
+  const handleEnterPress = (e) => {
+    if (e.key === "Enter") {
+      handleSignIn();
+      
+    }
+  };
+
   return (
     <>
       {token && token != "" && token != undefined ? (
@@ -38,7 +42,6 @@ const MyAccountModal = () => {
             inputClassName="form-control"
             inputId="formEmail"
             inputPlaceholder="Email"
-            
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -50,6 +53,7 @@ const MyAccountModal = () => {
             inputPlaceholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyUp={handleEnterPress}
           />
           <div className="d-flex justify-content-center mb-3">
             <button
@@ -57,6 +61,7 @@ const MyAccountModal = () => {
               className="btn btn-primary border-0 px-5"
               id="logInButton"
               onClick={handleSignIn}
+              
             >
               Log in
             </button>

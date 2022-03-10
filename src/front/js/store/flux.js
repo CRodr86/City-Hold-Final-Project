@@ -1,19 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      proposal: [],
       message: null,
-      demo: [
-        {
-          title: "FIRST",
-          background: "white",
-          initial: "white",
-        },
-        {
-          title: "SECOND",
-          background: "white",
-          initial: "white",
-        },
-      ],
     },
     actions: {
       exampleFunction: () => {
@@ -175,13 +164,44 @@ const getState = ({ getStore, getActions, setStore }) => {
             document_description: data.document_description,
             contact_by: data.contact_by,
             confirmation_by: data.confirmation_by,
+            id: data.id,
           });
           return true;
         } catch (error) {
           console.error("There has been an error", error);
         }
       },
-
+      // getProposals2: () => {
+      //   const store = getStore();
+      //   const opts = {
+      //     method: "GET",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Authorization: "Bearer " + store.token,
+      //     },
+      //   };
+      //   // fetching data from the backend
+      //   fetch(process.env.BACKEND_URL + "/api/proposalofuser", opts)
+      //     .then((resp) => resp.json())
+      //     .then((data) => {
+      //       const proposal = data.map((item) => {
+      //         return {
+      //           area: item.area,
+      //           proposal_type: item.proposal_type,
+      //           date: item.date,
+      //         };
+      //       });
+      //       setStore({
+      //         ...store,
+      //         proposal: proposal,
+      //       });
+      //       console.log(proposal);
+      //     })
+      //     .catch((error) =>
+      //       console.log("Error loading message from backend", error)
+      //     );
+      //   console.log("Hola estoy en proposal 2!");
+      // },
       getProposals: () => {
         const store = getStore();
         const opts = {
@@ -200,16 +220,69 @@ const getState = ({ getStore, getActions, setStore }) => {
                 area: item.area,
                 proposal_type: item.proposal_type,
                 date: item.date,
+                description: item.description,
+                proponent_id: item.proponent_id,
+                id: item.id,
               };
             });
             console.log(proposal);
             setStore({
-              proposal: proposal
+              ...store,
+              proposal: proposal,
             });
           })
           .catch((error) =>
             console.log("Error loading message from backend", error)
           );
+      },
+
+      getAllProposals: async () => {
+        const opts = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // Authorization: "Bearer " + store.token,
+          },
+        };
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/proposal",
+            opts
+          );
+          if (resp.status !== 200) {
+            alert("Something went wrong");
+            return false;
+          }
+          const data = await resp.json();
+          console.log(data);
+          setStore({
+            data: data,
+          });
+          return true;
+        } catch (error) {
+          console.error("There was an error ", error);
+        }
+
+        // // fetching data from the backend
+        // fetch(process.env.BACKEND_URL + "/api/proposal", opts)
+        //   .then((resp) => resp.json())
+        //   .then((data) => {
+        //     setStore({
+        //       area: data.area,
+        //       proposal_type: data.proposal_type,
+        //       date: data.date,
+        //       description: data.description,
+        //       documents: data.documents,
+        //       document_type: data.document_type,
+        //       document_description: data.document_description,
+        //       contact_by: data.contact_by,
+        //       confirmation_by: data.confirmation_by,
+        //     });
+        //     console.log(data);
+        //   })
+        //   .catch((error) =>
+        //     console.log("Error loading message from backend", error)
+        //   );
       },
 
       getMessage: () => {

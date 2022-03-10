@@ -22,6 +22,10 @@ import Services from "./pages/Services.jsx";
 import News from "./pages/News.jsx";
 import MyFileHome from "./pages/MyFileHome.jsx";
 import ThankYouSignIn from "./pages/ThankYouSignIn.jsx";
+import CityPrivateArea from "./pages/CityPrivateArea.jsx";
+import CityHome from "./pages/CityHome.jsx";
+import CreateVote from "./pages/CreateVote.jsx";
+import ReviewProposals from "./pages/ReviewProposals.jsx";
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -64,6 +68,10 @@ const Layout = () => {
           <Route exact path="/services" component={Services} />
           <Route exact path="/news" component={News} />
           <Route exact path="/welcome" component={ThankYouSignIn} />
+          <Route exact path="/cityprivate" component={CityPrivateArea} />
+          <Route exact path="/cityhome" component={CityHome} />
+          <Route exact path="/createvote" component={CreateVote} />
+          <Route exact path="/reviewproposals" component={ReviewProposals} />
         </Switch>
         <Footer />
       </BrowserRouter>

@@ -11,6 +11,7 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from flask_jwt_extended import JWTManager
+import cloudinary
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
@@ -20,6 +21,12 @@ app.url_map.strict_slashes = False
 
 app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET')
 jwt = JWTManager(app)
+
+
+app.config['CLOUD_NAME'] = os.environ.get("CLOUD_NAME")
+app.config['CLOUD_API_KEY'] = os.environ.get("CLOUD_API_KEY")
+app.config['CLOUD_API_SECRECT'] = os.environ.get("CLOUD_API_SECRECT")
+
 
 # database condiguration
 db_url = os.getenv("DATABASE_URL")
@@ -40,6 +47,15 @@ setup_admin(app)
 
 # Add all endpoints form the API with a "api" prefix
 app.register_blueprint(api, url_prefix='/api')
+# app.register_blueprint(user, url_prefix='/api/user')
+# app.register_blueprint(proposal, url_prefix='/api/proposal')
+
+cloudinary.config( 
+  cloud_name = app.config['CLOUD_NAME'] , 
+  api_key = app.config['CLOUD_API_KEY'], 
+  api_secret = app.config['CLOUD_API_SECRECT'],
+  secure = True
+)
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)

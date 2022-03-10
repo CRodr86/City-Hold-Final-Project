@@ -23,8 +23,7 @@ const FormInput = (props) => {
         onChange={props.onChange}
         name={props.name}
         required={props.required}
-
-
+        onKeyUp={props.onKeyUp}
       />
     </div>
   );
@@ -44,6 +43,7 @@ FormInput.propTypes = {
   onChange: PropTypes.func,
   name: PropTypes.string,
   required: PropTypes.bool,
+onKeyUp: PropTypes.func,
 };
 
 export default FormInput;

@@ -8,6 +8,7 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from werkzeug.security import generate_password_hash, check_password_hash
+from cloudinary.uploader import upload
 
 
 api = Blueprint('api', __name__)
@@ -79,6 +80,8 @@ def delete_user(id):
         db.session.commit()
         return jsonify("User deleted"), 200
 
+
+
 #Proposals endpoints
 
 @api.route('/proposal', methods=['GET'])
@@ -136,6 +139,20 @@ def create_proposal():
     db.session.add(new_proposal)
     db.session.commit()
     return jsonify(new_proposal.serialize()), 201
+
+@api.route('/proposal/documents', methods=['POST'])
+def upload_file():
+    try:
+        img = request.files['documents']
+        body =  request.form.to_dict()
+        print(img)
+        print(body)
+        url_img = upload(img)
+        print(url_img)
+        return jsonify(url_img['url'], 200)
+    except Exception as error:
+        print(error)
+        return jsonify('algo fue mal', 500)
 
 @api.route('/proposal/<int:id>', methods=['DELETE'])
 def delete_proposal(id):

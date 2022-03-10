@@ -8,7 +8,7 @@ import MyProfile from "./MyProfile.jsx";
 import MyProposalsEmpty from "./MyProposalsEmpty.jsx";
 import MyFilePassword from "./MyFilePassword.jsx";
 import MyProposalsFull from "./MyProposalsFull.jsx";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
 const MyFile = (props) => {
   const { store, actions } = useContext(Context);
@@ -87,7 +87,7 @@ const MyFile = (props) => {
               role="tabpanel"
               aria-labelledby="v-pills-messages-tab"
             >
-              {!store.area ? <MyProposalsEmpty /> : <MyProposalsFull />}
+              {!store.proposal ? <MyProposalsEmpty /> : <MyProposalsFull />}
             </div>
             <div
               className="tab-pane fade"

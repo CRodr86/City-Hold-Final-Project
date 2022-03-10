@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 
 import { Context } from "../store/appContext.js";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 import FormInput from "../component/FormInput/FormInput.jsx";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import StepperItem from "../component/StepperItem/StepperItem.jsx";
@@ -12,6 +12,7 @@ import ProposalsCheckbox from "../component/ProposalsCheckbox/ProposalsCheckbox.
 import TextArea from "../component/TextArea/TextArea.jsx";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
 import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
+import { save_img } from "../service/user.js";
 //Styles
 import "../../styles/proposals3.css";
 let bgImg = {
@@ -33,6 +34,8 @@ const Proposals3 = () => {
   const [document_description, setDocument_Description] = useState("");
   const [contact_by, setContact_By] = useState("");
   const [confirmation_by, setConfirmation_By] = useState("");
+  const [file, setFile] = useState("");
+  const [fileUrl, setFileUrl] = useState("");
   const history = useHistory();
 
   //Sending proposal to backend
@@ -60,6 +63,35 @@ const Proposals3 = () => {
     setConfirmation_By("");
     history.push("/proposals-5");
   };
+
+  //File handlers
+
+  const handleChangeFile = (e) => {
+    if (e.target.files) {
+      setFile(e.target.files[0]);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        if (reader.readyState === 2) {
+          console.log("result", reader.result);
+        }
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  };
+
+  const handelClick = async () => {
+    try {
+      const form = new FormData();
+      form.append("img", file);
+      const res = await save_img(form);
+      const data = await res.json();
+      console.log(data);
+      setFileUrl(data[0]);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  console.log(file);
 
   return (
     <>
@@ -287,20 +319,29 @@ const Proposals3 = () => {
                       className="align-middle m-4 documentsBoxText"
                       type="file"
                       id="getFile"
-                      // style={{ display: "none" }}
+                      onChange={handleChangeFile}
+                      style={{ display: "none" }}
                     />
                     Drag and drop your files here or...
                   </div>
                 </div>
                 <div className="row">
                   <div className="col mb-3 d-flex justify-content-center">
-                    <label
+                    {/* <label
                       htmlFor="getFile"
                       className="form-label"
                       id="getFileLink"
                     >
                       Attach your files
-                    </label>
+                    </label> */}
+                    <img src={fileUrl}></img>
+                    <button
+                      onClick={handelClick}
+                      className="form-label"
+                      id="getFileLink"
+                    >
+                      Attach Files
+                    </button>
                   </div>
                 </div>
               </div>
@@ -310,10 +351,13 @@ const Proposals3 = () => {
               <SelectMenu
                 label="Type of documents"
                 class="form-select border-0"
-                value2="Photo"
-                value3="Video"
-                selected2={document_type === "Photo"}
-                selected3={document_type === "Video"}
+                value1="Photo"
+                value2="Video"
+                value3="Other"
+                selected1={document_type === "Photo"}
+                selected2={document_type === "Video"}
+                selected3={document_type === "Other"}
+                valueName1="1"
                 valueName2="2"
                 valueName3="3"
                 onChange={(e) => setDocument_Type(e.target.value)}
@@ -367,7 +411,11 @@ const Proposals3 = () => {
         <div className="row d-flex justify-content-center mt-4 pb-5">
           <div className="col-3">
             <div className="d-flex justify-content-center">
-              <MainButton buttonText="Submit" to="/#" onClick={handleProposal} />
+              <MainButton
+                buttonText="Submit"
+                to={"/proposals-5"}
+                onClick={handleProposal}
+              />
             </div>
           </div>
         </div>

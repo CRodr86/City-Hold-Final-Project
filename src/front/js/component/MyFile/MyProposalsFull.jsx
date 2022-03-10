@@ -10,6 +10,14 @@ const MyProposalsFull = (props) => {
   const { store, actions } = useContext(Context);
   const proposal = store.proposal;
 
+  const firstCharToUpper = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+const cleanDate = (date) =>{
+return date.split(" ", 4).join(" ")
+}
+
   return (
     <>
       <div className="row g-3 bg-white m-auto ps-5 pe-2 pb-5 text-start">
@@ -38,10 +46,12 @@ const MyProposalsFull = (props) => {
               {proposal.map((item, i) => (
                 <tr className="table_content" key={i}>
                   <td scope="row" data-title="Date">
-                    {item.date}
+                    {cleanDate(item.date) }
                   </td>
-                  <td data-title="Type">{item.proposal_type}</td>
-                  <td data-title="Area">{item.area}</td>
+                  <td data-title="Type">
+                    {firstCharToUpper(item.proposal_type)+item.id }
+                  </td>
+                  <td data-title="Area">{firstCharToUpper(item.area)}</td>
                   <td data-title="Status" className="text-warning fw-bold">
                     Pending
                   </td>

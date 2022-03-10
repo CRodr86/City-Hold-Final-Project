@@ -75,12 +75,7 @@ const MyProposalDetail = (props) => {
                   </thead>
                   <tbody>
                     <tr className="table_content">
-                      <td>
-                        The proposal 654879 is being reviewed by the City’s
-                        Transit Department. The response time is between 30 and
-                        40 work days. Once this review is completed an email
-                        will be sent to you with the final resolution.
-                      </td>
+                      <td>{props.description}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -97,6 +92,8 @@ const MyProposalDetail = (props) => {
   );
 };
 
-MyProposalDetail.propTypes = {};
+MyProposalDetail.propTypes = {
+  description: PropTypes.func,
+};
 
 export default MyProposalDetail;
