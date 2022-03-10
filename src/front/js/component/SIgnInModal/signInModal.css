@@ -53,3 +53,16 @@
   background-color: #f8fafc;
   border: 0;
 }
+
+.form-control-private {
+  background-color: #f8fafc;
+  border: 0px;
+border-radius: 5px;
+padding: 5px;
+}
+
+.form-label-private {
+  font-family: "Ubuntu", sans-serif;
+  font-size: small;
+  color: #e5e5e5;
+}

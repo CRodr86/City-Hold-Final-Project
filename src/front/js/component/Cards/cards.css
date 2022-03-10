@@ -23,3 +23,10 @@
     background: #e5e5e5;
     cursor: pointer;
 }
+
+.card-text-proposal{
+    font-family: Open Sans;
+    color: #e5e5e5;
+    font-size: medium;
+    text-decoration: none;
+}

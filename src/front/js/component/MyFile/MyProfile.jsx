@@ -5,9 +5,17 @@ import "./myFile.css";
 import PropTypes from "prop-types";
 import MyProfileField from "./MyProfileField.jsx";
 import MainButton from "../MainButton/MainButton.jsx";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const MyProfile = (props) => {
   const { store, actions } = useContext(Context);
+  const history = useHistory();
+  // const getMyProposals = (e) => {
+  //   // e.preventDefault();
+  //   // actions.getProposals();
+  //   history.push("/myfiledetails");
+  // };
+  // console.log(actions, "actions");
   return (
     <>
       <div className="row g-3 bg-white m-auto">
@@ -19,7 +27,7 @@ const MyProfile = (props) => {
         <MyProfileField title="Adress" content={store.address1} />
         <MyProfileField title="Zip Code" content={store.zipCode} />
         <div className="col-md-6  mt-4 text-center">
-          <MainButton buttonText="Update profile" to="#" />
+          {/* <button onClick={getMyProposals}>Proposal</button> */}
         </div>
       </div>
     </>

@@ -35,17 +35,12 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col d-none d-lg-block">
-            <h5 className="footerLabel">Sign in</h5>
+            <h5 className="footerLabel">City Officials</h5>
             
             <ul className="nav flex-column">
-              <FooterLink to="/myfilehome" pageName="My Account" />
+              <FooterLink to="/cityprivate" pageName="Private Area"  />
               
-              <FooterLink
-                toggle="modal"
-                target="#signInModal"
-                pageName="Sign up"
-to="#"
-              />
+             
             </ul>
           </div> 
           
