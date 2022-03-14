@@ -41,32 +41,6 @@ const MyProposalDetail = (props) => {
               aria-labelledby="v-pills-home-tab"
             >
               <div className="row g-1 bg-white m-auto p-3 text-start w-100">
-                <table className="table ">
-                  <thead>
-                    <tr>
-                      <th scope="col" className="table_header">
-                        Date
-                      </th>
-                      <th scope="col" className="table_header">
-                        Id
-                      </th>
-                      <th scope="col" className="table_header">
-                        Area
-                      </th>
-                      <th scope="col" className="table_header">
-                        Status
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="table_content">
-                      <td>01/01/2022</td>
-                      <td>658742</td>
-                      <td>Education</td>
-                      <td>Pending</td>
-                    </tr>
-                  </tbody>
-                </table>
                 <table className="table">
                   <thead>
                     <th scope="col" className="table_header pt-3">
@@ -81,7 +55,7 @@ const MyProposalDetail = (props) => {
                 </table>
 
                 <div className="col text-center mt-4">
-                  <MainButton buttonText="Back" to="/myfile" />
+                  <MainButton buttonText="Back" to="/myfileprivate" />
                 </div>
               </div>
             </div>
