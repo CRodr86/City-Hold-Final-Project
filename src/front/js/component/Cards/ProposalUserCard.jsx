@@ -5,7 +5,7 @@ import MainButton from "../../component/MainButton/MainButton.jsx";
 const ProposalUserCard = (props) => {
   return (
     <>
-      <div className="card border-white mb-3" key={props.key}>
+      <div className="card border-white mb-3 h-100" key={props.key}>
         <div className="card-header bg-transparent border-secondary">
           {props.date}
         </div>
@@ -14,10 +14,10 @@ const ProposalUserCard = (props) => {
           <p className="card-text">{props.description}</p>
         </div>
         <div className="card-footer bg-transparent border-secondary">
-<div className="col"> Made by user Nº {props.proponent} </div>
-<div className="col"> {props.btn} </div>
-         
+          <div className="col"> Made by user Nº {props.proponent} </div>
+          <div className="col"> {props.btn} </div>
         </div>
+
         <div className="card-footer bg-transparent border-secondary">
           Contact by {props.contact}
         </div>
@@ -37,7 +37,7 @@ ProposalUserCard.propTypes = {
   confirmation: PropTypes.func,
   key: PropTypes.func,
   proponent: PropTypes.func,
-btn: PropTypes.func,
+  btn: PropTypes.func,
 };
 
 export default ProposalUserCard;

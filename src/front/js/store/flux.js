@@ -262,27 +262,37 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.error("There was an error ", error);
         }
+      },
 
-        // // fetching data from the backend
-        // fetch(process.env.BACKEND_URL + "/api/proposal", opts)
-        //   .then((resp) => resp.json())
-        //   .then((data) => {
-        //     setStore({
-        //       area: data.area,
-        //       proposal_type: data.proposal_type,
-        //       date: data.date,
-        //       description: data.description,
-        //       documents: data.documents,
-        //       document_type: data.document_type,
-        //       document_description: data.document_description,
-        //       contact_by: data.contact_by,
-        //       confirmation_by: data.confirmation_by,
-        //     });
-        //     console.log(data);
-        //   })
-        //   .catch((error) =>
-        //     console.log("Error loading message from backend", error)
-        //   );
+      getUserData: async (id) => {
+        const opts = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // Authorization: "Bearer " + store.token,
+          },
+        };
+        try {
+          const resp = await fetch(process.env.BACKEND_URL + "/api/user/"+ id , opts);
+          if (resp.status !== 200) {
+            alert("Something went wrong");
+            return false;
+          }
+          const data = await resp.json();
+          console.log(data);
+          setStore({
+            name: data.name,
+            lastname: data.lastname,
+            email: data.email,
+            homePhone: data.home_phone,
+            mobilePhone: data.mobile_phone,
+            address1: data.address1,
+            zipCode: data.zip_code,
+          });
+          return true;
+        } catch (error) {
+          console.error("There was an error ", error);
+        }
       },
 
       getMessage: () => {
