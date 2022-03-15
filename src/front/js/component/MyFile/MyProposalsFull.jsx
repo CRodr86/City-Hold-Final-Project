@@ -14,9 +14,9 @@ const MyProposalsFull = (props) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
-const cleanDate = (date) =>{
-return date.split(" ", 4).join(" ")
-}
+  const cleanDate = (date) => {
+    return date.split(" ", 4).join(" ");
+  };
 
   return (
     <>
@@ -35,10 +35,7 @@ return date.split(" ", 4).join(" ")
                   Area
                 </th>
                 <th scope="col" className="table_header">
-                  Type
-                </th>
-                <th scope="col" className="table_header">
-                  Info
+                  Description
                 </th>
               </tr>
             </thead>
@@ -46,66 +43,17 @@ return date.split(" ", 4).join(" ")
               {proposal.map((item, i) => (
                 <tr className="table_content" key={i}>
                   <td scope="row" data-title="Date">
-                    {cleanDate(item.date) }
+                    {cleanDate(item.date)}
                   </td>
                   <td data-title="Type">
-                    {firstCharToUpper(item.proposal_type)+item.id }
+                    {firstCharToUpper(item.proposal_type) + item.id}
                   </td>
                   <td data-title="Area">{firstCharToUpper(item.area)}</td>
-                  <td data-title="Status" className="text-warning fw-bold">
-                    Pending
-                  </td>
-                  <td data-title="Info">
-                    <HashLink to="/myfiledetails">
-                      {" "}
-                      <button
-                        type="button"
-                        className="btn btn-warning px-3 mb-1 text-center"
-                        id="btn_col"
-                      >
-                        More Info
-                      </button>
-                    </HashLink>
+                  <td data-title="Description" className="table_content">
+                    {firstCharToUpper(item.description)}
                   </td>
                 </tr>
               ))}
-
-              {/* <tr className="table_content">
-                <td scope="row" data-title="Date">10/09/2021</td>
-                <td data-title="Id">632154</td>
-                <td data-title="Area">Transport</td>
-                <td  data-title="Status" className="text-success fw-bold">Approved</td>
-                <td data-title="Info">
-                  <HashLink to="/myfiledetails">
-                    {" "}
-                    <button
-                      type="button"
-                      className="btn btn-warning px-3 mb-1 text-center"
-                      id="btn_col"
-                    >
-                      More Info
-                    </button>
-                  </HashLink>
-                </td>
-              </tr>
-              <tr className="table_content">
-                <td scope="row" data-title="Date">08/14/2021</td>
-                <td data-title="Id">596214</td>
-                <td data-title="Area">Nature</td>
-                <td  data-title="Status" className="text-danger fw-bold">Rejected</td>
-                <td data-title="Info">
-                  <HashLink to="/myfiledetails">
-                    {" "}
-                    <button
-                      type="button"
-                      className="btn btn-warning px-3 mb-1 text-center"
-                      id="btn_col"
-                    >
-                      More Info
-                    </button>
-                  </HashLink>
-                </td>
-              </tr> */}
             </tbody>
           </table>
         </div>

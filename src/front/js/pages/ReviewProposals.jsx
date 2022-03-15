@@ -1,18 +1,22 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import UpperBanner from "../component/UpperBanner/UpperBanner.jsx";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import ProposalUserCard from "../component/Cards/ProposalUserCard.jsx";
+import { useHistory } from "react-router-dom";
 
 const ReviewProposals = (props) => {
   let bgImg = { background: "#023047", height: "max-content" };
   const { store, actions } = useContext(Context);
   const data = store.data;
-  const getAllProposals = () => {
-    actions.getAllProposals();
-  };
+  const history = useHistory();
 
+  const getUserData = (id) => {
+    actions.getUserData(id);
+    history.push("/reviewuser");
+  };
+  // useEffect(() => {
+  //     actions.getProposals();
+  //   }, []);
   const firstCharToUpper = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
@@ -27,9 +31,10 @@ const ReviewProposals = (props) => {
           <h1 id="upper_banner_h1">All Proposals</h1>
           <div className="container">
             <div className="row">
-              <div className="col-4"></div>
-              <div className="col-4">
-                {data?.map((item) => (
+              
+
+              {data?.map((item) => (
+                <div className="col-md-4 mb-3">
                   <ProposalUserCard
                     key={item.id}
                     proposal_type={firstCharToUpper(item.proposal_type)}
@@ -38,16 +43,22 @@ const ReviewProposals = (props) => {
                     proponent={item.proponent_id}
                     confirmation={item.confirmation_by}
                     date={cleanDate(item.date)}
-                    btn={<MainButton buttonText="Access User info"/>}
+                    btn={
+                      <MainButton
+                        buttonText="Access User info"
+                        onClick={() => getUserData(item.proponent_id)}
+                      />
+                    }
                   />
-                ))}
-              </div>
-              <div className="col-4"></div>
+                </div>
+              ))}
+
+             
             </div>
           </div>
 
           <span>
-            <MainButton to="#" buttonText="Back" onClick={getAllProposals} />
+            <MainButton to="/cityhome" buttonText="Back" />
           </span>
         </div>
       </div>

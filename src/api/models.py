@@ -74,3 +74,23 @@ class Proposal(db.Model):
             # "proponent" : self.proponent,
             # do not serialize the password, its a security breach
         }
+
+class Project(db.Model):
+    __tablename__ = 'project'
+    id = db.Column(db.Integer, primary_key=True)
+    area = db.Column(db.String(200), unique=False, nullable=False)
+    name = db.Column(db.String(200), unique=False, nullable=False)
+    general_description = db.Column(db.String(1000), unique=False, nullable=False)
+    image = db.Column(db.String(800), unique=False, nullable=False)
+    
+    def __repr__(self):
+        return '<Project %r>' % self.name
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "area": self.area,
+            "name": self.name,
+            "general_description": self.general_description,
+            "image": self.image,
+        }
