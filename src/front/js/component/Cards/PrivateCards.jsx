@@ -49,7 +49,7 @@ const { store, actions } = useContext(Context);
             </HashLink>
           </div>
           <div className="col-md-4 card_wrapper">
-            <HashLink to={"/proposals"} style={{ textDecoration: "none" }}>
+            <HashLink to={"/createproject"} style={{ textDecoration: "none" }}>
               <div className="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">

@@ -1,12 +1,9 @@
 //React and Components
 import React, { useContext, useState } from "react";
-
 import { Context } from "../store/appContext.js";
 import { useHistory } from "react-router-dom";
 import FormInput from "../component/FormInput/FormInput.jsx";
 import MainButton from "../component/MainButton/MainButton.jsx";
-import StepperItem from "../component/StepperItem/StepperItem.jsx";
-import { HashLink } from "react-router-hash-link";
 import ProposalsCard from "../component/ProposalsCard/ProposalsCard.jsx";
 import ProposalsCheckbox from "../component/ProposalsCheckbox/ProposalsCheckbox.jsx";
 import TextArea from "../component/TextArea/TextArea.jsx";
@@ -366,6 +363,8 @@ const Proposals3 = () => {
             {/* Document description input */}
             <div className="row">
               <TextArea
+                labelClassName="form-label"
+                className="form-control"
                 label="Please provide a description of the image or video"
                 value={document_description}
                 onChange={(e) => setDocument_Description(e.target.value)}

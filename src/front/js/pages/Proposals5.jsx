@@ -13,7 +13,7 @@ let bgImg = {
 };
 
 const Proposals5 = () => {
-  const { store, actions } = useContext(Context);
+const { store, actions } = useContext(Context);
 const proposalId = store.id;
 
   return (

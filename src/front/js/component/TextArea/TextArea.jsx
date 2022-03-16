@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 const TextArea = (props) => {
   return (
     <div className="col">
-      <label className="form-label">{props.label}</label>
+      <label className={props.labelClassName}>{props.label}</label>
       <textarea
-        className="form-control"
-        placeholder="Hint Text"
+        className={props.className}
+        placeholder="Type Here..."
         id="textarea"
         onChange={props.onChange}
         value={props.value}
@@ -20,6 +20,8 @@ TextArea.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
+  className: PropTypes.string,
+  labelClassName: PropTypes.string,
 };
 
 export default TextArea;

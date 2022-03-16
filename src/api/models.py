@@ -82,6 +82,11 @@ class Project(db.Model):
     name = db.Column(db.String(200), unique=False, nullable=False)
     general_description = db.Column(db.String(1000), unique=False, nullable=False)
     image = db.Column(db.String(800), unique=False, nullable=False)
+    start = db.Column(db.String(800), unique=False, nullable=False)
+    cost = db.Column(db.String(800), unique=False, nullable=False)
+    taxes = db.Column(db.String(800), unique=False, nullable=False)
+    developer = db.Column(db.String(800), unique=False, nullable=False)
+    jobs = db.Column(db.String(800), unique=False, nullable=False)
     
     def __repr__(self):
         return '<Project %r>' % self.name
@@ -93,4 +98,9 @@ class Project(db.Model):
             "name": self.name,
             "general_description": self.general_description,
             "image": self.image,
+            "start": self.start,
+            "cost": self.cost,
+            "taxes": self.taxes,
+            "developer": self.developer,
+            "jobs": self.jobs,
         }

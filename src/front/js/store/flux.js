@@ -273,7 +273,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
         };
         try {
-          const resp = await fetch(process.env.BACKEND_URL + "/api/user/"+ id , opts);
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/user/" + id,
+            opts
+          );
           if (resp.status !== 200) {
             alert("Something went wrong");
             return false;
@@ -323,6 +326,65 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         //reset the global store
         setStore({ demo: demo });
+      },
+      createProject: async (
+        area,
+        name,
+        general_description,
+        image,
+        start,
+        cost,
+        taxes,
+        developer,
+        jobs
+      ) => {
+        const store = getStore();
+
+        const opts = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            area: area,
+            name: name,
+            general_description: general_description,
+            image: image,
+            start: start,
+            cost: cost,
+            taxes: taxes,
+            developer: developer,
+            jobs: jobs,
+          }),
+          mode: "cors",
+        };
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/project",
+            opts
+          );
+          if (resp.status !== 201) {
+            alert("Something went wrong");
+            return false;
+          }
+          const data = await resp.json();
+          console.log("this came from backend", data);
+          setStore({
+            area: data.area,
+            name: data.name,
+            general_description: data.general_description,
+            image: data.image,
+            start: data.start,
+            cost: data.cost,
+            taxes: data.taxes,
+            developer: data.developer,
+            jobs: data.jobs,
+          });
+          return true;
+        } catch (error) {
+          console.error("There has been an error", error);
+        }
       },
     },
   };

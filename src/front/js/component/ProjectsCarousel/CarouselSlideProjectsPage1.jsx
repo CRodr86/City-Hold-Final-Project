@@ -23,10 +23,10 @@ const CarouselSlideProjectsPage1 = (props) => {
           title="Construction of pedestrian streets"
           description="This project was developed by the City Hall in order to give priority to pedestrians in downtown area."
           topButtonText="Project Details"
-          bottomButtonText="Vote"
+          bottomButtonText="Leave Proposal"
           image={PedestrianStreet}
           imageAlt="Pedestrian Street"
-          toVote="/publicvotingsinglepoll"
+          toVote="/proposals"
           toDetails="/projectdetails"
         />
         <CarouselItem

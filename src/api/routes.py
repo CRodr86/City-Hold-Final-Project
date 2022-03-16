@@ -177,7 +177,58 @@ def create_token():
         return jsonify({"token": access_token, "user": user_json })
     else:
         return jsonify({"msg": "Bad email or password"}), 401
-        
+
+#Project endpoints
+
+@api.route('/project', methods=['GET'])
+def get_projects():
+    projects = Project.query.all()
+    all_projects = list(map(lambda x: x.serialize(), projects))
+    return jsonify(all_projects), 200 
+
+@api.route('/project', methods=['POST'])
+def create_project():
+    area, name, general_description, image, start, cost, taxes, developer, jobs = request.json.get(
+        "area" , None
+    ), request.json.get(
+        "name", None
+    ), request.json.get(
+        "general_description", None
+    ), request.json.get(
+        "image", None
+    ), request.json.get(
+        "start", None
+    ), request.json.get(
+        "cost", None
+    ), request.json.get(
+        "taxes", None
+    ), request.json.get(
+        "developer", None
+    ), request.json.get(
+        "jobs", None
+    )
+    new_project = Project(area= area, name= name, general_description= general_description, image= image, start= start,  cost= cost, taxes= taxes, developer= developer, jobs= jobs)
+    db.session.add(new_project)
+    db.session.commit()
+    return jsonify(new_project.serialize()), 201
+
+@api.route('/project/<int:id>', methods=['DELETE'])
+def delete_project(id):
+    project_x = Project.query.get(id)
+    if project_x is None:
+        return 'Project not found', 404
+    else:
+        db.session.delete(project_x)
+        db.session.commit()
+        return jsonify("Project deleted"), 200
+
+@api.route('/project/<int:id>', methods=['GET'])
+def get_one_project(id):
+    project_x = Project.query.get(id)
+    if project_x is None:
+        return 'Project not found', 404
+    else:
+        return jsonify(project_x.serialize()), 200
 
 #     # comprobar contraseña
 # if check_password_hash(password, passwordDB):
