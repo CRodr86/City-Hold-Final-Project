@@ -386,6 +386,69 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error("There has been an error", error);
         }
       },
+
+getAllProjects: async () => {
+        const opts = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // Authorization: "Bearer " + store.token,
+          },
+        };
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/project",
+            opts
+          );
+          if (resp.status !== 200) {
+            alert("Something went wrong");
+            return false;
+          }
+          const data = await resp.json();
+          console.log(data);
+          setStore({
+            data: data,
+          });
+          return true;
+        } catch (error) {
+          console.error("There was an error ", error);
+        }
+      },
+getProjectData: async (id) => {
+        const opts = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // Authorization: "Bearer " + store.token,
+          },
+        };
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/project/" + id,
+            opts
+          );
+          if (resp.status !== 200) {
+            alert("Something went wrong");
+            return false;
+          }
+          const data = await resp.json();
+          console.log(data);
+          setStore({
+            area: data.area,
+            name: data.name,
+            general_description: data.general_description,
+            image: data.image,
+            start: data.start,
+            cost: data.cost,
+            taxes: data.taxes,
+            developer: data.developer,
+            jobs: data.jobs,
+          });
+          return true;
+        } catch (error) {
+          console.error("There was an error ", error);
+        }
+      },
     },
   };
 };

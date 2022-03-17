@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import "./projectsCarousel.css";
 import CarouselSlideProjectsPage1 from "./CarouselSlideProjectsPage1.jsx";
 import CarouselSlideProjectsPage2 from "./CarouselSlideProjectsPage2.jsx";
@@ -11,6 +11,7 @@ const ProjectsCarousel = (props) => {
 	return (
     <>
       <div className="container h-100 p-0 rounded" id="carousel_wrapper">
+
         <div className="row ">
           <div className="col-12">
             <div

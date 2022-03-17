@@ -17,7 +17,7 @@ const ProjectDetails = () => {
         secondaryText="In this section you will find all the detailed infomation about the project."
         mainContent={<VoteAcordeon />}
         btnPosition1="btn col-4 "
-        button1= {<MainButton to="/publicvotingselect" buttonText="Back"/>}
+        button1= {<MainButton to="/projects" buttonText="Back"/>}
         />
 
         
