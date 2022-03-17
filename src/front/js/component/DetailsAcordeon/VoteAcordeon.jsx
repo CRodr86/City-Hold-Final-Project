@@ -1,12 +1,11 @@
 import "./detailsAcordeon.css";
 import React, { useContext } from "react";
 import { Context } from "../../store/appContext";
-import PropTypes from "prop-types";
 import DetailsAcordeon from "./DetailsAcordeon.jsx";
 
 
 
-const VoteAcordeon = (props) => {
+const VoteAcordeon = () => {
 
 const { store, actions } = useContext(Context);
 

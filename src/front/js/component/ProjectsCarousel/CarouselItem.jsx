@@ -1,5 +1,4 @@
 import React from "react";
-import { HashLink } from "react-router-hash-link";
 import "./carouselItem.css";
 import PropTypes from "prop-types";
 

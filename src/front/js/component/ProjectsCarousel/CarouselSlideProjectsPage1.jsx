@@ -3,22 +3,28 @@ import { Context } from "../../store/appContext";
 import CarouselItem from "./CarouselItem.jsx";
 import "./projectsCarousel.css";
 import PedestrianStreet from "../../../img/PedestrianStreet.png";
-import NewMall from "../../../img/NewMall.png";
 import { useHistory } from "react-router-dom";
 import MainButton from "../MainButton/MainButton.jsx";
 
-const CarouselSlideProjectsPage1 = (props) => {
+const CarouselSlideProjectsPage1 = () => {
+
   const { store, actions } = useContext(Context);
   const history = useHistory();
+
+// Getting all projects from back as page first loads
 
   useEffect(() => {
     actions.getAllProjects();
   }, []);
 
+//Handler onClick function gets only one project details
+
   const getProjectData = (id) => {
     actions.getProjectData(id);
     history.push("/projectdetails");
   };
+
+// Store data variable
 
   const projects = store.data;
 

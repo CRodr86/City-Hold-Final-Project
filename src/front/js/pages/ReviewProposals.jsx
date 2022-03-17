@@ -4,19 +4,22 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 import ProposalUserCard from "../component/Cards/ProposalUserCard.jsx";
 import { useHistory } from "react-router-dom";
 
-const ReviewProposals = (props) => {
+const ReviewProposals = () => {
+  //Style variable
   let bgImg = { background: "#023047", height: "max-content" };
+
+//Context variables
   const { store, actions } = useContext(Context);
   const data = store.data;
   const history = useHistory();
 
+  //Handler function renders only one user data
   const getUserData = (id) => {
     actions.getUserData(id);
     history.push("/reviewuser");
   };
-  // useEffect(() => {
-  //     actions.getProposals();
-  //   }, []);
+
+  //Style functions
   const firstCharToUpper = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
@@ -31,8 +34,6 @@ const ReviewProposals = (props) => {
           <h1 id="upper_banner_h1">All Proposals</h1>
           <div className="container">
             <div className="row">
-              
-
               {data?.map((item) => (
                 <div className="col-md-4 mb-3">
                   <ProposalUserCard
@@ -52,8 +53,6 @@ const ReviewProposals = (props) => {
                   />
                 </div>
               ))}
-
-             
             </div>
           </div>
 

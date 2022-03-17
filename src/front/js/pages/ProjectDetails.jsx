@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import { HashLink } from 'react-router-hash-link';
+import React from "react";
 import GeneralBackground from "../component/GeneralBackground/GeneralBackground.jsx";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import VoteAcordeon from "../component/DetailsAcordeon/VoteAcordeon.jsx";

@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { HashLink } from "react-router-hash-link";
 import CarouselItem from "../component/ProjectsCarousel/CarouselItem.jsx";
 import "../component/ProjectsCarousel/projectsCarousel.css";
 import PedestrianStreet from "../../img/PedestrianStreet.png";
 import "../component/DetailsAcordeon/detailsAcordeon.css";
 import DetailsAcordeon from "../component/DetailsAcordeon/DetailsAcordeon.jsx";
-import PropTypes from "prop-types";
 
-const PreviewProject1 = (props) => {
+
+const PreviewProject1 = () => {
+
   const { store, actions } = useContext(Context);
 
   return (

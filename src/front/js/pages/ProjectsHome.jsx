@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 import GeneralBackground from "../component/GeneralBackground/GeneralBackground.jsx";
-import ProjectsHomeCarousel from "../component/ProjectsCarousel/ProjectsHomeCarousel.jsx";
 import CarouselSlideProjectsPage1 from "../component/ProjectsCarousel/CarouselSlideProjectsPage1.jsx"
 
 
