@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import "./projectsCarousel.css";
 import CarouselSlide1 from "./CarouselSlide1.jsx";
 
-
-
-
 const ProjectsCarousel = (props) => {
-	return (
+  return (
     <>
       <div className="container h-100 p-0 rounded" id="carousel_wrapper">
         <div className="row ">
@@ -22,10 +19,10 @@ const ProjectsCarousel = (props) => {
                   <CarouselSlide1 />
                 </div>
                 <div className="carousel-item">
-                <CarouselSlide1 />
+                  <CarouselSlide1 />
                 </div>
                 <div className="carousel-item">
-                <CarouselSlide1 />
+                  <CarouselSlide1 />
                 </div>
               </div>
               <button
@@ -60,4 +57,4 @@ const ProjectsCarousel = (props) => {
   );
 };
 
-export default ProjectsCarousel
+export default ProjectsCarousel;

@@ -12,7 +12,6 @@ const MyAccountModal = () => {
   const token = sessionStorage.getItem("jwt-token");
 
   const handleSignIn = (e) => {
-    // e.preventDefault();
     actions.signIn(email, password);
     setEmail("");
     setPassword("");

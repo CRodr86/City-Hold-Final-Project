@@ -6,9 +6,7 @@ import PedestrianStreet from "../../img/PedestrianStreet.png";
 import "../component/DetailsAcordeon/detailsAcordeon.css";
 import DetailsAcordeon from "../component/DetailsAcordeon/DetailsAcordeon.jsx";
 
-
-const PreviewProject1 = () => {
-
+const PreviewProject = () => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -18,7 +16,8 @@ const PreviewProject1 = () => {
           id="carousel_item_wrapper"
           topText={
             <p>
-              <strong>Project Area: </strong><em>{store.area}</em>
+              <strong>Project Area: </strong>
+              <em>{store.area}</em>
             </p>
           }
           title={store.name}
@@ -49,4 +48,4 @@ const PreviewProject1 = () => {
   );
 };
 
-export default PreviewProject1;
+export default PreviewProject;

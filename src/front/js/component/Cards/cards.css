@@ -1,32 +1,28 @@
-.card-title-upper{
-    font-family: Ubuntu;
-    color: #010B13;
-    text-decoration: none;
+.card-title-upper {
+  font-family: Ubuntu;
+  color: #010b13;
+  text-decoration: none;
 }
 
-.card-text{
-    font-family: Open Sans;
-    color: #010B13;
-    font-size: medium;
-    text-decoration: none;
+.card-text {
+  font-family: Open Sans;
+  color: #010b13;
+  font-size: medium;
+  text-decoration: none;
 }
 
-.card{
-    border: solid 1px #e5e5e5;
-    
-    
+.card {
+  border: solid 1px #e5e5e5;
 }
 
-
-
-.card_wrapper :hover{
-    background: #e5e5e5;
-    cursor: pointer;
+.card_wrapper :hover {
+  background: #e5e5e5;
+  cursor: pointer;
 }
 
-.card-text-proposal{
-    font-family: Open Sans;
-    color: #e5e5e5;
-    font-size: medium;
-    text-decoration: none;
+.card-text-proposal {
+  font-family: Open Sans;
+  color: #e5e5e5;
+  font-size: medium;
+  text-decoration: none;
 }

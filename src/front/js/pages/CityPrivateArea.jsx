@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import UpperBanner from "../component/UpperBanner/UpperBanner.jsx";
+import React from "react";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import FormInput from "../component/FormInput/FormInput.jsx";
 
 const CityPrivateArea = (props) => {
+
+//Style variable
   let bgImg = { background: "#023047" };
 
   return (

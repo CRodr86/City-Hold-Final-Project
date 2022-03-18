@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./aboutBanner.css";
 import{FaDesktop, FaPeopleArrows, FaBullseye} from "react-icons/fa";
-import AboutBannerImg1 from "../../../img/AboutBannerImg1.png";
-import AboutBannerImg2 from "../../../img/AboutBannerImg2.png";
 import AboutUsBanner from "../../../img/AboutUsBanner.png";
 
+
+const AboutBanner = () => {
+
+//Style variables
 const iconStyles = {
     color: "#F88500",
     display: "inline-block",
@@ -13,7 +14,6 @@ const iconStyles = {
     fontSize: "25px"
 };
 
-const AboutBanner = () => {
 	return (
     <>
       <div className="container-fluid my-5" id="about_banner_wrapper" >

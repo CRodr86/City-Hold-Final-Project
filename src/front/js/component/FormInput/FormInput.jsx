@@ -1,13 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
 
 const FormInput = (props) => {
-  // const [input, setInput] = useState("");
-  // const inputTextChanger = ev => {
-  // 	setInput(ev.target.value);
-  // };
-
   return (
     <div className={props.divClassName}>
       <label htmlFor={props.labelFor} className={props.labelClassName}>
@@ -43,7 +37,7 @@ FormInput.propTypes = {
   onChange: PropTypes.func,
   name: PropTypes.string,
   required: PropTypes.bool,
-onKeyUp: PropTypes.func,
+  onKeyUp: PropTypes.func,
 };
 
 export default FormInput;

@@ -1,18 +1,18 @@
 import React from "react";
 import "../../styles/proposals3.css";
-import MainButton from "../component/MainButton/MainButton.jsx";
-import StepperItem from "../component/StepperItem/StepperItem.jsx";
-import { HashLink } from "react-router-hash-link";
 import ProposalsCard from "../component/ProposalsCard/ProposalsCard.jsx";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
+
+
+const Services = () => {
+
+//Style variable 
 let bgImg = {
   background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
   backgroundPosition: `center`,
   backgroundSize: "cover",
   height: "max-content",
 };
-
-const Services = () => {
   return (
     <>
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>

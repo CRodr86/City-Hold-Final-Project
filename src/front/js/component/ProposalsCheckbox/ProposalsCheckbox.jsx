@@ -20,20 +20,6 @@ const ProposalsCheckbox = (props) => {
       </div>
     </>
 
-    /* <div className="form-check">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            checked={props.checked}
-            value={props.value}
-            onChange={props.onChange}
-            name={props.name}
-            id="flexCheckClaim"
-          />
-          <label className="form-check-label" htmlFor="flexCheckClaim">
-            Claim
-          </label>
-        </div> */
   );
 };
 

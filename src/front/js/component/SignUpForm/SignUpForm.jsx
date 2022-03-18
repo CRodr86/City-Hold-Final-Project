@@ -4,6 +4,7 @@ import { Context } from "../../store/appContext.js";
 import { useHistory } from "react-router-dom";
 
 const SignUpForm = () => {
+  //State  variables
   const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -17,9 +18,8 @@ const SignUpForm = () => {
   const [yearsOfResidence, setYearsOfResidence] = useState("");
   const history = useHistory();
 
+  //Handler functions to create new user
   const handleSignUp = (e) => {
-    // e.preventDefault();
-
     actions.createNewUser(
       name,
       lastname,

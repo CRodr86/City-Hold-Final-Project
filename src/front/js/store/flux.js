@@ -5,9 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       message: null,
     },
     actions: {
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
-      },
+      //User Sign in Actions
 
       signIn: async (email, password) => {
         const opts = {
@@ -97,18 +95,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const resp = await fetch(process.env.BACKEND_URL + "/api/user", opts);
-
-          // if (resp.status !== 200) {
-          //   alert("An error has ocurred");
-          //   return false;
-          // }
           const data = await resp.json();
           console.log("this came from backend", data);
-          // setStore(data)
         } catch (error) {
           console.error("There has been an error", error);
         }
       },
+
+      //Proposal related actions
 
       createProposal: async (
         area,
@@ -171,37 +165,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error("There has been an error", error);
         }
       },
-      // getProposals2: () => {
-      //   const store = getStore();
-      //   const opts = {
-      //     method: "GET",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       Authorization: "Bearer " + store.token,
-      //     },
-      //   };
-      //   // fetching data from the backend
-      //   fetch(process.env.BACKEND_URL + "/api/proposalofuser", opts)
-      //     .then((resp) => resp.json())
-      //     .then((data) => {
-      //       const proposal = data.map((item) => {
-      //         return {
-      //           area: item.area,
-      //           proposal_type: item.proposal_type,
-      //           date: item.date,
-      //         };
-      //       });
-      //       setStore({
-      //         ...store,
-      //         proposal: proposal,
-      //       });
-      //       console.log(proposal);
-      //     })
-      //     .catch((error) =>
-      //       console.log("Error loading message from backend", error)
-      //     );
-      //   console.log("Hola estoy en proposal 2!");
-      // },
+
       getProposals: () => {
         const store = getStore();
         const opts = {
@@ -211,7 +175,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             Authorization: "Bearer " + store.token,
           },
         };
-        // fetching data from the backend
         fetch(process.env.BACKEND_URL + "/api/proposalofuser", opts)
           .then((resp) => resp.json())
           .then((data) => {
@@ -236,12 +199,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
       },
 
+      // Admin area related functions
+
       getAllProposals: async () => {
         const opts = {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            // Authorization: "Bearer " + store.token,
           },
         };
         try {
@@ -269,7 +233,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            // Authorization: "Bearer " + store.token,
           },
         };
         try {
@@ -298,35 +261,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      getMessage: () => {
-        // const store = getStore();
-        // const opts = {
-        //   headers: {
-        //     "Authorization" : "Bearer " + store.token
-        //   }
-        // }
-        // fetching data from the backend
-        fetch(process.env.BACKEND_URL + "/api/hello")
-          .then((resp) => resp.json())
-          .then((data) => setStore({ message: data.message }))
-          .catch((error) =>
-            console.log("Error loading message from backend", error)
-          );
-      },
-      changeColor: (index, color) => {
-        //get the store
-        const store = getStore();
+      //Projects related functions
 
-        //we have to loop the entire demo array to look for the respective index
-
-        const demo = store.demo.map((elm, i) => {
-          if (i === index) elm.background = color;
-          return elm;
-        });
-
-        //reset the global store
-        setStore({ demo: demo });
-      },
       createProject: async (
         area,
         name,
@@ -372,7 +308,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("this came from backend", data);
           setStore({
             area: data.area,
-            name: data.name,
+            project_name: data.name,
             general_description: data.general_description,
             image: data.image,
             start: data.start,
@@ -387,12 +323,11 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-getAllProjects: async () => {
+      getAllProjects: async () => {
         const opts = {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            // Authorization: "Bearer " + store.token,
           },
         };
         try {
@@ -414,12 +349,12 @@ getAllProjects: async () => {
           console.error("There was an error ", error);
         }
       },
-getProjectData: async (id) => {
+
+      getProjectData: async (id) => {
         const opts = {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            // Authorization: "Bearer " + store.token,
           },
         };
         try {
@@ -435,7 +370,7 @@ getProjectData: async (id) => {
           console.log(data);
           setStore({
             area: data.area,
-            name: data.name,
+            project_name: data.name,
             general_description: data.general_description,
             image: data.image,
             start: data.start,
@@ -448,6 +383,38 @@ getProjectData: async (id) => {
         } catch (error) {
           console.error("There was an error ", error);
         }
+      },
+
+      //Demo functions
+
+      getMessage: () => {
+        // const store = getStore();
+        // const opts = {
+        //   headers: {
+        //     "Authorization" : "Bearer " + store.token
+        //   }
+        // }
+        // fetching data from the backend
+        fetch(process.env.BACKEND_URL + "/api/hello")
+          .then((resp) => resp.json())
+          .then((data) => setStore({ message: data.message }))
+          .catch((error) =>
+            console.log("Error loading message from backend", error)
+          );
+      },
+      changeColor: (index, color) => {
+        //get the store
+        const store = getStore();
+
+        //we have to loop the entire demo array to look for the respective index
+
+        const demo = store.demo.map((elm, i) => {
+          if (i === index) elm.background = color;
+          return elm;
+        });
+
+        //reset the global store
+        setStore({ demo: demo });
       },
     },
   };

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { HashLink } from "react-router-hash-link";
-import { string } from "prop-types";
+
 
 const FooterLink = (props) => {
   return (

@@ -27,7 +27,7 @@ import CityHome from "./pages/CityHome.jsx";
 import CreateProject from "./pages/CreateProject.jsx";
 import ReviewProposals from "./pages/ReviewProposals.jsx";
 import ReviewUser from "./pages/ReviewUser.jsx";
-import PreviewProject1 from "./pages/PreviewProject1.jsx";
+import PreviewProject from "./pages/PreviewProject.jsx";
 
 const Layout = () => {
 
@@ -74,7 +74,7 @@ const Layout = () => {
           <Route exact path="/createproject" component={CreateProject} />
           <Route exact path="/reviewproposals" component={ReviewProposals} />
           <Route exact path="/reviewuser" component={ReviewUser} />
-          <Route exact path="/previewproject" component={PreviewProject1} />
+          <Route exact path="/previewproject" component={PreviewProject} />
         </Switch>
         <Footer />
       </BrowserRouter>

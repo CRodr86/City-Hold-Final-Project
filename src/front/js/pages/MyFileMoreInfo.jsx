@@ -5,8 +5,9 @@ import MyProposalDetail from "../component/MyFile/MyProposalDetail.jsx";
 
 const MyFileMoreInfo = () => {
   const { store, actions } = useContext(Context);
-const proposal = store.proposal;
+  const proposal = store.proposal;
 
+  //Loading user's proposals
   useEffect(() => {
     actions.getProposals();
   }, []);
@@ -18,7 +19,11 @@ const proposal = store.proposal;
         primaryText=""
         h1ClassName="pb-2"
         pClassName="px-5 pb-4"
-        mainContent={<MyProposalDetail description={proposal.map((item)=> (item.description))} />}
+        mainContent={
+          <MyProposalDetail
+            description={proposal.map((item) => item.description)}
+          />
+        }
       />
     </>
   );

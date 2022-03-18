@@ -1,16 +1,12 @@
-#general_bg_h1{
-    font-family: Ubuntu;   
-    font-weight: bold;
-    color: #E5e5e5;
-    font-size: xx-large;
-    }
-    
-    #general_bg_p{
-        font-family: Open Sans;
-        font-size:large;
-        color: #E5e5e5;
-       
-    }
+#general_bg_h1 {
+  font-family: Ubuntu;
+  font-weight: bold;
+  color: #e5e5e5;
+  font-size: xx-large;
+}
 
-    
-    
+#general_bg_p {
+  font-family: Open Sans;
+  font-size: large;
+  color: #e5e5e5;
+}

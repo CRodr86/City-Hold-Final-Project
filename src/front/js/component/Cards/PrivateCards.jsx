@@ -1,32 +1,24 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Context } from "../../store/appContext";
 import "./cards.css";
-import {
-  FaCity,
-  FaBusAlt,
-  FaEnvelopeOpenText,
-  FaFileAlt,
-  FaIdBadge,
-  FaPersonBooth,
-  FaStore,
-  FaUsersCog,
-} from "react-icons/fa";
-import { GiTeamIdea } from "react-icons/gi";
-const iconStyles = {
-  color: "#023047",
-  display: "inline-block",
-  margin: "5px",
-  fontSize: "35px",
-};
+import { FaCity, FaEnvelopeOpenText, FaPersonBooth } from "react-icons/fa";
 
 const PrivateCards = () => {
+  //Icon styles variable
+  const iconStyles = {
+    color: "#023047",
+    display: "inline-block",
+    margin: "5px",
+    fontSize: "35px",
+  };
 
-const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
+
+  //Handler function to get proposals from backend
+
   const getAllProposals = () => {
     actions.getAllProposals();
-  
   };
   return (
     <>
@@ -64,7 +56,11 @@ const { store, actions } = useContext(Context);
           </div>
 
           <div className="col-md-4 card_wrapper">
-            <HashLink to={"/reviewproposals"} style={{ textDecoration: "none" }} onClick={getAllProposals}>
+            <HashLink
+              to={"/reviewproposals"}
+              style={{ textDecoration: "none" }}
+              onClick={getAllProposals}
+            >
               <div className="card p-4 h-100">
                 <div className="card-body">
                   <h5 className="card-title-upper">

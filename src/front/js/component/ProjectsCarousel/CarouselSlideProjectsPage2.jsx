@@ -1,22 +1,18 @@
 import React from "react";
-import { HashLink } from 'react-router-hash-link'
 import CarouselItem from "./CarouselItem.jsx";
 import "./projectsCarousel.css";
-import PropTypes from "prop-types";
 import GreenBus from "../../../img/GreenBus.png";
 import TrainStation from "../../../img/TrainStation.png";
 
-
-
-const CarouselSlideProjectsPage1 = (props) => {
-	return (
+const CarouselSlideProjectsPage1 = () => {
+  return (
     <>
       <div className="row d-flex justify-content-evenly">
         <CarouselItem
-        id="carousel_item_wrapper"
+          id="carousel_item_wrapper"
           topText={
             <p>
-                <em>Voting coming soon</em>
+              <em>Voting coming soon</em>
             </p>
           }
           title="Declaration of Penn Station as historic building"
@@ -32,7 +28,7 @@ const CarouselSlideProjectsPage1 = (props) => {
           id="carousel_item_wrapper"
           topText={
             <p>
-                <em>Voting coming soon</em>
+              <em>Voting coming soon</em>
             </p>
           }
           title="Acquisition of new bus units for the city"
@@ -44,12 +40,9 @@ const CarouselSlideProjectsPage1 = (props) => {
           toVote="#"
           toDetails="/projectdetails"
         />
-      
-          
-      
       </div>
     </>
   );
 };
 
-export default CarouselSlideProjectsPage1
+export default CarouselSlideProjectsPage1;
