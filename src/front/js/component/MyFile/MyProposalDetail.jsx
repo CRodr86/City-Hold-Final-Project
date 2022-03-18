@@ -1,12 +1,6 @@
 import React from "react";
-import { HashLink } from "react-router-hash-link";
 import "./myFile.css";
 import PropTypes from "prop-types";
-import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
-import MyProfile from "./MyProfile.jsx";
-import MyProposalsEmpty from "./MyProposalsEmpty.jsx";
-import MyFilePassword from "./MyFilePassword.jsx";
-import MyProposalsFull from "./MyProposalsFull.jsx";
 import MainButton from "../MainButton/MainButton.jsx";
 
 const MyProposalDetail = (props) => {

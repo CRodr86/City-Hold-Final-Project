@@ -1,19 +1,21 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./footer.css";
 import Logo from "../Logo/Logo.jsx";
 import FooterLink from "../FooterLink/FooterLink.jsx";
 import FooterIcons from "../FooterIcons/FooterIcons.jsx";
 import { BsArrowUpCircle } from "react-icons/bs";
-import { Context } from "../../store/appContext.js";
+
+
+
+const Footer = () => {
+ 
+//Icon style variable
 const iconStyles = {
   color: "#023047",
   display: "inline-block",
   margin: "5px",
   fontSize: "35px",
 };
-
-const Footer = () => {
-  // const {store, actions} = useContext(Context);
   return (
     <footer className=" pt-5 pb-3 border-top footer">
       <div className="container">

@@ -1,20 +1,16 @@
 import React from "react";
-import { HashLink } from 'react-router-hash-link'
 import CarouselItem from "./CarouselItem.jsx";
 import "./projectsCarousel.css";
 import PedestrianStreet from "../../../img/PedestrianStreet.png";
-import NewMall from "../../../img/NewMall.png"
-import PropTypes from "prop-types";
+import NewMall from "../../../img/NewMall.png";
 import "./carouselSlide1.css";
 
-
-
-const CarouselSlide1 = (props) => {
-	return (
+const CarouselSlide1 = () => {
+  return (
     <>
       <div className="row d-flex justify-content-evenly">
         <CarouselItem
-        id="carousel_item_wrapper"
+          id="carousel_item_wrapper"
           topText={
             <p>
               <strong>17</strong> <em>days left to vote</em>
@@ -30,7 +26,7 @@ const CarouselSlide1 = (props) => {
           toDetails="/projectdetails"
         />
         <CarouselItem
-        id="carousel_item_wrapper"
+          id="carousel_item_wrapper"
           topText={
             <p>
               <strong>30</strong> <em>days left to vote</em>
@@ -50,13 +46,4 @@ const CarouselSlide1 = (props) => {
   );
 };
 
-// topText: PropTypes.string,
-//     image: PropTypes.string,
-//     imageAlt: PropTypes.string,
-//     title: PropTypes.string,
-//     description: PropTypes.string,
-//     topButtonText: PropTypes.string,
-//     bottomButtonText: PropTypes.string,
-
-
-export default CarouselSlide1
+export default CarouselSlide1;

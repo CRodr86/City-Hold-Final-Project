@@ -1,5 +1,4 @@
-import React, {useContext, useState} from "react";
-import { Context } from "../../store/appContext.js";
+import React from "react";
 import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
 import SignUpForm from "../SignUpForm/SignUpForm.jsx";
 import "./signInModal.css";

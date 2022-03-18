@@ -10,16 +10,16 @@ import TextArea from "../component/TextArea/TextArea.jsx";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
 import SelectMenu from "../component/SelectMenu/SelectMenu.jsx";
 import { save_img } from "../service/user.js";
-//Styles
 import "../../styles/proposals3.css";
-let bgImg = {
-  background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
-  backgroundPosition: `center`,
-  backgroundSize: "cover",
-  height: "max-content",
-};
 
 const Proposals3 = () => {
+  //Style variables
+  let bgImg = {
+    background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
+    backgroundPosition: `center`,
+    backgroundSize: "cover",
+    height: "max-content",
+  };
   //State variables
   const { store, actions } = useContext(Context);
   const [area, setArea] = useState("");
@@ -94,35 +94,7 @@ const Proposals3 = () => {
     <>
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
         <div className="row d-flex justify-content-center pt-5">
-          <div className="col-8 col-md-6 col-lg-4">
-            {/* Deleted stepper because we only have one page of form*/}
-
-            {/* <div className="position-relative m-4">
-              <div className="progress stepperProgress">
-                <div
-                  className="progress-bar stepperProgress-bar"
-                  role="progressbar"
-                  aria-valuenow="0"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-              <div className="d-flex justify-content-between">
-                <StepperItem
-                  stepClass="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelActive"
-                  stepLabel="1"
-                />
-                <StepperItem
-                  stepClass="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill border-0 stepLabelInactive"
-                  stepLabel="2"
-                />
-                <StepperItem
-                  stepClass="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill border-0 stepLabelInactive"
-                  stepLabel="3"
-                />
-              </div>
-            </div> */}
-          </div>
+          <div className="col-8 col-md-6 col-lg-4"></div>
         </div>
         <div className="row d-flex justify-content-center mt-1">
           <div className="col-8 text-center">

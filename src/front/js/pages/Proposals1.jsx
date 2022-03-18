@@ -1,19 +1,19 @@
 import React from "react";
 import "../../styles/proposals1.css";
 import MainButton from "../component/MainButton/MainButton.jsx";
-import { HashLink } from "react-router-hash-link";
-import StepperItem from "../component/StepperItem/StepperItem.jsx";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-let bgImg = {
-  background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
-  backgroundPosition: `center`,
-  backgroundSize: "cover",
-  height: "max-content",
-};
-
 const Proposals1 = () => {
+  //Style variable
+  let bgImg = {
+    background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
+    backgroundPosition: `center`,
+    backgroundSize: "cover",
+    height: "max-content",
+  };
+
+  //Getting token from backend
   const history = useHistory();
   const token = sessionStorage.getItem("jwt-token");
 

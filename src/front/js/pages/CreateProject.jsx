@@ -5,8 +5,11 @@ import MainButton from "../component/MainButton/MainButton.jsx";
 import FormInput from "../component/FormInput/FormInput.jsx";
 import TextArea from "../component/TextArea/TextArea.jsx";
 
-const CreateProject = (props) => {
+const CreateProject = () => {
+  //Style variable
   let bgImg = { background: "#023047", height: "max-content" };
+
+  //Store variables
   const { store, actions } = useContext(Context);
   const [area, setArea] = useState("");
   const [name, setName] = useState("");
@@ -21,7 +24,6 @@ const CreateProject = (props) => {
 
   //Sending project to the backend
 
-  //Sending proposal to backend
   const handleProject = (e) => {
     e.preventDefault();
     actions.createProject(
@@ -136,7 +138,11 @@ const CreateProject = (props) => {
               />
             </form>
             <span>
-              <MainButton to={"/previewproject"} buttonText="Submit" onClick={handleProject} />
+              <MainButton
+                to={"/previewproject"}
+                buttonText="Submit"
+                onClick={handleProject}
+              />
             </span>
           </div>
         </div>

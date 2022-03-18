@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import "./myProposals.css";
 import PropTypes from "prop-types";
 import MainButton from "../MainButton/MainButton.jsx";
-import { HashLink } from "react-router-hash-link";
 import { Context } from "../../store/appContext.js";
 
 const MyProposalsFull = (props) => {
+  //Store variable
   const { store, actions } = useContext(Context);
   const proposal = store.proposal;
 
+  //Text styling functions
   const firstCharToUpper = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };

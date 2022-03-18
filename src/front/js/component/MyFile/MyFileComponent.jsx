@@ -1,20 +1,17 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { Context } from "../../store/appContext.js";
 import "./myFile.css";
-import PropTypes from "prop-types";
-import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
 import MyProfile from "./MyProfile.jsx";
 import MyProposalsEmpty from "./MyProposalsEmpty.jsx";
 import MyFilePassword from "./MyFilePassword.jsx";
 import MyProposalsFull from "./MyProposalsFull.jsx";
-import { useHistory } from "react-router-dom";
 
-const MyFile = (props) => {
+const MyFile = () => {
   const { store, actions } = useContext(Context);
+
+  //Handler function to get user's proposals
   const getMyProposals = () => {
     actions.getProposals();
-  
   };
   return (
     <>
@@ -104,6 +101,5 @@ const MyFile = (props) => {
   );
 };
 
-MyFile.propTypes = {};
 
 export default MyFile;

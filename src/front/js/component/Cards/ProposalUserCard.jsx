@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MainButton from "../../component/MainButton/MainButton.jsx";
+
 
 const ProposalUserCard = (props) => {
   return (

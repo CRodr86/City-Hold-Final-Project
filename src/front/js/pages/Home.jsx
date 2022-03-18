@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-
+import React from "react";
 import UpperBanner from "../component/UpperBanner/UpperBanner.jsx";
 import Cards from "../component/Cards/Cards.jsx";
 import AboutBanner from "../component/AboutBanner/AboutBanner.jsx";
@@ -19,7 +17,9 @@ const Home = () => {
         primaryText="Participating has never been so easy."
         secondaryText="Get involved and keep informed of everything that is happening
                 in our city."
-        button={<MainButton to="/#about_banner_wrapper" buttonText="About us"/>}
+        button={
+          <MainButton to="/#about_banner_wrapper" buttonText="About us" />
+        }
       />
       <Cards />
       <AboutBanner />
