@@ -15,12 +15,12 @@ const PreviewProject = () => {
         <CarouselItem
           id="carousel_item_wrapper"
           topText={
-            <p>
+            <div className="mb-3">
               <strong>Project Area: </strong>
               <em>{store.area}</em>
-            </p>
+            </div>
           }
-          title={store.name}
+          title={store.project_name}
           description={store.general_description}
           image={PedestrianStreet}
           imageAlt="Pedestrian Street"

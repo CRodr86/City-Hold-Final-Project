@@ -269,6 +269,8 @@ const Proposals3 = () => {
                 label="Describe your proposal"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                labelClassName="form-label"
+                className="form-control"
               />
             </div>
             {/* Document attachment input */}
