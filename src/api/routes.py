@@ -203,6 +203,16 @@ def create_token():
     else:
         return jsonify({"msg": "Bad email or password"}), 401
 
+@api.route("/citytoken", methods=["POST"])
+def create_city_token():
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    if email != "test" or password != "test":
+        return jsonify({"msg": "Bad email or password"}), 401
+
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
+
 #Project endpoints
 
 @api.route('/project', methods=['GET'])
@@ -212,6 +222,7 @@ def get_projects():
     return jsonify(all_projects), 200 
 
 @api.route('/project', methods=['POST'])
+@jwt_required()
 def create_project():
     area, name, general_description, image, start, cost, taxes, developer, jobs = request.json.get(
         "area" , None
@@ -238,6 +249,7 @@ def create_project():
     return jsonify(new_project.serialize()), 201
 
 @api.route('/project/<int:id>', methods=['DELETE'])
+@jwt_required()
 def delete_project(id):
     project_x = Project.query.get(id)
     if project_x is None:
@@ -248,6 +260,7 @@ def delete_project(id):
         return jsonify("Project deleted"), 200
 
 @api.route('/project/<int:id>', methods=['GET'])
+@jwt_required()
 def get_one_project(id):
     project_x = Project.query.get(id)
     if project_x is None:

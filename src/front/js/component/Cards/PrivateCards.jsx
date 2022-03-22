@@ -24,6 +24,10 @@ const PrivateCards = () => {
   const getAllProjects = () => {
     actions.getAllProjects();
   };
+
+  const cityLogout = () => {
+    actions.cityLogout();
+  };
   return (
     <>
       <div className="container">
@@ -92,6 +96,23 @@ const PrivateCards = () => {
                       <FaCity style={iconStyles} /> Delete Project
                     </h5>
                     <p className="card-text">Review and delete city projects</p>
+                  </div>
+                </div>
+              </HashLink>
+            </div>
+            <div className="col-md-4 card_wrapper">
+              <HashLink
+                to={"/"}
+                style={{ textDecoration: "none" }}
+                onClick={cityLogout}
+              >
+                <div className="card p-4 h-100">
+                  <div className="card-body">
+                    <h5 className="card-title-upper">
+                      {" "}
+                      <FaCity style={iconStyles} /> Logout
+                    </h5>
+                    <p className="card-text">End city session.</p>
                   </div>
                 </div>
               </HashLink>
