@@ -92,22 +92,6 @@ const CreateProject = () => {
                 </div>
               </div>
               <div className="row d-flex justify-content-center">
-                <div className="col-lg-4 col-md-6 col-8">
-                  <FormInput
-                    divClassName="mb-3"
-                    inputType="file"
-                    inputClassName="form-control-private col-12 mb-3"
-                    inputId="formImg"
-                    inputPlaceholder="Type here..."
-                    labelClassName="form-label-private col-12 mb-2"
-                    labelFor="image"
-                    labelText="Load Cover Image"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="row d-flex justify-content-center">
                 <div className="col-lg-6 col-md-8 col-10">
                   <TextArea
                     label="General Description"
