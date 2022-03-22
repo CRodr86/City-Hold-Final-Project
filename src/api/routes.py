@@ -117,11 +117,6 @@ def get_user_proposal():
 @api.route('/proposal', methods=['POST'])
 @jwt_required()
 def create_proposal():
-    # cloudinary.config( 
-    #     cloud_name = "pablop442", 
-    #     api_key = "714367384677275", 
-    #     api_secret = "1X765N8teYSzs7-W2LM_3KXwoSU" 
-    # )
     user_id = get_jwt_identity()
     print(user_id)
     area, proposal_type, date, description, documents, document_type, document_description, contact_by, confirmation_by = request.json.get(

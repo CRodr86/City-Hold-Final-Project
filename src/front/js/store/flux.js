@@ -368,9 +368,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
           const data = await resp.json();
           console.log(data);
-          // setStore({
-          //  data: data,
-          // });
+          alert("Project deleted")
           return true;
         } catch (error) {
           console.error("There was an error ", error);

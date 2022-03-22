@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import MainButton from "../component/MainButton/MainButton.jsx";
-import { useHistory } from "react-router-dom";
 import CarouselItem from "../component/ProjectsCarousel/CarouselItem.jsx";
 import CityHoldLogo from "../../img/CityHoldLogo.png";
 
@@ -12,28 +11,21 @@ const DeleteProjects = () => {
   //Context variables
   const { store, actions } = useContext(Context);
   const data = store.data;
-  const history = useHistory();
 
-  // const [project, setProject] = useState(data);
 
   // Getting all projects from back as page first loads
   useEffect(() => {
     actions.getAllProjects();
   }, []);
 
-  //Handler function renders only one user data
+  //Handler function deletes selected project and loads updated data.
   const deleteProject = (id) => {
-    actions.deleteProject(id);
-    // history.push("/deleteprojects");
-    // const newArray = project.filter((item, i) => i != id);
-    // setProject(newArray);
+    const remove = actions.deleteProject(id);
+    remove.then(() => {
+      actions.getAllProjects();
+    });
   };
 
-  // const removeProject = (id) => {
-  //   const newArray = project.filter((item, i) => i != id);
-  //   setProject(newArray);
-  //   deleteProject(id);
-  // };
 
   return (
     <>
@@ -59,6 +51,7 @@ const DeleteProjects = () => {
                   imageAlt="Logo"
                   btn={
                     <MainButton
+                      to="#"
                       buttonText="Delete Project"
                       onClick={() => deleteProject(item.id)}
                     />
