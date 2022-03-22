@@ -28,9 +28,9 @@ import CreateProject from "./pages/CreateProject.jsx";
 import ReviewProposals from "./pages/ReviewProposals.jsx";
 import ReviewUser from "./pages/ReviewUser.jsx";
 import PreviewProject from "./pages/PreviewProject.jsx";
+import DeleteProjects from "./pages/DeleteProjects.jsx";
 
 const Layout = () => {
-
   const basename = process.env.BASENAME || "";
 
   return (
@@ -75,6 +75,7 @@ const Layout = () => {
           <Route exact path="/reviewproposals" component={ReviewProposals} />
           <Route exact path="/reviewuser" component={ReviewUser} />
           <Route exact path="/previewproject" component={PreviewProject} />
+          <Route exact path="/deleteprojects" component={DeleteProjects} />
         </Switch>
         <Footer />
       </BrowserRouter>

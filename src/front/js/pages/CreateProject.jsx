@@ -55,6 +55,7 @@ const CreateProject = () => {
         <div className="container-fluid w-100" id="banner_wrapper">
           <div className="text-center py-5" id="bg-image" style={bgImg}>
             <h1 id="upper_banner_h1">Create a new Project</h1>
+
             <p className="mb-4" id="upper_banner_p">
               Please fill the following form
             </p>
