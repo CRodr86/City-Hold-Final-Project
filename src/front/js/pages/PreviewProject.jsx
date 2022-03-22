@@ -3,11 +3,13 @@ import { Context } from "../store/appContext";
 import CarouselItem from "../component/ProjectsCarousel/CarouselItem.jsx";
 import "../component/ProjectsCarousel/projectsCarousel.css";
 import PedestrianStreet from "../../img/PedestrianStreet.png";
+import CityHoldLogo from "../../img/CityHoldLogo.png"
 import "../component/DetailsAcordeon/detailsAcordeon.css";
 import DetailsAcordeon from "../component/DetailsAcordeon/DetailsAcordeon.jsx";
 
 const PreviewProject = () => {
   const { store, actions } = useContext(Context);
+
 
   return (
     <>
@@ -22,8 +24,8 @@ const PreviewProject = () => {
           }
           title={store.project_name}
           description={store.general_description}
-          image={PedestrianStreet}
-          imageAlt="Pedestrian Street"
+          image={CityHoldLogo}
+          imageAlt="City Hold"
           topButtonText="Details"
           bottomButtonText="Leave Proposal"
         />

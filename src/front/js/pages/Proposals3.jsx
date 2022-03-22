@@ -31,8 +31,8 @@ const Proposals3 = () => {
   const [document_description, setDocument_Description] = useState("");
   const [contact_by, setContact_By] = useState("");
   const [confirmation_by, setConfirmation_By] = useState("");
-  const [file, setFile] = useState("");
-  const [fileUrl, setFileUrl] = useState("");
+  const [files, setFiles] = useState([]);
+  // const [fileUrl, setFileUrl] = useState("");
   const history = useHistory();
 
   //Sending proposal to backend
@@ -63,32 +63,42 @@ const Proposals3 = () => {
 
   //File handlers
 
-  const handleChangeFile = (e) => {
-    if (e.target.files) {
-      setFile(e.target.files[0]);
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        if (reader.readyState === 2) {
-          console.log("result", reader.result);
-        }
-      };
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  };
+  // const handleChangeFile = (e) => {
+  //   if (e.target.files) {
+  //     setFile(e.target.files[0]);
+  //     const reader = new FileReader();
+  //     reader.onload = (e) => {
+  //       if (reader.readyState === 2) {
+  //         console.log("result", reader.result);
+  //       }
+  //     };
+  //     reader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
 
-  const handelClick = async () => {
-    try {
-      const form = new FormData();
-      form.append("img", file);
-      const res = await save_img(form);
-      const data = await res.json();
-      console.log(data);
-      setFileUrl(data[0]);
-    } catch (err) {
-      console.log(err);
-    }
+  // const handelClick = async () => {
+  //   try {
+  //     const form = new FormData();
+  //     form.append("img", file);
+  //     const res = await save_img(form);
+  //     const data = await res.json();
+  //     console.log(data);
+  //     setFileUrl(data[0]);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // console.log(file);
+
+  const saveImage = () => {
+    let data = new FormData();
+    data.append("file", files[0]);
+
+    fetch(process.env.BACKEND_URL + "/api/proposal/documents", {
+      method: "POST",
+      body: data,
+    });
   };
-  console.log(file);
 
   return (
     <>
@@ -290,10 +300,13 @@ const Proposals3 = () => {
                       className="align-middle m-4 documentsBoxText"
                       type="file"
                       id="getFile"
-                      onChange={handleChangeFile}
-                      style={{ display: "none" }}
+                      
+                      onChange={(event) => {
+                        setFiles(event.target.files);
+                      }}
+                      // style={{ display: "none" }}
                     />
-                    Drag and drop your files here or...
+                    Attach images, videos or files
                   </div>
                 </div>
                 <div className="row">
@@ -305,14 +318,14 @@ const Proposals3 = () => {
                     >
                       Attach your files
                     </label> */}
-                    <img src={fileUrl}></img>
+                    {/* <img src={fileUrl}></img>
                     <button
-                      onClick={handelClick}
+                      onClick={saveImage}
                       className="form-label"
                       id="getFileLink"
                     >
                       Attach Files
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
@@ -387,7 +400,7 @@ const Proposals3 = () => {
               <MainButton
                 buttonText="Submit"
                 to={"/proposals-5"}
-                onClick={handleProposal}
+                onClick={(e)=>{handleProposal(e); saveImage()}}
               />
             </div>
           </div>

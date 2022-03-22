@@ -350,6 +350,34 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      deleteProject: async (id) => {
+        const opts = {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/project/" + id,
+            opts
+          );
+          if (resp.status !== 200) {
+            alert("Something went wrong");
+            return false;
+          }
+          const data = await resp.json();
+          console.log(data);
+          // setStore({
+          //  data: data,
+          // });
+          return true;
+        } catch (error) {
+          console.error("There was an error ", error);
+        }
+      },
+
+
       getProjectData: async (id) => {
         const opts = {
           method: "GET",

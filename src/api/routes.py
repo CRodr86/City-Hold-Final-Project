@@ -9,6 +9,9 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from werkzeug.security import generate_password_hash, check_password_hash
 from cloudinary.uploader import upload
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 api = Blueprint('api', __name__)
@@ -114,6 +117,11 @@ def get_user_proposal():
 @api.route('/proposal', methods=['POST'])
 @jwt_required()
 def create_proposal():
+    # cloudinary.config( 
+    #     cloud_name = "pablop442", 
+    #     api_key = "714367384677275", 
+    #     api_secret = "1X765N8teYSzs7-W2LM_3KXwoSU" 
+    # )
     user_id = get_jwt_identity()
     print(user_id)
     area, proposal_type, date, description, documents, document_type, document_description, contact_by, confirmation_by = request.json.get(
@@ -135,6 +143,11 @@ def create_proposal():
     ), request.json.get(
         "confirmation_by", None
     )
+    # file_to_upload = request.files.get('documents')
+    # if file_to_upload: 
+    #     upload_result = cloudinary.uploader.upload(file_to_upload)
+    #     if upload_result:
+    #         documents = upload_result.get('secure_url')
     new_proposal = Proposal(area= area, proposal_type= proposal_type, date= date, description= description, documents= documents, document_type= document_type, document_description= document_description, contact_by= contact_by, confirmation_by= confirmation_by, proponent_id=user_id)
     db.session.add(new_proposal)
     db.session.commit()
@@ -142,17 +155,34 @@ def create_proposal():
 
 @api.route('/proposal/documents', methods=['POST'])
 def upload_file():
-    try:
-        img = request.files['documents']
-        body =  request.form.to_dict()
-        print(img)
-        print(body)
-        url_img = upload(img)
-        print(url_img)
-        return jsonify(url_img['url'], 200)
-    except Exception as error:
-        print(error)
-        return jsonify('algo fue mal', 500)
+    proposal = Proposal.query.get(1)
+    
+    cloudinary.config( 
+        cloud_name = "pablop442", 
+        api_key = "714367384677275", 
+        api_secret = "1X765N8teYSzs7-W2LM_3KXwoSU" 
+    )
+    
+    upload_result = None
+    file_to_upload = request.files.get('documents')
+    if file_to_upload: 
+        upload_result = cloudinary.uploader.upload(file_to_upload)
+        if upload_result:
+            proposal.documents = upload_result.get('secure_url')
+    db.session.add(file_to_upload)
+    db.session.commit()
+    return jsonify(''), 200 
+    # try:
+    #     img = request.files['documents']
+    #     body =  request.form.to_dict()
+    #     print(img)
+    #     print(body)
+    #     url_img = upload(img)
+    #     print(url_img)
+    #     return jsonify(url_img['url'], 200)
+    # except Exception as error:
+    #     print(error)
+    #     return jsonify('algo fue mal', 500)
 
 @api.route('/proposal/<int:id>', methods=['DELETE'])
 def delete_proposal(id):

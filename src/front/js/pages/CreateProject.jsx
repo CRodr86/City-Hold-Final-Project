@@ -82,18 +82,7 @@ const CreateProject = () => {
                 onChange={(e) => setName(e.target.value)}
               />
 
-              <FormInput
-                divClassName="mb-3"
-                inputType="file"
-                inputClassName="form-control-private ms-2"
-                inputId="formImg"
-                inputPlaceholder="Type here..."
-                labelClassName="form-label-private"
-                labelFor="image"
-                labelText="Load Cover Image"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              />
+          
               <TextArea
                 label="General Description"
                 className="form-control-private ms-2"

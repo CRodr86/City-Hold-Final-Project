@@ -20,6 +20,10 @@ const PrivateCards = () => {
   const getAllProposals = () => {
     actions.getAllProposals();
   };
+
+  const getAllProjects = () => {
+    actions.getAllProjects();
+  };
   return (
     <>
       <div className="container">
@@ -73,6 +77,25 @@ const PrivateCards = () => {
                 </div>
               </div>
             </HashLink>
+          </div>
+          <div className="row mt-2 mb-2">
+            <div className="col-md-4 card_wrapper">
+              <HashLink
+                to={"/deleteprojects"}
+                style={{ textDecoration: "none" }}
+                onClick={getAllProjects}
+              >
+                <div className="card p-4 h-100">
+                  <div className="card-body">
+                    <h5 className="card-title-upper">
+                      {" "}
+                      <FaCity style={iconStyles} /> Delete Project
+                    </h5>
+                    <p className="card-text">Review and delete city projects</p>
+                  </div>
+                </div>
+              </HashLink>
+            </div>
           </div>
         </div>
       </div>
