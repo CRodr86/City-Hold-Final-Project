@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../store/appContext";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import FormInput from "../component/FormInput/FormInput.jsx";
+import { useHistory } from "react-router-dom";
 
-const CityPrivateArea = (props) => {
+const CityPrivateArea = () => {
+  const { store, actions } = useContext(Context);
 
-//Style variable
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+  const cityToken = sessionStorage.getItem("jwt-token");
+
+  const citySignIn = (e) => {
+    e.preventDefault();
+    actions.citySignIn(email, password);
+  };
+
+  //Style variable
   let bgImg = { background: "#023047" };
+
+ if (cityToken && cityToken != "" && cityToken != undefined){
+    history.push("/cityhome")
+  }
 
   return (
     <>
@@ -29,6 +46,8 @@ const CityPrivateArea = (props) => {
                     inputClassName="form-control-private"
                     inputId="formEmail"
                     inputPlaceholder="Email"
+                    onChange={(ev) => setEmail(ev.target.value)}
+                    value={email}
                   />
                   <FormInput
                     divClassName="mb-3"
@@ -36,10 +55,16 @@ const CityPrivateArea = (props) => {
                     inputClassName="form-control-private"
                     inputId="formPassword"
                     inputPlaceholder="Password"
+                    onChange={(ev) => setPassword(ev.target.value)}
+                    value={password}
                   />
                 </form>
                 <span>
-                  <MainButton to="/cityhome" buttonText="Access Private Area" />
+                  <MainButton
+                    to="/cityhome"
+                    buttonText="Access Private Area"
+                    onClick={citySignIn}
+                  />
                 </span>
               </div>
             </div>

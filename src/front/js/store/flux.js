@@ -61,6 +61,46 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
       },
 
+      citySignIn: async (email, password) => {
+        const opts = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        };
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/citytoken",
+            opts
+          );
+          if (resp.status !== 200) {
+            alert("Bad email or password");
+            return false;
+          }
+          const data = await resp.json();
+          console.log("this came from backend", data);
+          sessionStorage.setItem("jwt-token", data.access_token);
+          setStore({
+            cityToken: data.access_token,
+          });
+          return true;
+        } catch (error) {
+          console.error("There has been an error", error);
+        }
+      },
+
+      cityLogout: () => {
+        sessionStorage.removeItem("jwt-token");
+        setStore({
+          cityToken: null,
+        });
+      },
+
       createNewUser: async (
         name,
         lastname,
@@ -368,13 +408,12 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
           const data = await resp.json();
           console.log(data);
-          alert("Project deleted")
+          alert("Project deleted");
           return true;
         } catch (error) {
           console.error("There was an error ", error);
         }
       },
-
 
       getProjectData: async (id) => {
         const opts = {

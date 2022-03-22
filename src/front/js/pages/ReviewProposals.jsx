@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import MainButton from "../component/MainButton/MainButton.jsx";
 import ProposalUserCard from "../component/Cards/ProposalUserCard.jsx";
@@ -18,6 +18,9 @@ const ReviewProposals = () => {
     actions.getUserData(id);
     history.push("/reviewuser");
   };
+  useEffect(() => {
+    actions.getAllProposals();
+  }, []);
 
   //Style functions
   const firstCharToUpper = (str) => {
