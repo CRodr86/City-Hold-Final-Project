@@ -23,7 +23,7 @@ const Cards = () => {
     <>
       <div className="container">
         <div className="row mt-5">
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/proposals"} style={{ textDecoration: "none" }}>
               <div className="card p-4 h-100">
                 <div className="card-body">
@@ -39,7 +39,7 @@ const Cards = () => {
             </HashLink>
           </div>
 
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/projects"} style={{ textDecoration: "none" }}>
               <div className="card p-4 h-100">
                 <div className="card-body">
@@ -56,7 +56,7 @@ const Cards = () => {
             </HashLink>
           </div>
 
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/publicvoting"} style={{ textDecoration: "none" }}>
               {" "}
               <div className="card p-4 h-100">
@@ -74,8 +74,8 @@ const Cards = () => {
             </HashLink>
           </div>
         </div>
-        <div className="row mt-4 ">
-          <div className="col-md-4 card_wrapper">
+        <div className="row">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/services"} style={{ textDecoration: "none" }}>
               <div className="card p-4 h-100">
                 <div className="card-body">
@@ -91,8 +91,7 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
-
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/myfilehome"} style={{ textDecoration: "none" }}>
               <div className="card p-4 h-100">
                 <div className="card-body">
@@ -107,8 +106,7 @@ const Cards = () => {
               </div>
             </HashLink>
           </div>
-
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/news"} style={{ textDecoration: "none" }}>
               <div className="card p-4 h-100">
                 <div className="card-body">

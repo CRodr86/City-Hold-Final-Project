@@ -16,7 +16,7 @@ const iconStyles = {
 
 	return (
     <>
-      <div className="container-fluid my-5" id="about_banner_wrapper" >
+      <div className="container-fluid mt-1 mb-5" id="about_banner_wrapper" >
         <div className="row my-3"  > 
           <div className="col-md-8 p-2">
             <h5 id="section_title">About us</h5>
