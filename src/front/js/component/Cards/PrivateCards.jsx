@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Context } from "../../store/appContext";
 import "./cards.css";
-import { FaCity, FaEnvelopeOpenText, FaPersonBooth } from "react-icons/fa";
+import { FaCity, FaEnvelopeOpenText, FaPersonBooth, FaClipboardList, FaTrashAlt, FaTimesCircle } from "react-icons/fa";
 
 const PrivateCards = () => {
   //Icon styles variable
@@ -32,7 +32,7 @@ const PrivateCards = () => {
     <>
       <div className="container">
         <div className="row mt-5 mb-5">
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/createvote"} style={{ textDecoration: "none" }}>
               {" "}
               <div className="card p-4 h-100">
@@ -48,7 +48,7 @@ const PrivateCards = () => {
               </div>
             </HashLink>
           </div>
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink to={"/createproject"} style={{ textDecoration: "none" }}>
               <div className="card p-4 h-100">
                 <div className="card-body">
@@ -62,8 +62,7 @@ const PrivateCards = () => {
               </div>
             </HashLink>
           </div>
-
-          <div className="col-md-4 card_wrapper">
+          <div className="col-md-4 card_wrapper mb-4">
             <HashLink
               to={"/reviewproposals"}
               style={{ textDecoration: "none" }}
@@ -73,7 +72,7 @@ const PrivateCards = () => {
                 <div className="card-body">
                   <h5 className="card-title-upper">
                     {" "}
-                    <FaCity style={iconStyles} /> Review Proposals
+                    <FaClipboardList style={iconStyles} /> Review Proposals
                   </h5>
                   <p className="card-text">
                     Access all user proposals database.
@@ -82,8 +81,7 @@ const PrivateCards = () => {
               </div>
             </HashLink>
           </div>
-          <div className="row mt-2 mb-2">
-            <div className="col-md-4 card_wrapper">
+            <div className="col-md-4 card_wrapper mb-4">
               <HashLink
                 to={"/deleteprojects"}
                 style={{ textDecoration: "none" }}
@@ -93,14 +91,14 @@ const PrivateCards = () => {
                   <div className="card-body">
                     <h5 className="card-title-upper">
                       {" "}
-                      <FaCity style={iconStyles} /> Delete Project
+                      <FaTrashAlt style={iconStyles} /> Delete Project
                     </h5>
                     <p className="card-text">Review and delete city projects</p>
                   </div>
                 </div>
               </HashLink>
             </div>
-            <div className="col-md-4 card_wrapper">
+            <div className="col-md-4 card_wrapper mb-4">
               <HashLink
                 to={"/"}
                 style={{ textDecoration: "none" }}
@@ -110,7 +108,7 @@ const PrivateCards = () => {
                   <div className="card-body">
                     <h5 className="card-title-upper">
                       {" "}
-                      <FaCity style={iconStyles} /> Logout
+                      <FaTimesCircle style={iconStyles} /> Logout
                     </h5>
                     <p className="card-text">End city session.</p>
                   </div>
@@ -119,7 +117,6 @@ const PrivateCards = () => {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
