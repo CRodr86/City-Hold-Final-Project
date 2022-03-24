@@ -66,7 +66,7 @@ const PrivateCards = () => {
             <HashLink
               to={"/reviewproposals"}
               style={{ textDecoration: "none" }}
-              onClick={getAllProposals}
+              // onClick={getAllProposals}
             >
               <div className="card p-4 h-100">
                 <div className="card-body">

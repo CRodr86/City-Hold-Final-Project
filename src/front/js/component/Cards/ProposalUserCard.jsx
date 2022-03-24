@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const ProposalUserCard = (props) => {
   return (
     <>
-      <div className="card border-white mb-3 h-100" key={props.key}>
+      <div className="card border-white mb-3 h-100" >
         <div className="card-header bg-transparent border-secondary">
           {props.date}
         </div>
