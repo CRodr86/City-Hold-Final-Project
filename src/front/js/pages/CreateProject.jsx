@@ -159,13 +159,18 @@ const CreateProject = () => {
                 </div>
               </div>
             </form>
-            <span>
-              <MainButton
-                to={"/previewproject"}
-                buttonText="Submit"
-                onClick={handleProject}
-              />
-            </span>
+            <div className="row d-flex justify-content-center">
+              <div className="col-lg-6 col-md-8 col-10">
+                <div className="d-flex justify-content-evenly">
+                  <MainButton to={"/cityhome"} buttonText="Back" />
+                  <MainButton
+                    to={"/previewproject"}
+                    buttonText="Submit"
+                    onClick={handleProject}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </>

@@ -58,8 +58,7 @@ const ReviewProposals = () => {
               ))}
             </div>
           </div>
-
-          <span>
+          <span className="mt-2">
             <MainButton to="/cityhome" buttonText="Back" />
           </span>
         </div>

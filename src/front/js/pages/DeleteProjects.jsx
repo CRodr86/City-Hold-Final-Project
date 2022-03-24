@@ -60,6 +60,11 @@ const DeleteProjects = () => {
               ))}
             </div>
           </div>
+          <div className="row d-flex justify-content-center mt-4">
+            <div className="col-3">
+              <MainButton buttonText="Back" to={"/cityhome"} />
+          </div>
+        </div>
         </div>
       </div>
     </>
