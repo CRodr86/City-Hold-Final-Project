@@ -8,7 +8,7 @@ const ReviewProposals = () => {
   //Style variable
   let bgImg = { background: "#023047", height: "max-content" };
 
-//Context variables
+  //Context variables
   const { store, actions } = useContext(Context);
   const data = store.data;
   const history = useHistory();
@@ -41,8 +41,10 @@ const ReviewProposals = () => {
                 <div className="col-md-4 mb-3">
                   <ProposalUserCard
                     key={item.id}
+                    proposal_id={item.id}
                     proposal_type={firstCharToUpper(item.proposal_type)}
                     description={item.description}
+                    document_type={item.document_type}
                     contact={item.contact_by}
                     proponent={item.proponent_id}
                     confirmation={item.confirmation_by}

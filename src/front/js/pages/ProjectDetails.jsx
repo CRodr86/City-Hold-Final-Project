@@ -8,7 +8,7 @@ const ProjectDetails = () => {
     <>
       <GeneralBackground
         gralBgClassName="bg-image px-2 py-5 text-center"
-        primaryText="FAQ"
+        primaryText="Project FAQ"
         h1ClassName="pb-2 px-3"
         secondaryText="In this section you will find all the detailed infomation about the project."
         mainContent={<VoteAcordeon />}
