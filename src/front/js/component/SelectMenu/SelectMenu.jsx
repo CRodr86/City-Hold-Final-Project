@@ -10,14 +10,14 @@ const SelectMenu = (props) => {
         aria-label="Default select example"
         onChange={props.onChange}
       >
-        <option selected={props.selected}>Open this select menu</option>
-        <option valuename={props.valueName1} selected={props.selected1}>
+        <option defaultValue={props.selected}>Open this select menu</option>
+        <option valuename={props.valueName1} defaultValue={props.selected1}>
           {props.value1}
         </option>
-        <option valuename={props.valueName2} selected={props.selected2}>
+        <option valuename={props.valueName2} defaultValue={props.selected2}>
           {props.value2}
         </option>
-        <option valuename={props.valueName3} selected={props.selected3}>
+        <option valuename={props.valueName3} defaultValue={props.selected3}>
           {props.value3}
         </option>
       </select>

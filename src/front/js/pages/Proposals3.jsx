@@ -276,7 +276,7 @@ const Proposals3 = () => {
             {/* Description input */}
             <div className="row">
               <TextArea
-                label="Describe your proposal"
+                label="Describe your proposal. Please provide all possible details."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 labelClassName="form-label"
@@ -284,7 +284,7 @@ const Proposals3 = () => {
               />
             </div>
             {/* Document attachment input */}
-            <div className="row mt-3">
+            {/* <div className="row mt-3">
               <div className="col">
                 <p id="areaP">Documents</p>
               </div>
@@ -300,7 +300,7 @@ const Proposals3 = () => {
                       className="align-middle m-4 documentsBoxText"
                       type="file"
                       id="getFile"
-                      
+                      name="file"
                       onChange={(event) => {
                         setFiles(event.target.files);
                       }}
@@ -310,7 +310,7 @@ const Proposals3 = () => {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col mb-3 d-flex justify-content-center">
+                  <div className="col mb-3 d-flex justify-content-center"> */}
                     {/* <label
                       htmlFor="getFile"
                       className="form-label"
@@ -319,27 +319,27 @@ const Proposals3 = () => {
                       Attach your files
                     </label> */}
                     {/* <img src={fileUrl}></img>
-                    <button
-                      onClick={saveImage}
-                      className="form-label"
-                      id="getFileLink"
-                    >
-                      Attach Files
-                    </button> */}
-                  </div>
+                    // <button
+                    //   onClick={saveImage}
+                    //   className="form-label"
+                    //   id="getFileLink"
+                    // >
+                    //   Attach Files
+                    // </button> */}
+                  {/* </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* Type of document input */}
             <div className="row">
               <SelectMenu
-                label="Type of documents"
+                label="Neighborhood to which your proposal is addressed"
                 class="form-select border-0"
-                value1="Photo"
-                value2="Video"
-                value3="Other"
-                selected1={document_type === "Photo"}
-                selected2={document_type === "Video"}
+                value1="Manhattan"
+                value2="Brooklyn"
+                value3="Queens"
+                selected1={document_type === "Manhattan"}
+                selected2={document_type === "Brooklyn"}
                 selected3={document_type === "Other"}
                 valueName1="1"
                 valueName2="2"
@@ -348,7 +348,7 @@ const Proposals3 = () => {
               />
             </div>
             {/* Document description input */}
-            <div className="row">
+            {/* <div className="row">
               <TextArea
                 labelClassName="form-label"
                 className="form-control"
@@ -356,12 +356,12 @@ const Proposals3 = () => {
                 value={document_description}
                 onChange={(e) => setDocument_Description(e.target.value)}
               />
-            </div>
+            </div> */}
             {/* How to contact user input */}
             <div className="row mt-3">
               <div className="col-md-6">
                 <SelectMenu
-                  label="Contact me by"
+                  label="Recieve information about your proposal by"
                   class="form-select border-0"
                   value1="Email"
                   value2="Phone"
@@ -377,17 +377,17 @@ const Proposals3 = () => {
               </div>
               <div className="col-md-6">
                 <SelectMenu
-                  label="Recieve information by"
+                  label="Recieve information about city events by"
                   class="form-select border-0"
                   value1="Email"
-                  value2="SMS"
-                  value3="WhatsApp"
+                  value2="WhatsApp"
+                  value3="None"
                   valueName1="1"
                   valueName2="2"
                   valueName3="3"
                   selected1={confirmation_by === "Email"}
-                  selected2={confirmation_by === "SMS"}
-                  selected3={confirmation_by === "WhatsApp"}
+                  selected2={confirmation_by === "WhatsApp"}
+                  selected3={confirmation_by === "None"}
                   onChange={(e) => setConfirmation_By(e.target.value)}
                 />
               </div>
@@ -400,7 +400,10 @@ const Proposals3 = () => {
               <MainButton
                 buttonText="Submit"
                 to={"/proposals-5"}
-                onClick={(e)=>{handleProposal(e); saveImage()}}
+                onClick={(e) => {
+                  handleProposal(e);
+                  // saveImage();
+                }}
               />
             </div>
           </div>

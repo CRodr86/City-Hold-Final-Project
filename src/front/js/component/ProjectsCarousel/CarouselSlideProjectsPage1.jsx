@@ -60,6 +60,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -86,6 +87,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -112,6 +114,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -137,6 +140,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -163,6 +167,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -189,6 +194,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -215,6 +221,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -241,6 +248,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
@@ -265,6 +273,7 @@ const CarouselSlideProjectsPage1 = () => {
                     <MainButton
                       buttonText="More Details"
                       onClick={() => getProjectData(item.id)}
+                      to="#"
                     />
                   }
                 />
