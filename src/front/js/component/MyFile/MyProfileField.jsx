@@ -7,7 +7,7 @@ const MyProfileField = (props) => {
     <>
       <div className="col-md-6 text-start">
         <p id="profile_title">{props.title}</p>
-        <p id="profile_content">{props.content}</p>
+        <p className="border border-2 rounded border-secondary fw-bold p-2" id="profile_content">{props.content}</p>
       </div>
     </>
   );
