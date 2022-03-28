@@ -22,10 +22,15 @@ import Services from "./pages/Services.jsx";
 import News from "./pages/News.jsx";
 import MyFileHome from "./pages/MyFileHome.jsx";
 import ThankYouSignIn from "./pages/ThankYouSignIn.jsx";
+import CityPrivateArea from "./pages/CityPrivateArea.jsx";
+import CityHome from "./pages/CityHome.jsx";
+import CreateProject from "./pages/CreateProject.jsx";
+import ReviewProposals from "./pages/ReviewProposals.jsx";
+import ReviewUser from "./pages/ReviewUser.jsx";
+import PreviewProject from "./pages/PreviewProject.jsx";
+import DeleteProjects from "./pages/DeleteProjects.jsx";
 
 const Layout = () => {
-  //the basename is used when your project is published in a subdirectory and not in the root of the domain
-  // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
 
   return (
@@ -64,6 +69,13 @@ const Layout = () => {
           <Route exact path="/services" component={Services} />
           <Route exact path="/news" component={News} />
           <Route exact path="/welcome" component={ThankYouSignIn} />
+          <Route exact path="/cityprivate" component={CityPrivateArea} />
+          <Route exact path="/cityhome" component={CityHome} />
+          <Route exact path="/createproject" component={CreateProject} />
+          <Route exact path="/reviewproposals" component={ReviewProposals} />
+          <Route exact path="/reviewuser" component={ReviewUser} />
+          <Route exact path="/previewproject" component={PreviewProject} />
+          <Route exact path="/deleteprojects" component={DeleteProjects} />
         </Switch>
         <Footer />
       </BrowserRouter>

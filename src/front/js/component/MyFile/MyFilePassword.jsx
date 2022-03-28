@@ -1,14 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./myFile.css";
-import PropTypes from "prop-types";
 import FormInput from "../FormInput/FormInput.jsx";
 import MainButton from "../MainButton/MainButton.jsx";
 
 
 
 
-const MyFilePassword = (props) => {
+const MyFilePassword = () => {
 	return (
     <>
      <div className="row g-3 bg-white m-auto px-5 pb-5 text-start w-100">

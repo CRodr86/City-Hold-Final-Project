@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./counterBanner.css";
 import CounterElement from "./CounterElement.jsx";
 

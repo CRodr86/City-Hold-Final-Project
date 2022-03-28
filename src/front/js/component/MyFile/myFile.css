@@ -1,14 +1,12 @@
-#myfile_wrapper{
-    background: #e5e5e5;
-
-   
+#myfile_wrapper {
+  background: #e5e5e5;
 }
 
-.profile_nav_btn{
-font-family: Ubuntu !important;
-color: #010B13 !important;
+.profile_nav_btn {
+  font-family: Ubuntu !important;
+  color: #010b13 !important;
 }
 
-.nav-pills .nav-link.active{
-    background-color: white;
+.nav-pills .nav-link.active {
+  background-color: white;
 }

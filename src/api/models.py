@@ -52,6 +52,7 @@ class Proposal(db.Model):
     contact_by = db.Column(db.String(20), unique=False, nullable=False)
     confirmation_by = db.Column(db.String(20), unique=False, nullable=False)
     proponent_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user= db.relationship('User')
   
 
     # def __repr__(self):
@@ -61,15 +62,45 @@ class Proposal(db.Model):
         return {
             "id": self.id,
             "area": self.area,
-            "proposal type": self.proposal_type,
+            "proposal_type": self.proposal_type,
             "date": self.date,
             "description": self.description,
             "documents": self.documents,
-            "document type": self.document_type,
+            "document_type": self.document_type,
             "document_description": self.document_description,
             "contact_by": self.contact_by,
-            "confirmation by": self.confirmation_by,
+            "confirmation_by": self.confirmation_by,
             "proponent_id" : self.proponent_id,
             # "proponent" : self.proponent,
             # do not serialize the password, its a security breach
+        }
+
+class Project(db.Model):
+    __tablename__ = 'project'
+    id = db.Column(db.Integer, primary_key=True)
+    area = db.Column(db.String(200), unique=False, nullable=False)
+    name = db.Column(db.String(200), unique=False, nullable=False)
+    general_description = db.Column(db.String(1000), unique=False, nullable=False)
+    image = db.Column(db.String(800), unique=False, nullable=False)
+    start = db.Column(db.String(800), unique=False, nullable=False)
+    cost = db.Column(db.String(800), unique=False, nullable=False)
+    taxes = db.Column(db.String(800), unique=False, nullable=False)
+    developer = db.Column(db.String(800), unique=False, nullable=False)
+    jobs = db.Column(db.String(800), unique=False, nullable=False)
+    
+    def __repr__(self):
+        return '<Project %r>' % self.name
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "area": self.area,
+            "name": self.name,
+            "general_description": self.general_description,
+            "image": self.image,
+            "start": self.start,
+            "cost": self.cost,
+            "taxes": self.taxes,
+            "developer": self.developer,
+            "jobs": self.jobs,
         }

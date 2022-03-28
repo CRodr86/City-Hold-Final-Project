@@ -4,6 +4,7 @@ import "./mainButton.css";
 import PropTypes from "prop-types";
 
 const MainButton = (props) => {
+// console.log(props)
   return (
     <>
       <HashLink

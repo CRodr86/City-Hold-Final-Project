@@ -14,14 +14,21 @@ const ProposalsCard = (props) => {
         <input
           type="radio"
           className="btn-check"
-          name="options"
+          name={props.name}
           id={props.inputId}
-          autocomplete="off"
+          autoComplete="off"
+          checked={props.checked}
+          value={props.value}
+          onChange={props.onChange}
         />
         <label className="btn cardButton" htmlFor={props.labelFor}>
           <div className="card-body">
             <img src={props.imgSrc} />
-            <p className="card-text">{props.text}</p>
+            <p className="card-text">
+              <a href={props.href} target={props.target}>
+                {props.text}
+              </a>
+            </p>
           </div>
         </label>
       </div>
@@ -36,6 +43,12 @@ ProposalsCard.propTypes = {
   imgSrc: PropTypes.string,
   text: PropTypes.string,
   class: PropTypes.string,
+  name: PropTypes.string,
+  checked: PropTypes.bool,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  href: PropTypes.string,
+  target: PropTypes.string,
 };
 
 export default ProposalsCard;

@@ -1,47 +1,10 @@
 import React, { useState, useContext } from "react";
 import FormInput from "../FormInput/FormInput.jsx";
 import { Context } from "../../store/appContext.js";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
 const SignUpForm = () => {
-  // const initialValues = {
-  //   name : "",
-  //   lastname : "",
-  //   email : "",
-  //   password : "",
-  //   homePhone : "",
-  //   mobilePhone : "",
-  //   address1 : "",
-  //   address2 : "",
-  //   zipCode : "",
-  //   yearsOfResidence : "",
-  // };
-
-  // const [input, setInput] = useState(initialValues);
-  // const inputTextChanger = ev => {
-  //   const {name, value} = ev.target;
-  // 	setInput({...input, [name]: value});
-  // };
-
-  // const addNewUser = () => {
-  //   		fetch("https://3001-crodr86-cityholdfinalpr-eb9ve4vhd3q.ws-eu32.gitpod.io/api/user", {
-  //   			method: "POST",
-  //   			body: JSON.stringify(input),
-  //         mode: "no-cors",
-  //   			headers: { "Content-Type": "application/json" }
-
-  //   		})
-  //   			.then(response => {
-  //   				return response.json();
-  //   			})
-  //   			.then(data => {
-  //   				console.log(data);
-  //   			})
-  //   			.catch(error => {
-  //   				console.log("Error", error);
-  //   			});
-  //   	};
-
+  //State  variables
   const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -55,9 +18,8 @@ const SignUpForm = () => {
   const [yearsOfResidence, setYearsOfResidence] = useState("");
   const history = useHistory();
 
+  //Handler functions to create new user
   const handleSignUp = (e) => {
-    e.preventDefault();
-
     actions.createNewUser(
       name,
       lastname,
@@ -81,6 +43,12 @@ const SignUpForm = () => {
     setZipCode("");
     setYearsOfResidence("");
     history.push("/welcome");
+  };
+
+  const handleEnterPress = (e) => {
+    if (e.key === "Enter") {
+      handleSignUp();
+    }
   };
 
   return (
@@ -152,7 +120,7 @@ const SignUpForm = () => {
           labelFor="formHomePhone"
           labelClassName="form-label"
           labelText="Home Phone"
-          inputType="text"
+          inputType="tel"
           inputClassName="form-control"
           inputPlaceholder="Home phone number"
           inputAriaLabel="homePhone"
@@ -165,7 +133,7 @@ const SignUpForm = () => {
           labelFor="formMobilePhone"
           labelClassName="form-label"
           labelText="Mobile Phone"
-          inputType="text"
+          inputType="tel"
           inputClassName="form-control"
           inputPlaceholder="Mobile phone number"
           inputAriaLabel="mobilePhone"
@@ -220,7 +188,7 @@ const SignUpForm = () => {
           labelFor="formYearsOfResidence"
           labelClassName="form-label"
           labelText="Years of residence"
-          inputType="text"
+          inputType="number"
           inputClassName="form-control"
           inputPlaceholder="Years of residence"
           inputAriaLabel="yearsOfResidence"
@@ -228,6 +196,7 @@ const SignUpForm = () => {
           onChange={(e) => setYearsOfResidence(e.target.value)}
           name="yearsOfResidence"
           required={true}
+          onKeyUp={handleEnterPress}
         />
         <div className="col-12 d-flex justify-content-end">
           <button

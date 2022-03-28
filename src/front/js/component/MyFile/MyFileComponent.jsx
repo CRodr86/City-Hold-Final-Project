@@ -1,14 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Context } from "../../store/appContext.js";
 import "./myFile.css";
-import PropTypes from "prop-types";
-import MyAccountModal from "../MyAccountModal/MyAccountModal.jsx";
 import MyProfile from "./MyProfile.jsx";
 import MyProposalsEmpty from "./MyProposalsEmpty.jsx";
 import MyFilePassword from "./MyFilePassword.jsx";
 import MyProposalsFull from "./MyProposalsFull.jsx";
 
-const MyFile = (props) => {
+const MyFile = () => {
+  const { store, actions } = useContext(Context);
+
+  //Handler function to get user's proposals
+  const getMyProposals = () => {
+    actions.getProposals();
+  };
   return (
     <>
       <div className="container h-100 w-75 p-0 rounded" id="myfile_wrapper">
@@ -52,6 +56,7 @@ const MyFile = (props) => {
               role="tab"
               aria-controls="v-pills-messages"
               aria-selected="false"
+              onClick={getMyProposals}
             >
               My proposals
             </button>
@@ -79,7 +84,7 @@ const MyFile = (props) => {
               role="tabpanel"
               aria-labelledby="v-pills-messages-tab"
             >
-              <MyProposalsFull />
+              {!store.proposal ? <MyProposalsEmpty /> : <MyProposalsFull />}
             </div>
             <div
               className="tab-pane fade"
@@ -96,6 +101,5 @@ const MyFile = (props) => {
   );
 };
 
-MyFile.propTypes = {};
 
 export default MyFile;

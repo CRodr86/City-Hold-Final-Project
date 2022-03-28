@@ -1,18 +1,16 @@
 import React from "react";
 import "../../styles/proposals3.css";
-import MainButton from "../component/MainButton/MainButton.jsx";
-import StepperItem from "../component/StepperItem/StepperItem.jsx";
-import { HashLink } from "react-router-hash-link";
 import ProposalsCard from "../component/ProposalsCard/ProposalsCard.jsx";
 import AuxBackgroundImg from "../../img/AuxBackgroundImg.png";
-let bgImg = {
-  background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
-  backgroundPosition: `center`,
-  backgroundSize: "cover",
-  height: "max-content",
-};
 
 const Services = () => {
+  //Style variable
+  let bgImg = {
+    background: `linear-gradient(0deg, rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)), url(${AuxBackgroundImg})`,
+    backgroundPosition: `center`,
+    backgroundSize: "cover",
+    height: "max-content",
+  };
   return (
     <>
       <div className="container-fluid w-100 proposals1-body" style={bgImg}>
@@ -32,11 +30,15 @@ const Services = () => {
                     tooltip="Bus hours and routes information"
                     imgSrc="https://img.icons8.com/ios/50/000000/get-on-bus.png"
                     text="Buses"
+                    href="https://www.crtm.es/"
+                    target="_blank"
                   />
                   <ProposalsCard
                     tooltip="Subway information"
                     imgSrc="https://img.icons8.com/ios/50/000000/train-platform.png"
                     text="Subway"
+                    href="https://www.metromadrid.es/es"
+                    target="_blank"
                   />
                   <ProposalsCard
                     tooltip="Taxes consulting and payment"

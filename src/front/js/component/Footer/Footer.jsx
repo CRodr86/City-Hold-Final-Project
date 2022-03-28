@@ -1,19 +1,21 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./footer.css";
 import Logo from "../Logo/Logo.jsx";
 import FooterLink from "../FooterLink/FooterLink.jsx";
 import FooterIcons from "../FooterIcons/FooterIcons.jsx";
 import { BsArrowUpCircle } from "react-icons/bs";
-import { Context } from "../../store/appContext.js";
+
+
+
+const Footer = () => {
+ 
+//Icon style variable
 const iconStyles = {
   color: "#023047",
   display: "inline-block",
   margin: "5px",
   fontSize: "35px",
 };
-
-const Footer = () => {
-  // const {store, actions} = useContext(Context);
   return (
     <footer className=" pt-5 pb-3 border-top footer">
       <div className="container">
@@ -35,16 +37,12 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col d-none d-lg-block">
-            <h5 className="footerLabel">Sign in</h5>
+            <h5 className="footerLabel">City Officials</h5>
             
             <ul className="nav flex-column">
-              <FooterLink to="/myfilehome" pageName="My Account" />
+              <FooterLink to="/cityprivate" pageName="Private Area"  />
               
-              <FooterLink
-                toggle="modal"
-                target="#signInModal"
-                pageName="Sign up"
-              />
+             
             </ul>
           </div> 
           

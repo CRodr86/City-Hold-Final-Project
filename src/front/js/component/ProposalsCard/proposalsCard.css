@@ -9,3 +9,29 @@
 .btn-check:focus + .cardButton {
   box-shadow: 0 0 0 0.25rem rgba(2, 48, 71, 0.541);
 }
+
+#getFileLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  background: #ffb703;
+}
+
+#getFileLink {
+ 
+  background: #f88500;
+  color: #e5e5e5;
+  border: #f88500;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+a:hover {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+

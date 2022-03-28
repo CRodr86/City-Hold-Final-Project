@@ -1,14 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./projectsCarousel.css";
 import CarouselSlideProjectsPage1 from "./CarouselSlideProjectsPage1.jsx";
 import CarouselSlideProjectsPage2 from "./CarouselSlideProjectsPage2.jsx";
 
-
-
-
-const ProjectsCarousel = (props) => {
-	return (
+const ProjectsCarousel = () => {
+  return (
     <>
       <div className="container h-100 p-0 rounded" id="carousel_wrapper">
         <div className="row ">
@@ -23,7 +19,7 @@ const ProjectsCarousel = (props) => {
                   <CarouselSlideProjectsPage1 />
                 </div>
                 <div className="carousel-item">
-                <CarouselSlideProjectsPage2 />
+                  <CarouselSlideProjectsPage2 />
                 </div>
               </div>
               <button
@@ -58,4 +54,4 @@ const ProjectsCarousel = (props) => {
   );
 };
 
-export default ProjectsCarousel
+export default ProjectsCarousel;

@@ -2,12 +2,16 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Proposal
+from api.models import db, User, Proposal, Project
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from werkzeug.security import generate_password_hash, check_password_hash
+from cloudinary.uploader import upload
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 api = Blueprint('api', __name__)
@@ -79,6 +83,8 @@ def delete_user(id):
         db.session.commit()
         return jsonify("User deleted"), 200
 
+
+
 #Proposals endpoints
 
 @api.route('/proposal', methods=['GET'])
@@ -95,21 +101,83 @@ def get_one_proposal(id):
     else:
         return jsonify(proposal_x.serialize()), 200
 
-@api.route('/proposalofuser/<int:proponent_id>', methods=['GET'])
-def get_user_proposal(proponent_id):
-    proposal_x = Proposal.query.get(proponent_id)
-    if proposal_x is None:
-        return 'User does not have any proposals', 404
-    else:
-        return jsonify(proposal_x.serialize()), 200
+@api.route('/proposalofuser', methods=['GET'])
+@jwt_required()
+def get_user_proposal():
+    user_id = get_jwt_identity()
+    print('user token', user_id)
+    list_proposal = db.session.query(Proposal).filter(Proposal.proponent_id == user_id)
+    # if len(list_proposal) == 0:
+    #     return jsonify([]), 200
+    list_propsal_json = []
+    for proposal in list_proposal:
+        list_propsal_json.append(proposal.serialize())
+    return jsonify(list_propsal_json), 200
 
 @api.route('/proposal', methods=['POST'])
+@jwt_required()
 def create_proposal():
-    request_body = request.get_json()
-    new_proposal = Proposal(area= request_body["area"], proposal_type= request_body["proposal type"], date= request_body["date"], description= request_body["description"], documents= request_body["documents"], document_type= request_body["document type"], document_description= request_body["document description"], contact_by= request_body["contact by"], confirmation_by= request_body["confirmation by"])
+    user_id = get_jwt_identity()
+    print(user_id)
+    area, proposal_type, date, description, documents, document_type, document_description, contact_by, confirmation_by = request.json.get(
+        "area", None
+    ), request.json.get(
+        "proposal_type", None
+    ), request.json.get(
+        "date", None
+    ), request.json.get(
+        "description", None
+    ), request.json.get(
+        "documents", None
+    ), request.json.get(
+        "document_type", None
+    ), request.json.get(
+        "document_description", None
+    ), request.json.get(
+        "contact_by", None
+    ), request.json.get(
+        "confirmation_by", None
+    )
+    # file_to_upload = request.files.get('documents')
+    # if file_to_upload: 
+    #     upload_result = cloudinary.uploader.upload(file_to_upload)
+    #     if upload_result:
+    #         documents = upload_result.get('secure_url')
+    new_proposal = Proposal(area= area, proposal_type= proposal_type, date= date, description= description, documents= documents, document_type= document_type, document_description= document_description, contact_by= contact_by, confirmation_by= confirmation_by, proponent_id=user_id)
     db.session.add(new_proposal)
     db.session.commit()
-    return jsonify(request_body), 201
+    return jsonify(new_proposal.serialize()), 201
+
+@api.route('/proposal/documents', methods=['POST'])
+def upload_file():
+    proposal = Proposal.query.get(1)
+    
+    cloudinary.config( 
+        cloud_name = "pablop442", 
+        api_key = "714367384677275", 
+        api_secret = "1X765N8teYSzs7-W2LM_3KXwoSU" 
+    )
+    
+    upload_result = None
+    file_to_upload = request.files.get('documents')
+    if file_to_upload: 
+        upload_result = cloudinary.uploader.upload(file_to_upload)
+        if upload_result:
+            proposal.documents = upload_result.get('secure_url')
+    db.session.add(file_to_upload)
+    db.session.commit()
+    return jsonify(''), 200 
+    # try:
+    #     img = request.files['documents']
+    #     body =  request.form.to_dict()
+    #     print(img)
+    #     print(body)
+    #     url_img = upload(img)
+    #     print(url_img)
+    #     return jsonify(url_img['url'], 200)
+    # except Exception as error:
+    #     print(error)
+    #     return jsonify('algo fue mal', 500)
 
 @api.route('/proposal/<int:id>', methods=['DELETE'])
 def delete_proposal(id):
@@ -127,19 +195,77 @@ def delete_proposal(id):
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    name = request.json.get("name", None)
-    lastname = request.json.get("lastname", None)
-    homePhone = request.json.get("homePhone", None)
-    mobilePhone = request.json.get("mobilePhone", None)
-    address1 = request.json.get("address1", None)
-    zipCode = request.json.get("zipCode", None)
     user = User.query.filter_by(email=email, password=password).first()
     if user != None:
+        user_json = user.serialize()
         access_token = create_access_token(identity= user.id)
-        return jsonify({"token": access_token, "user": user.id, "name": user.name, "lastname": user.lastname, "homePhone": user.home_phone, "mobilePhone": user.mobile_phone, "address1":user.address1, "zipCode": user.zip_code, "email": user.email})
+        return jsonify({"token": access_token, "user": user_json })
     else:
         return jsonify({"msg": "Bad email or password"}), 401
-        
+
+@api.route("/citytoken", methods=["POST"])
+def create_city_token():
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    if email != "city" or password != "test":
+        return jsonify({"msg": "Bad email or password"}), 401
+
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
+
+#Project endpoints
+
+@api.route('/project', methods=['GET'])
+def get_projects():
+    projects = Project.query.all()
+    all_projects = list(map(lambda x: x.serialize(), projects))
+    return jsonify(all_projects), 200 
+
+@api.route('/project', methods=['POST'])
+@jwt_required()
+def create_project():
+    area, name, general_description, image, start, cost, taxes, developer, jobs = request.json.get(
+        "area" , None
+    ), request.json.get(
+        "name", None
+    ), request.json.get(
+        "general_description", None
+    ), request.json.get(
+        "image", None
+    ), request.json.get(
+        "start", None
+    ), request.json.get(
+        "cost", None
+    ), request.json.get(
+        "taxes", None
+    ), request.json.get(
+        "developer", None
+    ), request.json.get(
+        "jobs", None
+    )
+    new_project = Project(area= area, name= name, general_description= general_description, image= image, start= start,  cost= cost, taxes= taxes, developer= developer, jobs= jobs)
+    db.session.add(new_project)
+    db.session.commit()
+    return jsonify(new_project.serialize()), 201
+
+@api.route('/project/<int:id>', methods=['DELETE'])
+@jwt_required()
+def delete_project(id):
+    project_x = Project.query.get(id)
+    if project_x is None:
+        return 'Project not found', 404
+    else:
+        db.session.delete(project_x)
+        db.session.commit()
+        return jsonify("Project deleted"), 200
+
+@api.route('/project/<int:id>', methods=['GET'])
+def get_one_project(id):
+    project_x = Project.query.get(id)
+    if project_x is None:
+        return 'Project not found', 404
+    else:
+        return jsonify(project_x.serialize()), 200
 
 #     # comprobar contraseña
 # if check_password_hash(password, passwordDB):

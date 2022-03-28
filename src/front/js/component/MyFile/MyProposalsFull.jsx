@@ -1,11 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import "./myProposals.css";
 import PropTypes from "prop-types";
 import MainButton from "../MainButton/MainButton.jsx";
-import { HashLink } from "react-router-hash-link";
+import { Context } from "../../store/appContext.js";
 
 const MyProposalsFull = (props) => {
+  //Store variable
+  const { store, actions } = useContext(Context);
+  const proposal = store.proposal;
+
+  //Text styling functions
+  const firstCharToUpper = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  const cleanDate = (date) => {
+    return date.split(" ", 4).join(" ");
+  };
+
   return (
     <>
       <div className="row g-3 bg-white m-auto ps-5 pe-2 pb-5 text-start">
@@ -23,74 +35,31 @@ const MyProposalsFull = (props) => {
                   Area
                 </th>
                 <th scope="col" className="table_header">
-                  Status
-                </th>
-                <th scope="col" className="table_header">
-                  Info
+                  Description
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr className="table_content">
-                <td scope="row" data-title="Date">01/01/2022</td>
-                <td data-title="Id">658742</td>
-                <td data-title="Area">Education</td>
-                <td data-title="Status" className="text-warning fw-bold">Pending</td>
-                <td data-title="Info" >
-                  <HashLink to="/myfiledetails">
-                    {" "}
-                    <button
-                      type="button"
-                      className="btn btn-warning px-3 mb-1 text-center"
-                      id="btn_col"
-                    >
-                      More Info
-                    </button>
-                  </HashLink>
-                </td>
-              </tr>
-              <tr className="table_content">
-                <td scope="row" data-title="Date">10/09/2021</td>
-                <td data-title="Id">632154</td>
-                <td data-title="Area">Transport</td>
-                <td  data-title="Status" className="text-success fw-bold">Approved</td>
-                <td data-title="Info">
-                  <HashLink to="/myfiledetails">
-                    {" "}
-                    <button
-                      type="button"
-                      className="btn btn-warning px-3 mb-1 text-center"
-                      id="btn_col"
-                    >
-                      More Info
-                    </button>
-                  </HashLink>
-                </td>
-              </tr>
-              <tr className="table_content">
-                <td scope="row" data-title="Date">08/14/2021</td>
-                <td data-title="Id">596214</td>
-                <td data-title="Area">Nature</td>
-                <td  data-title="Status" className="text-danger fw-bold">Rejected</td>
-                <td data-title="Info">
-                  <HashLink to="/myfiledetails">
-                    {" "}
-                    <button
-                      type="button"
-                      className="btn btn-warning px-3 mb-1 text-center"
-                      id="btn_col"
-                    >
-                      More Info
-                    </button>
-                  </HashLink>
-                </td>
-              </tr>
+              {proposal.map((item, i) => (
+                <tr className="table_content" key={i}>
+                  <td scope="row" data-title="Date">
+                    {cleanDate(item.date)}
+                  </td>
+                  <td data-title="Type">
+                    {firstCharToUpper(item.proposal_type) + item.id}
+                  </td>
+                  <td data-title="Area">{firstCharToUpper(item.area)}</td>
+                  <td data-title="Description" className="table_content">
+                    {firstCharToUpper(item.description)}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
         <div className="col text-center mt-4">
-          <MainButton buttonText="New proposal" to="#" />
+          <MainButton buttonText="New proposal" to="/proposals-3" />
         </div>
       </div>
     </>

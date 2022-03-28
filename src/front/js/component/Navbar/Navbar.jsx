@@ -72,15 +72,15 @@ const Navbar = () => {
                 to="/news"
                 pageName="News"
               />
+
             </ul>
             {!store.token ? <div className="d-flex">
             <MainButton to="#" dataToggle="modal" dataTarget="#signInModal"  buttonText="Sign In"  />
+
             </div> :<div className="d-flex"> <MainButton buttonText="Logout" onClick={() => actions.logout()} to="/" 
               /> <p className=" mt-2 ms-3 mb-0">Welcome {store.name}</p> </div>
-        
-               
-                }
-            
+ }
+           
           </div>
         </div>
       </nav>
