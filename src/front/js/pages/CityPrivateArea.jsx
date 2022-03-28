@@ -30,7 +30,7 @@ const CityPrivateArea = () => {
         <div className="container-fluid w-100" id="banner_wrapper">
           <div className="row " id="upper-b-elem">
             <div className="col-12 ">
-              <div className="text-center" id="bg-image" style={bgImg}>
+              <div className="text-center p-5 h-100" style={bgImg}>
                 <h1 id="upper_banner_h1">
                   This area is for City Officials use only.
                 </h1>
@@ -45,7 +45,7 @@ const CityPrivateArea = () => {
                     inputType="email"
                     inputClassName="form-control-private"
                     inputId="formEmail"
-                    inputPlaceholder="Email"
+                    inputPlaceholder="User Name"
                     onChange={(ev) => setEmail(ev.target.value)}
                     value={email}
                   />
