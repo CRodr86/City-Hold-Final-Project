@@ -321,6 +321,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            Authorization: "Bearer " + store.cityToken,
           },
           body: JSON.stringify({
             area: area,
@@ -391,10 +392,12 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       deleteProject: async (id) => {
+        const store = getStore();
         const opts = {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
+            Authorization: "Bearer " + store.cityToken,
           },
         };
         try {

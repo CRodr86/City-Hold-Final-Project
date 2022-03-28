@@ -8,7 +8,7 @@ const ReviewProposals = () => {
   //Style variable
   let bgImg = { background: "#023047", height: "max-content" };
 
-//Context variables
+  //Context variables
   const { store, actions } = useContext(Context);
   const data = store.data;
   const history = useHistory();
@@ -34,15 +34,18 @@ const ReviewProposals = () => {
     <>
       <div className="container-fluid w-100" id="banner_wrapper">
         <div className="text-center py-4" id="bg-image" style={bgImg}>
-          <h1 id="upper_banner_h1">All Proposals</h1>
+          <h1 id="upper_banner_h1" className="my-4">
+            All Proposals
+          </h1>
           <div className="container">
             <div className="row">
               {data?.map((item) => (
-                <div className="col-md-4 mb-3">
+                <div className="col-md-4 mb-3" key={item.id}>
                   <ProposalUserCard
-                    key={item.id}
+                    proposal_id={item.id}
                     proposal_type={firstCharToUpper(item.proposal_type)}
                     description={item.description}
+                    document_type={item.document_type}
                     contact={item.contact_by}
                     proponent={item.proponent_id}
                     confirmation={item.confirmation_by}
@@ -51,6 +54,7 @@ const ReviewProposals = () => {
                       <MainButton
                         buttonText="Access User info"
                         onClick={() => getUserData(item.proponent_id)}
+                        to="#"
                       />
                     }
                   />

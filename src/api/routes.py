@@ -260,7 +260,6 @@ def delete_project(id):
         return jsonify("Project deleted"), 200
 
 @api.route('/project/<int:id>', methods=['GET'])
-@jwt_required()
 def get_one_project(id):
     project_x = Project.query.get(id)
     if project_x is None:
