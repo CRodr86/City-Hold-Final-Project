@@ -24,7 +24,11 @@ const ProposalsCard = (props) => {
         <label className="btn cardButton" htmlFor={props.labelFor}>
           <div className="card-body">
             <img src={props.imgSrc} />
-            <p className="card-text">{props.text}</p>
+            <p className="card-text">
+              <a href={props.href} target={props.target}>
+                {props.text}
+              </a>
+            </p>
           </div>
         </label>
       </div>
@@ -43,6 +47,8 @@ ProposalsCard.propTypes = {
   checked: PropTypes.bool,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  href: PropTypes.string,
+  target: PropTypes.string,
 };
 
 export default ProposalsCard;
