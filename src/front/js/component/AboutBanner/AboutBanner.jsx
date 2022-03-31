@@ -22,7 +22,7 @@ const iconStyles = {
             <h5 id="section_title">About us</h5>
             <h2 id="section_subtitle">Keeping the city connected</h2>
             <ul className="fa-ul" id="about_banner_ul">
-              <li className="about_li"> <FaDesktop className="fa-li" style={iconStyles}/> Town-Hold is a digital platform for the cities. Is a way to comunicate between citizens and local governement</li>
+              <li className="about_li"> <FaDesktop className="fa-li" style={iconStyles}/> City-Hold is a digital platform for the cities. Is a way to comunicate between citizens and local governement</li>
               <li className="about_li"> <FaPeopleArrows className="fa-li" style={iconStyles}/>We are determined to facilitate and promote participation by creating a direct line of communication with local governments</li>
               <li className="about_li"> <FaBullseye className="fa-li" style={iconStyles}/>By allowing authorities to manage information more efficiently we aim to speed up the resolution of public problems</li>
             </ul>
